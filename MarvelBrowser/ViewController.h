@@ -1,10 +1,5 @@
-//
-//  ViewController.h
-//  MarvelBrowser
-//
-//  Created by Jon Reid on 11/19/14.
-//  Copyright (c) 2014 Jon Reid. All rights reserved.
-//
+//  TDD sample app MarvelBrowser by Jon Reid, http://qualitycoding.org/about/
+//  Copyright 2014 Jonathan M. Reid. See LICENSE.txt
 
 #import <UIKit/UIKit.h>
 
