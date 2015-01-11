@@ -7,7 +7,6 @@
 #import <CommonCrypto/CommonDigest.h>
 
 @interface ViewController () <NSURLSessionDelegate>
-
 @end
 
 @implementation ViewController
@@ -44,7 +43,11 @@
                                                      delegateQueue:nil];
     NSURLSessionDataTask *dataTask = [session dataTaskWithURL:[NSURL URLWithString:URLString]
                                             completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+                                                NSLog(@"Data: %@", data);
+                                                NSLog(@"Response: %@", response);
+                                                NSLog(@"Error: %@", error);
                                             }];
+    [dataTask resume];
 }
 
 - (void)didReceiveMemoryWarning {
