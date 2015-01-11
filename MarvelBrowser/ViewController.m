@@ -33,7 +33,7 @@
     NSLog(@"%@", hash);
 
     // Manually confirm URL string:
-    NSString *URLString = [NSString stringWithFormat:@"http://gateway.marvel.com/v1/public/characters?nameStartsWith=Spider&?ts=%@&apikey=%@&hash=%@", timeStamp, MarvelPublicKey, hash];
+    NSString *URLString = [NSString stringWithFormat:@"http://gateway.marvel.com/v1/public/characters?nameStartsWith=Spider&ts=%@&apikey=%@&hash=%@", timeStamp, MarvelPublicKey, hash];
     NSLog(@"%@", URLString);
 
     // Create data task:
