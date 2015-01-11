@@ -32,6 +32,10 @@
 
     // Manually confirm that it's 32 hex digits:
     NSLog(@"%@", hash);
+
+    // Manually confirm URL string:
+    NSString *URLString = [NSString stringWithFormat:@"http://gateway.marvel.com/v1/public/characters?nameStartsWith=Spider&?ts=%@&apikey=%@&hash=%@", timeStamp, MarvelPublicKey, hash];
+    NSLog(@"%@", URLString);
 }
 
 - (void)didReceiveMemoryWarning {
