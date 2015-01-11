@@ -41,7 +41,9 @@
     NSURLSession *session = [NSURLSession sessionWithConfiguration:sessionConfig
                                                           delegate:self
                                                      delegateQueue:nil];
-    NSURLSessionDataTask *dataTask = [session dataTaskWithURL:[NSURL URLWithString:URLString]
+    NSURL *url = [NSURL URLWithString:URLString];
+    NSLog(@"URL: %@", url);
+    NSURLSessionDataTask *dataTask = [session dataTaskWithURL:url
                                             completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
                                                 NSLog(@"Data: %@", data);
                                                 NSLog(@"Response: %@", response);
