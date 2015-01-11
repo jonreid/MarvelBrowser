@@ -6,7 +6,7 @@
 #import "MarvelKeys.m"
 #import <CommonCrypto/CommonDigest.h>
 
-@interface ViewController ()
+@interface ViewController () <NSURLSessionDelegate>
 
 @end
 
@@ -36,6 +36,15 @@
     // Manually confirm URL string:
     NSString *URLString = [NSString stringWithFormat:@"http://gateway.marvel.com/v1/public/characters?nameStartsWith=Spider&?ts=%@&apikey=%@&hash=%@", timeStamp, MarvelPublicKey, hash];
     NSLog(@"%@", URLString);
+
+    // Create data task:
+    NSURLSessionConfiguration *sessionConfig = [NSURLSessionConfiguration defaultSessionConfiguration];
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:sessionConfig
+                                                          delegate:self
+                                                     delegateQueue:nil];
+    NSURLSessionDataTask *dataTask = [session dataTaskWithURL:[NSURL URLWithString:URLString]
+                                            completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+                                            }];
 }
 
 - (void)didReceiveMemoryWarning {
