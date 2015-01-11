@@ -4,6 +4,7 @@
 #import "ViewController.h"
 
 #import "MarvelKeys.m"
+#import <CommonCrypto/CommonDigest.h>
 
 @interface ViewController ()
 
@@ -21,6 +22,16 @@
 
     // Confirm manually:
     NSLog(@"%s", keysString);
+
+    // Create MD5 hash:
+    unsigned char digest[CC_MD5_DIGEST_LENGTH];
+    CC_MD5(keysString, strlen(keysString), digest);
+    NSMutableString *hash = [NSMutableString stringWithCapacity:CC_MD5_DIGEST_LENGTH * 2];
+    for (NSUInteger i = 0; i < CC_MD5_DIGEST_LENGTH; ++i)
+        [hash appendFormat:@"%02x", digest[i]];
+
+    // Manually confirm that it's 32 hex digits:
+    NSLog(@"%@", hash);
 }
 
 - (void)didReceiveMemoryWarning {
