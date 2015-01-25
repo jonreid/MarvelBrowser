@@ -39,8 +39,8 @@
 		74CC7A941A1D9036007FCA40 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		74CC7A971A1D9036007FCA40 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		74CC7A9D1A1D9036007FCA40 /* MarvelBrowserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarvelBrowserTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		74CC7AA21A1D9036007FCA40 /* Info-Tests.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-Tests.plist"; sourceTree = "<group>"; };
-		74CC7AA31A1D9036007FCA40 /* MarvelBrowserTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MarvelBrowserTests.m; sourceTree = "<group>"; };
+		74CC7AA21A1D9036007FCA40 /* Info-Tests.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info-Tests.plist"; path = "MarvelBrowser/Info-Tests.plist"; sourceTree = SOURCE_ROOT; };
+		74CC7AA31A1D9036007FCA40 /* MarvelBrowserTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MarvelBrowserTests.m; path = MarvelBrowser/MarvelBrowserTests.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +92,7 @@
 				74CC7A911A1D9036007FCA40 /* Main.storyboard */,
 				74CC7A941A1D9036007FCA40 /* Images.xcassets */,
 				74CC7A961A1D9036007FCA40 /* LaunchScreen.xib */,
+				74CC7AA31A1D9036007FCA40 /* MarvelBrowserTests.m */,
 				74CC7A871A1D9036007FCA40 /* Supporting Files */,
 			);
 			path = MarvelBrowser;
@@ -101,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				74CC7A881A1D9036007FCA40 /* Info.plist */,
+				74CC7AA21A1D9036007FCA40 /* Info-Tests.plist */,
 				74CC7A891A1D9036007FCA40 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -109,7 +111,6 @@
 		74CC7AA01A1D9036007FCA40 /* MarvelBrowserTests */ = {
 			isa = PBXGroup;
 			children = (
-				74CC7AA31A1D9036007FCA40 /* MarvelBrowserTests.m */,
 				74CC7AA11A1D9036007FCA40 /* Supporting Files */,
 			);
 			path = MarvelBrowserTests;
@@ -118,7 +119,6 @@
 		74CC7AA11A1D9036007FCA40 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				74CC7AA21A1D9036007FCA40 /* Info-Tests.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -347,7 +347,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "MarvelBrowserTests/Info-Tests.plist";
+				INFOPLIST_FILE = "MarvelBrowser/Info-Tests.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MarvelBrowser.app/MarvelBrowser";
@@ -362,7 +362,7 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "MarvelBrowserTests/Info-Tests.plist";
+				INFOPLIST_FILE = "MarvelBrowser/Info-Tests.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MarvelBrowser.app/MarvelBrowser";
