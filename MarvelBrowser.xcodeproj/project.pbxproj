@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7462DD211AB6313C00EE429E /* TestingAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7462DD201AB6313C00EE429E /* TestingAppDelegate.m */; };
+		0E854BD41B49F00B00559E1E /* TestingAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7462DD201AB6313C00EE429E /* TestingAppDelegate.m */; };
 		74CC7A8A1A1D9036007FCA40 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CC7A891A1D9036007FCA40 /* main.m */; };
 		74CC7A8D1A1D9036007FCA40 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CC7A8C1A1D9036007FCA40 /* AppDelegate.m */; };
 		74CC7A901A1D9036007FCA40 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CC7A8F1A1D9036007FCA40 /* ViewController.m */; };
@@ -213,7 +213,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				74CC7A901A1D9036007FCA40 /* ViewController.m in Sources */,
-				7462DD211AB6313C00EE429E /* TestingAppDelegate.m in Sources */,
 				74CC7A8D1A1D9036007FCA40 /* AppDelegate.m in Sources */,
 				74CC7A8A1A1D9036007FCA40 /* main.m in Sources */,
 			);
@@ -224,6 +223,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				74CC7AA41A1D9036007FCA40 /* MarvelBrowserTests.m in Sources */,
+				0E854BD41B49F00B00559E1E /* TestingAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
