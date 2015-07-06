@@ -22,4 +22,11 @@
     assertThat(ts1, isNot(equalTo(ts2)));
 }
 
+- (void)testPublicKey_ShouldHave32Characters
+{
+    NSString *key = [QCOMarvelAuthentication publicKey];
+
+    assertThat(@(key.length), is(@32));
+}
+
 @end

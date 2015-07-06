@@ -6,5 +6,6 @@
 @interface QCOMarvelAuthentication : NSObject
 
 + (NSString *)timestamp;
++ (NSString *)publicKey;
 
 @end
