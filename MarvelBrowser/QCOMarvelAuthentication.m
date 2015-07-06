@@ -7,7 +7,7 @@
 
 + (NSString *)timestamp
 {
-    return @([[NSDate date] timeIntervalSinceReferenceDate]).stringValue;
+    return @([NSDate date].timeIntervalSinceReferenceDate).stringValue;
 }
 
 @end
