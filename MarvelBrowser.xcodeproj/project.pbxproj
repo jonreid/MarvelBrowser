@@ -17,7 +17,6 @@
 		74CC7A931A1D9036007FCA40 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74CC7A911A1D9036007FCA40 /* Main.storyboard */; };
 		74CC7A951A1D9036007FCA40 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74CC7A941A1D9036007FCA40 /* Images.xcassets */; };
 		74CC7A981A1D9036007FCA40 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74CC7A961A1D9036007FCA40 /* LaunchScreen.xib */; };
-		74CC7AA41A1D9036007FCA40 /* MarvelBrowserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CC7AA31A1D9036007FCA40 /* MarvelBrowserTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,7 +50,6 @@
 		74CC7A971A1D9036007FCA40 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		74CC7A9D1A1D9036007FCA40 /* MarvelBrowserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarvelBrowserTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		74CC7AA21A1D9036007FCA40 /* Info-Tests.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info-Tests.plist"; path = "MarvelBrowser/Info-Tests.plist"; sourceTree = SOURCE_ROOT; };
-		74CC7AA31A1D9036007FCA40 /* MarvelBrowserTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MarvelBrowserTests.m; path = MarvelBrowser/MarvelBrowserTests.m; sourceTree = SOURCE_ROOT; };
 		EF3CFF15149796AC0E6B6B92 /* Pods-MarvelBrowserTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelBrowserTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MarvelBrowserTests/Pods-MarvelBrowserTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -117,7 +115,6 @@
 				74CC7A911A1D9036007FCA40 /* Main.storyboard */,
 				74CC7A941A1D9036007FCA40 /* Images.xcassets */,
 				74CC7A961A1D9036007FCA40 /* LaunchScreen.xib */,
-				74CC7AA31A1D9036007FCA40 /* MarvelBrowserTests.m */,
 				74CC7A871A1D9036007FCA40 /* Supporting Files */,
 				609E98B120EF92D11321CCAF /* QCOMarvelAuthenticationTests.m */,
 				609E950D6BA8062FC0F214A8 /* QCOMarvelAuthentication.m */,
@@ -290,7 +287,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				74CC7AA41A1D9036007FCA40 /* MarvelBrowserTests.m in Sources */,
 				0E854BD41B49F00B00559E1E /* TestingAppDelegate.m in Sources */,
 				609E99A7842D4BC05E1F6182 /* QCOMarvelAuthenticationTests.m in Sources */,
 			);
