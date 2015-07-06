@@ -1,8 +1,12 @@
 //  TDD sample app MarvelBrowser by Jon Reid, http://qualitycoding.org/about/
 //  Copyright 2015 Jonathan M. Reid. See LICENSE.txt
 
-#import <XCTest/XCTest.h>
 #import "QCOMarvelAuthentication.h"
+
+#import <XCTest/XCTest.h>
+
+#define HC_SHORTHAND
+#import <OCHamcrest/OCHamcrest.h>
 
 
 @interface QCOMarvelAuthenticationTests : XCTestCase
@@ -15,7 +19,7 @@
     NSString *ts1 = [QCOMarvelAuthentication timestamp];
     NSString *ts2 = [QCOMarvelAuthentication timestamp];
 
-    XCTAssertNotEqualObjects(ts1, ts2);
+    assertThat(ts1, isNot(equalTo(ts2)));
 }
 
 @end
