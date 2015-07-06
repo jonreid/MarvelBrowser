@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0E854BD41B49F00B00559E1E /* TestingAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7462DD201AB6313C00EE429E /* TestingAppDelegate.m */; };
+		609E985DF300A893AD02B8B3 /* QCOMarvelAuthentication.m in Sources */ = {isa = PBXBuildFile; fileRef = 609E950D6BA8062FC0F214A8 /* QCOMarvelAuthentication.m */; };
+		609E99A7842D4BC05E1F6182 /* QCOMarvelAuthenticationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 609E98B120EF92D11321CCAF /* QCOMarvelAuthenticationTests.m */; };
 		74CC7A8A1A1D9036007FCA40 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CC7A891A1D9036007FCA40 /* main.m */; };
 		74CC7A8D1A1D9036007FCA40 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CC7A8C1A1D9036007FCA40 /* AppDelegate.m */; };
 		74CC7A901A1D9036007FCA40 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CC7A8F1A1D9036007FCA40 /* ViewController.m */; };
@@ -28,6 +30,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		609E950D6BA8062FC0F214A8 /* QCOMarvelAuthentication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCOMarvelAuthentication.m; sourceTree = "<group>"; };
+		609E98B120EF92D11321CCAF /* QCOMarvelAuthenticationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCOMarvelAuthenticationTests.m; sourceTree = "<group>"; };
+		609E9AD95579A176D1F76003 /* QCOMarvelAuthentication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCOMarvelAuthentication.h; sourceTree = "<group>"; };
 		7462DD1F1AB6313C00EE429E /* TestingAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestingAppDelegate.h; sourceTree = "<group>"; };
 		7462DD201AB6313C00EE429E /* TestingAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestingAppDelegate.m; sourceTree = "<group>"; };
 		747AF50F1A34C16E005EC86B /* XcodeWarnings.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = XcodeWarnings.xcconfig; sourceTree = "<group>"; };
@@ -98,6 +103,9 @@
 				74CC7A961A1D9036007FCA40 /* LaunchScreen.xib */,
 				74CC7AA31A1D9036007FCA40 /* MarvelBrowserTests.m */,
 				74CC7A871A1D9036007FCA40 /* Supporting Files */,
+				609E98B120EF92D11321CCAF /* QCOMarvelAuthenticationTests.m */,
+				609E950D6BA8062FC0F214A8 /* QCOMarvelAuthentication.m */,
+				609E9AD95579A176D1F76003 /* QCOMarvelAuthentication.h */,
 			);
 			path = MarvelBrowser;
 			sourceTree = "<group>";
@@ -215,6 +223,7 @@
 				74CC7A901A1D9036007FCA40 /* ViewController.m in Sources */,
 				74CC7A8D1A1D9036007FCA40 /* AppDelegate.m in Sources */,
 				74CC7A8A1A1D9036007FCA40 /* main.m in Sources */,
+				609E985DF300A893AD02B8B3 /* QCOMarvelAuthentication.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,6 +233,7 @@
 			files = (
 				74CC7AA41A1D9036007FCA40 /* MarvelBrowserTests.m in Sources */,
 				0E854BD41B49F00B00559E1E /* TestingAppDelegate.m in Sources */,
+				609E99A7842D4BC05E1F6182 /* QCOMarvelAuthenticationTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
