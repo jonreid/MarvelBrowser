@@ -3,6 +3,9 @@
 
 #import "QCOMarvelAuthentication.h"
 
+#import "MarvelKeys.m"
+
+
 @implementation QCOMarvelAuthentication
 
 + (NSString *)timestamp
@@ -12,7 +15,7 @@
 
 + (NSString *)publicKey
 {
-    return nil;
+    return MarvelPublicKey;
 }
 
 @end
