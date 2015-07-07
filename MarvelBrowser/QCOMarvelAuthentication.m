@@ -34,4 +34,9 @@
     return _privateKey;
 }
 
+- (NSString *)timestampedKeys
+{
+    return [NSString stringWithFormat:@"%@%@%@", self.timestamp, self.privateKey, self.publicKey];
+}
+
 @end
