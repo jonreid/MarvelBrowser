@@ -9,6 +9,19 @@
 #import <OCHamcrest/OCHamcrest.h>
 
 
+@interface TestingMarvelAuthentication : QCOMarvelAuthentication
+@end
+
+@implementation TestingMarvelAuthentication
+
+- (NSString *)MD5OfString:(NSString *)str
+{
+    return [NSString stringWithFormat:@"MD5%@MD5", str];
+}
+
+@end
+
+
 @interface QCOMarvelAuthentication (Testing)
 @property (nonatomic, copy, readwrite) NSString *timestamp;
 @property (nonatomic, copy, readwrite) NSString *publicKey;
@@ -74,6 +87,18 @@
     NSString *md5 = [sut MD5OfString:@"abc"];
 
     assertThat(md5, is(@"900150983cd24fb0d6963f7d28e17f72"));
+}
+
+- (void)testURLParameters_ShouldHaveTimestampPublicKeyAndHash
+{
+    TestingMarvelAuthentication *sutWithFakeMD5 = [[TestingMarvelAuthentication alloc] init];
+    sutWithFakeMD5.timestamp = @"Timestamp";
+    sutWithFakeMD5.privateKey = @"Private";
+    sutWithFakeMD5.publicKey = @"Public";
+
+    NSString *params = [sutWithFakeMD5 URLParameters];
+
+    assertThat(params, is(@"&ts=Timestamp&apikey=Public&hash=MD5TimestampPrivatePublicMD5"));
 }
 
 @end

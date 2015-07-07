@@ -11,5 +11,6 @@
 @property (nonatomic, copy, readonly) NSString *timestampedKeys;
 
 - (NSString *)MD5OfString:(NSString *)str;
+- (NSString *)URLParameters;
 
 @end

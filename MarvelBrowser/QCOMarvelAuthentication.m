@@ -54,4 +54,9 @@
     ];
 }
 
+- (NSString *)URLParameters
+{
+    return nil;
+}
+
 @end
