@@ -69,11 +69,11 @@
     assertThat(sut.timestampedKeys, is(@"TimestampPrivatePublic"));
 }
 
-- (void)testMD5OfString_ShouldYieldKnownResult
+- (void)testMD5OfKnownString_ShouldYieldKnownResult  // http://tools.ietf.org/html/rfc1321
 {
     NSString *md5 = [sut MD5OfString:@"abc"];
 
-    assertThat(md5, is(@"900150983cd24fb0d6963f7d28e17f72"));  // http://tools.ietf.org/html/rfc1321
+    assertThat(md5, is(@"900150983cd24fb0d6963f7d28e17f72"));
 }
 
 @end
