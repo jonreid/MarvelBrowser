@@ -7,5 +7,6 @@
 
 + (NSString *)timestamp;
 + (NSString *)publicKey;
++ (NSString *)privateKey;
 
 @end

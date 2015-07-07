@@ -18,4 +18,9 @@
     return MarvelPublicKey;
 }
 
++ (NSString *)privateKey
+{
+    return MarvelPrivateKey;
+}
+
 @end

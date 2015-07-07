@@ -29,4 +29,11 @@
     assertThat(@(key.length), is(@32));
 }
 
+- (void)testPrivateKey_ShouldHave40Characters
+{
+    NSString *key = [QCOMarvelAuthentication privateKey];
+
+    assertThat(@(key.length), is(@40));
+}
+
 @end
