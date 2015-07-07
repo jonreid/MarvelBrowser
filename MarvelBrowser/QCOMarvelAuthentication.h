@@ -7,7 +7,7 @@
 
 @property (nonatomic, copy, readonly) NSString *timestamp;
 
-+ (NSString *)publicKey;
-+ (NSString *)privateKey;
+- (NSString *)publicKey;
+- (NSString *)privateKey;
 
 @end

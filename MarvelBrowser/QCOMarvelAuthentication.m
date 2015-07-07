@@ -11,12 +11,12 @@
 
 @implementation QCOMarvelAuthentication
 
-+ (NSString *)publicKey
+- (NSString *)publicKey
 {
     return MarvelPublicKey;
 }
 
-+ (NSString *)privateKey
+- (NSString *)privateKey
 {
     return MarvelPrivateKey;
 }
