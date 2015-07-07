@@ -9,6 +9,13 @@
 #import <OCHamcrest/OCHamcrest.h>
 
 
+@interface QCOMarvelAuthentication (Testing)
+@property (nonatomic, copy, readwrite) NSString *timestamp;
+@property (nonatomic, copy, readwrite) NSString *publicKey;
+@property (nonatomic, copy, readwrite) NSString *privateKey;
+@end
+
+
 @interface QCOMarvelAuthenticationTests : XCTestCase
 @end
 
@@ -51,6 +58,15 @@
     NSString *key = sut.privateKey;
 
     assertThat(@(key.length), is(@40));
+}
+
+- (void)testTimestampedKeys_ShouldConcatenateTimestampPrivateKeyPublicKey
+{
+    sut.timestamp = @"Timestamp";
+    sut.privateKey = @"Private";
+    sut.publicKey = @"Public";
+
+    assertThat(sut.timestampedKeys, is(@"TimestampPrivatePublic"));
 }
 
 @end

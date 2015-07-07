@@ -8,5 +8,6 @@
 @property (nonatomic, copy, readonly) NSString *timestamp;
 @property (nonatomic, copy, readonly) NSString *publicKey;
 @property (nonatomic, copy, readonly) NSString *privateKey;
+@property (nonatomic, copy, readonly) NSString *timestampedKeys;
 
 @end
