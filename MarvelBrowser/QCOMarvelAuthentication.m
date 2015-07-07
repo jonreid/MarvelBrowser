@@ -39,4 +39,9 @@
     return [NSString stringWithFormat:@"%@%@%@", self.timestamp, self.privateKey, self.publicKey];
 }
 
+- (NSString *)MD5OfString:(NSString *)str
+{
+    return nil;
+}
+
 @end

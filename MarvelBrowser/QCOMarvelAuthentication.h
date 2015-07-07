@@ -10,4 +10,6 @@
 @property (nonatomic, copy, readonly) NSString *privateKey;
 @property (nonatomic, copy, readonly) NSString *timestampedKeys;
 
+- (NSString *)MD5OfString:(NSString *)str;
+
 @end
