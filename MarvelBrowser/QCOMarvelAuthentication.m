@@ -8,11 +8,6 @@
 
 @implementation QCOMarvelAuthentication
 
-+ (NSString *)timestamp
-{
-    return @([NSDate date].timeIntervalSinceReferenceDate).stringValue;
-}
-
 + (NSString *)publicKey
 {
     return MarvelPublicKey;
@@ -21,6 +16,11 @@
 + (NSString *)privateKey
 {
     return MarvelPrivateKey;
+}
+
+- (NSString *)timestamp
+{
+    return @([NSDate date].timeIntervalSinceReferenceDate).stringValue;
 }
 
 @end

@@ -16,8 +16,8 @@
 
 - (void)testTimestamp_ShouldChangeEveryCall
 {
-    NSString *ts1 = [QCOMarvelAuthentication timestamp];
-    NSString *ts2 = [QCOMarvelAuthentication timestamp];
+    NSString *ts1 = [[[QCOMarvelAuthentication alloc] init] timestamp];
+    NSString *ts2 = [[[QCOMarvelAuthentication alloc] init] timestamp];
 
     assertThat(ts1, isNot(equalTo(ts2)));
 }
