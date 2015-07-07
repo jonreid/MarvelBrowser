@@ -18,16 +18,16 @@
 {
     QCOMarvelAuthentication *sut = [[QCOMarvelAuthentication alloc] init];
 
-    NSString *ts1 = [sut timestamp];
-    NSString *ts2 = [sut timestamp];
+    NSString *ts1 = sut.timestamp;
+    NSString *ts2 = sut.timestamp;
 
     assertThat(ts1, equalTo(ts2));
 }
 
 - (void)testTimestamp_ShouldChangeAcrossDifferentInstances
 {
-    NSString *ts1 = [[[QCOMarvelAuthentication alloc] init] timestamp];
-    NSString *ts2 = [[[QCOMarvelAuthentication alloc] init] timestamp];
+    NSString *ts1 = [[QCOMarvelAuthentication alloc] init].timestamp;
+    NSString *ts2 = [[QCOMarvelAuthentication alloc] init].timestamp;
 
     assertThat(ts1, isNot(equalTo(ts2)));
 }

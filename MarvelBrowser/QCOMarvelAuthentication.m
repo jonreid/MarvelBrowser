@@ -5,6 +5,9 @@
 
 #import "MarvelKeys.m"
 
+@interface QCOMarvelAuthentication ()
+@property (nonatomic, copy, readwrite) NSString *timestamp;
+@end
 
 @implementation QCOMarvelAuthentication
 
@@ -20,7 +23,9 @@
 
 - (NSString *)timestamp
 {
-    return @([NSDate date].timeIntervalSinceReferenceDate).stringValue;
+    if (!_timestamp)
+        _timestamp = @([NSDate date].timeIntervalSinceReferenceDate).stringValue;
+    return _timestamp;
 }
 
 @end

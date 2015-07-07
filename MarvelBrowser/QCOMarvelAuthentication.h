@@ -5,8 +5,9 @@
 
 @interface QCOMarvelAuthentication : NSObject
 
+@property (nonatomic, copy, readonly) NSString *timestamp;
+
 + (NSString *)publicKey;
 + (NSString *)privateKey;
-- (NSString *)timestamp;
 
 @end
