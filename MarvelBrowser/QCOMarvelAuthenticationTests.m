@@ -34,14 +34,14 @@
 
 - (void)testPublicKey_ShouldHave32Characters
 {
-    NSString *key = [[[QCOMarvelAuthentication alloc] init] publicKey];
+    NSString *key = [[QCOMarvelAuthentication alloc] init].publicKey;
 
     assertThat(@(key.length), is(@32));
 }
 
 - (void)testPrivateKey_ShouldHave40Characters
 {
-    NSString *key = [[[QCOMarvelAuthentication alloc] init] privateKey];
+    NSString *key = [[QCOMarvelAuthentication alloc] init].privateKey;
 
     assertThat(@(key.length), is(@40));
 }

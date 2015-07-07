@@ -7,25 +7,31 @@
 
 @interface QCOMarvelAuthentication ()
 @property (nonatomic, copy, readwrite) NSString *timestamp;
+@property (nonatomic, copy, readwrite) NSString *publicKey;
+@property (nonatomic, copy, readwrite) NSString *privateKey;
 @end
 
 @implementation QCOMarvelAuthentication
-
-- (NSString *)publicKey
-{
-    return MarvelPublicKey;
-}
-
-- (NSString *)privateKey
-{
-    return MarvelPrivateKey;
-}
 
 - (NSString *)timestamp
 {
     if (!_timestamp)
         _timestamp = @([NSDate date].timeIntervalSinceReferenceDate).stringValue;
     return _timestamp;
+}
+
+- (NSString *)publicKey
+{
+    if (!_publicKey)
+        _publicKey = MarvelPublicKey;
+    return _publicKey;
+}
+
+- (NSString *)privateKey
+{
+    if (!_privateKey)
+        _privateKey = MarvelPrivateKey;
+    return _privateKey;
 }
 
 @end
