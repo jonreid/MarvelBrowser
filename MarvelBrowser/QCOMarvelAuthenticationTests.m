@@ -17,10 +17,14 @@
     QCOMarvelAuthentication *sut;
 }
 
+- (void)setUp
+{
+    [super setUp];
+    sut = [[QCOMarvelAuthentication alloc] init];
+}
+
 - (void)testTimestamp_ShouldNotChangeOnTheSameInstance
 {
-    sut = [[QCOMarvelAuthentication alloc] init];
-
     NSString *ts1 = sut.timestamp;
     NSString *ts2 = sut.timestamp;
 
@@ -29,8 +33,6 @@
 
 - (void)testTimestamp_ShouldChangeAcrossDifferentInstances
 {
-    sut = [[QCOMarvelAuthentication alloc] init];
-
     NSString *ts1 = sut.timestamp;
     NSString *ts2 = [[QCOMarvelAuthentication alloc] init].timestamp;
 
@@ -39,8 +41,6 @@
 
 - (void)testPublicKey_ShouldHave32Characters
 {
-    sut = [[QCOMarvelAuthentication alloc] init];
-
     NSString *key = sut.publicKey;
 
     assertThat(@(key.length), is(@32));
@@ -48,8 +48,6 @@
 
 - (void)testPrivateKey_ShouldHave40Characters
 {
-    sut = [[QCOMarvelAuthentication alloc] init];
-
     NSString *key = sut.privateKey;
 
     assertThat(@(key.length), is(@40));
