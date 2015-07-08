@@ -33,7 +33,7 @@
 - (NSString *)URLParameters
 {
     return [NSString stringWithFormat:@"&ts=%@&apikey=%@&hash=%@",
-                    self.timestamp, self.publicKey, [self MD5OfString:[self timestampedKeys]]
+                    self.timestamp, self.publicKey, self.MD5Block([self timestampedKeys])
     ];
 }
 
