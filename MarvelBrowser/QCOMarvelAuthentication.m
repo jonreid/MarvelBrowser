@@ -37,7 +37,7 @@
         _calculateMD5 = ^(NSString *str){
             const char *cstr = [str UTF8String];
             unsigned char digest[CC_MD5_DIGEST_LENGTH];
-            CC_MD5(cstr, strlen(cstr), digest);
+            CC_MD5(cstr, (CC_LONG)strlen(cstr), digest);
             return [NSString stringWithFormat:
                     @"%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x",
                     digest[0], digest[1], digest[2], digest[3],
