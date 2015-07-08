@@ -73,14 +73,26 @@
     assertThat(md5, is(@"900150983cd24fb0d6963f7d28e17f72"));
 }
 
-- (void)testURLParameters_ShouldHaveTimestampPublicKeyAndHash
-{
-    TestingMarvelAuthentication *sutWithFakeMD5 = [[TestingMarvelAuthentication alloc] init];
-    sutWithFakeMD5.timestamp = @"Timestamp";
-    sutWithFakeMD5.privateKey = @"Private";
-    sutWithFakeMD5.publicKey = @"Public";
+//- (void)testURLParameters_ShouldHaveTimestampPublicKeyAndHash
+//{
+//    TestingMarvelAuthentication *sutWithFakeMD5 = [[TestingMarvelAuthentication alloc] init];
+//    sutWithFakeMD5.timestamp = @"Timestamp";
+//    sutWithFakeMD5.privateKey = @"Private";
+//    sutWithFakeMD5.publicKey = @"Public";
+//
+//    NSString *params = [sutWithFakeMD5 URLParameters];
+//
+//    assertThat(params, is(@"&ts=Timestamp&apikey=Public&hash=MD5TimestampPrivatePublicMD5"));
+//}
 
-    NSString *params = [sutWithFakeMD5 URLParameters];
+- (void)testURLParameters_ShouldHaveTimestampPublicKeyAndHashedConcatenation
+{
+    sut.timestamp = @"Timestamp";
+    sut.privateKey = @"Private";
+    sut.publicKey = @"Public";
+    sut.MD5Block = ^(NSString *str) { return [NSString stringWithFormat:@"MD5%@MD5", str]; };
+
+    NSString *params = [sut URLParameters];
 
     assertThat(params, is(@"&ts=Timestamp&apikey=Public&hash=MD5TimestampPrivatePublicMD5"));
 }
