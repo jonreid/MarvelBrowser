@@ -9,7 +9,6 @@
 @property (nonatomic, copy, readonly) NSString *publicKey;
 @property (nonatomic, copy, readonly) NSString *privateKey;
 
-- (NSString *)timestampedKeys;
 - (NSString *)MD5OfString:(NSString *)str;
 - (NSString *)URLParameters;
 
