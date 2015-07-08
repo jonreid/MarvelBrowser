@@ -8,7 +8,7 @@
 @property (nonatomic, copy) NSString *timestamp;
 @property (nonatomic, copy) NSString *publicKey;
 @property (nonatomic, copy) NSString *privateKey;
-@property (nonatomic, copy) NSString *(^MD5Block)(NSString *);
+@property (nonatomic, copy) NSString *(^calculateMD5)(NSString *);
 
 - (NSString *)MD5OfString:(NSString *)str;
 - (NSString *)URLParameters;

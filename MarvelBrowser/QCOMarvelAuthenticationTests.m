@@ -68,7 +68,7 @@
 
 - (void)testMD5OfKnownString_ShouldYieldKnownResult  // http://tools.ietf.org/html/rfc1321
 {
-    NSString *md5 = sut.MD5Block(@"abc");
+    NSString *md5 = sut.calculateMD5(@"abc");
 
     assertThat(md5, is(@"900150983cd24fb0d6963f7d28e17f72"));
 }
@@ -90,7 +90,7 @@
     sut.timestamp = @"Timestamp";
     sut.privateKey = @"Private";
     sut.publicKey = @"Public";
-    sut.MD5Block = ^(NSString *str) { return [NSString stringWithFormat:@"MD5%@MD5", str]; };
+    sut.calculateMD5 = ^(NSString *str) { return [NSString stringWithFormat:@"MD5%@MD5", str]; };
 
     NSString *params = [sut URLParameters];
 

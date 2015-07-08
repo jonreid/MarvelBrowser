@@ -30,11 +30,11 @@
     return _privateKey;
 }
 
-- (NSString *(^)(NSString *))MD5Block
+- (NSString *(^)(NSString *))calculateMD5
 {
-    if (!_MD5Block)
+    if (!_calculateMD5)
     {
-        _MD5Block = ^(NSString *str){
+        _calculateMD5 = ^(NSString *str){
             const char *cstr = [str UTF8String];
             unsigned char digest[CC_MD5_DIGEST_LENGTH];
             CC_MD5(cstr, strlen(cstr), digest);
@@ -47,13 +47,13 @@
             ];
         };
     }
-    return _MD5Block;
+    return _calculateMD5;
 }
 
 - (NSString *)URLParameters
 {
     return [NSString stringWithFormat:@"&ts=%@&apikey=%@&hash=%@",
-                    self.timestamp, self.publicKey, self.MD5Block([self timestampedKeys])
+                    self.timestamp, self.publicKey, self.calculateMD5([self timestampedKeys])
     ];
 }
 
