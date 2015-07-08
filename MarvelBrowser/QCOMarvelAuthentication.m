@@ -6,11 +6,6 @@
 #import "MarvelKeys.m"
 #import <CommonCrypto/CommonDigest.h>
 
-@interface QCOMarvelAuthentication ()
-@property (nonatomic, copy, readwrite) NSString *timestamp;
-@property (nonatomic, copy, readwrite) NSString *publicKey;
-@property (nonatomic, copy, readwrite) NSString *privateKey;
-@end
 
 @implementation QCOMarvelAuthentication
 

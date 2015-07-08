@@ -22,13 +22,6 @@
 @end
 
 
-@interface QCOMarvelAuthentication (Testing)
-@property (nonatomic, copy, readwrite) NSString *timestamp;
-@property (nonatomic, copy, readwrite) NSString *publicKey;
-@property (nonatomic, copy, readwrite) NSString *privateKey;
-@end
-
-
 @interface QCOMarvelAuthenticationTests : XCTestCase
 @end
 
