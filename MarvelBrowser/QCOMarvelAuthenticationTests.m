@@ -65,7 +65,7 @@
     sut.timestamp = @"Timestamp";
     sut.privateKey = @"Private";
     sut.publicKey = @"Public";
-    sut.calculateMD5 = ^(NSString *str) { return [NSString stringWithFormat:@"MD5%@MD5", str]; };
+    sut.calculateMD5 = ^(NSString *str){ return [NSString stringWithFormat:@"MD5%@MD5", str]; };
 
     NSString *params = [sut URLParameters];
 
