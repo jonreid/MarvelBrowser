@@ -79,7 +79,7 @@
     sut.privateKey = @"Private";
     sut.publicKey = @"Public";
 
-    assertThat(sut.timestampedKeys, is(@"TimestampPrivatePublic"));
+    assertThat([sut timestampedKeys], is(@"TimestampPrivatePublic"));
 }
 
 - (void)testMD5OfKnownString_ShouldYieldKnownResult  // http://tools.ietf.org/html/rfc1321
