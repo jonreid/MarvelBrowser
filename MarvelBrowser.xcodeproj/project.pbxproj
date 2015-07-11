@@ -39,7 +39,6 @@
 
 /* Begin PBXFileReference section */
 		0E7709941B50C1CD0056472E /* AcceptanceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AcceptanceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0E7709971B50C1CD0056472E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E7709981B50C1CD0056472E /* AcceptanceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AcceptanceTests.m; sourceTree = "<group>"; };
 		609E950D6BA8062FC0F214A8 /* QCOMarvelAuthentication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCOMarvelAuthentication.m; sourceTree = "<group>"; };
 		609E98B120EF92D11321CCAF /* QCOMarvelAuthenticationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCOMarvelAuthenticationTests.m; sourceTree = "<group>"; };
@@ -94,17 +93,8 @@
 			isa = PBXGroup;
 			children = (
 				0E7709981B50C1CD0056472E /* AcceptanceTests.m */,
-				0E7709961B50C1CD0056472E /* Supporting Files */,
 			);
 			path = AcceptanceTests;
-			sourceTree = "<group>";
-		};
-		0E7709961B50C1CD0056472E /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				0E7709971B50C1CD0056472E /* Info.plist */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		0FB0E57FC2DC0510B64F60C6 /* Pods */ = {
@@ -431,7 +421,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = AcceptanceTests/Info.plist;
+				INFOPLIST_FILE = "MarvelBrowser/Info-Tests.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -465,7 +455,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = AcceptanceTests/Info.plist;
+				INFOPLIST_FILE = "MarvelBrowser/Info-Tests.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
