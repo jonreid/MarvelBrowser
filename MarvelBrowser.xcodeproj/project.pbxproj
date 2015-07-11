@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E7709991B50C1CD0056472E /* AcceptanceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7709981B50C1CD0056472E /* AcceptanceTests.m */; };
 		0E854BD41B49F00B00559E1E /* TestingAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7462DD201AB6313C00EE429E /* TestingAppDelegate.m */; };
 		609E985DF300A893AD02B8B3 /* QCOMarvelAuthentication.m in Sources */ = {isa = PBXBuildFile; fileRef = 609E950D6BA8062FC0F214A8 /* QCOMarvelAuthentication.m */; };
 		609E99A7842D4BC05E1F6182 /* QCOMarvelAuthenticationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 609E98B120EF92D11321CCAF /* QCOMarvelAuthenticationTests.m */; };
@@ -20,6 +21,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		0E77099A1B50C1CD0056472E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 74CC7A7C1A1D9036007FCA40 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 74CC7A831A1D9036007FCA40;
+			remoteInfo = MarvelBrowser;
+		};
 		74CC7A9E1A1D9036007FCA40 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 74CC7A7C1A1D9036007FCA40 /* Project object */;
@@ -30,6 +38,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0E7709941B50C1CD0056472E /* AcceptanceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AcceptanceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E7709971B50C1CD0056472E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0E7709981B50C1CD0056472E /* AcceptanceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AcceptanceTests.m; sourceTree = "<group>"; };
 		609E950D6BA8062FC0F214A8 /* QCOMarvelAuthentication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCOMarvelAuthentication.m; sourceTree = "<group>"; };
 		609E98B120EF92D11321CCAF /* QCOMarvelAuthenticationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCOMarvelAuthenticationTests.m; sourceTree = "<group>"; };
 		609E9AD95579A176D1F76003 /* QCOMarvelAuthentication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCOMarvelAuthentication.h; sourceTree = "<group>"; };
@@ -54,6 +65,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0E7709911B50C1CD0056472E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		74CC7A811A1D9036007FCA40 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -72,6 +90,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E7709951B50C1CD0056472E /* AcceptanceTests */ = {
+			isa = PBXGroup;
+			children = (
+				0E7709981B50C1CD0056472E /* AcceptanceTests.m */,
+				0E7709961B50C1CD0056472E /* Supporting Files */,
+			);
+			path = AcceptanceTests;
+			sourceTree = "<group>";
+		};
+		0E7709961B50C1CD0056472E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0E7709971B50C1CD0056472E /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		0FB0E57FC2DC0510B64F60C6 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +121,7 @@
 			children = (
 				747AF50F1A34C16E005EC86B /* XcodeWarnings.xcconfig */,
 				74CC7A861A1D9036007FCA40 /* MarvelBrowser */,
+				0E7709951B50C1CD0056472E /* AcceptanceTests */,
 				74CC7A851A1D9036007FCA40 /* Products */,
 				0FB0E57FC2DC0510B64F60C6 /* Pods */,
 				DD7597E4D2BEF937B459DAD1 /* Frameworks */,
@@ -99,6 +135,7 @@
 			children = (
 				74CC7A841A1D9036007FCA40 /* MarvelBrowser.app */,
 				74CC7A9D1A1D9036007FCA40 /* MarvelBrowserTests.xctest */,
+				0E7709941B50C1CD0056472E /* AcceptanceTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -144,6 +181,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		0E7709931B50C1CD0056472E /* AcceptanceTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0E77099E1B50C1CD0056472E /* Build configuration list for PBXNativeTarget "AcceptanceTests" */;
+			buildPhases = (
+				0E7709901B50C1CD0056472E /* Sources */,
+				0E7709911B50C1CD0056472E /* Frameworks */,
+				0E7709921B50C1CD0056472E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0E77099B1B50C1CD0056472E /* PBXTargetDependency */,
+			);
+			name = AcceptanceTests;
+			productName = AcceptanceTests;
+			productReference = 0E7709941B50C1CD0056472E /* AcceptanceTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		74CC7A831A1D9036007FCA40 /* MarvelBrowser */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 74CC7AA71A1D9036007FCA40 /* Build configuration list for PBXNativeTarget "MarvelBrowser" */;
@@ -190,6 +245,10 @@
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "Jon Reid";
 				TargetAttributes = {
+					0E7709931B50C1CD0056472E = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = 74CC7A831A1D9036007FCA40;
+					};
 					74CC7A831A1D9036007FCA40 = {
 						CreatedOnToolsVersion = 6.1;
 					};
@@ -214,11 +273,19 @@
 			targets = (
 				74CC7A831A1D9036007FCA40 /* MarvelBrowser */,
 				74CC7A9C1A1D9036007FCA40 /* MarvelBrowserTests */,
+				0E7709931B50C1CD0056472E /* AcceptanceTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		0E7709921B50C1CD0056472E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		74CC7A821A1D9036007FCA40 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -272,6 +339,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0E7709901B50C1CD0056472E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E7709991B50C1CD0056472E /* AcceptanceTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		74CC7A801A1D9036007FCA40 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -295,6 +370,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		0E77099B1B50C1CD0056472E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 74CC7A831A1D9036007FCA40 /* MarvelBrowser */;
+			targetProxy = 0E77099A1B50C1CD0056472E /* PBXContainerItemProxy */;
+		};
 		74CC7A9F1A1D9036007FCA40 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 74CC7A831A1D9036007FCA40 /* MarvelBrowser */;
@@ -322,6 +402,77 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		0E77099C1B50C1CD0056472E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = AcceptanceTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MarvelBrowser.app/MarvelBrowser";
+			};
+			name = Debug;
+		};
+		0E77099D1B50C1CD0056472E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = AcceptanceTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MarvelBrowser.app/MarvelBrowser";
+			};
+			name = Release;
+		};
 		74CC7AA51A1D9036007FCA40 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 747AF50F1A34C16E005EC86B /* XcodeWarnings.xcconfig */;
@@ -439,6 +590,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0E77099E1B50C1CD0056472E /* Build configuration list for PBXNativeTarget "AcceptanceTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0E77099C1B50C1CD0056472E /* Debug */,
+				0E77099D1B50C1CD0056472E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		74CC7A7F1A1D9036007FCA40 /* Build configuration list for PBXProject "MarvelBrowser" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
