@@ -11,7 +11,7 @@
 
 + (NSString *)URLParameters
 {
-    return @"";
+    return [[[self alloc] init] URLParameters];
 }
 
 - (NSString *)timestamp
