@@ -9,6 +9,11 @@
 
 @implementation QCOMarvelAuthentication
 
++ (NSString *)URLParameters
+{
+    return @"";
+}
+
 - (NSString *)timestamp
 {
     if (!_timestamp)
