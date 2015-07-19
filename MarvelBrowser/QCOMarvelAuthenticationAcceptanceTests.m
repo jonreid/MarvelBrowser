@@ -21,18 +21,24 @@
     NSURL *validQueryURL = [NSURL URLWithString:
             [validQueryMissingAuthentication stringByAppendingString:[authentication URLParameters]]];
 
+    __block NSHTTPURLResponse *httpResponse;
+    [self startGETRequestToURL:validQueryURL
+         withCompletionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+             httpResponse = (NSHTTPURLResponse *)response;
+         }];
+
+    assertThatAfter(5, futureValueOf(@(httpResponse.statusCode)), is(@200));
+}
+
+- (void)startGETRequestToURL:(NSURL *)url
+       withCompletionHandler:(void (^)(NSData *, NSURLResponse *, NSError *))completionHandler
+{
     NSURLSessionConfiguration *sessionConfig = [NSURLSessionConfiguration defaultSessionConfiguration];
     NSURLSession *session = [NSURLSession sessionWithConfiguration:sessionConfig
                                                           delegate:nil
                                                      delegateQueue:nil];
-    __block NSHTTPURLResponse *httpResponse;
-    NSURLSessionDataTask *dataTask = [session dataTaskWithURL:validQueryURL
-                                            completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-                                                httpResponse = (NSHTTPURLResponse *)response;
-                                            }];
+    NSURLSessionDataTask *dataTask = [session dataTaskWithURL:url completionHandler:completionHandler];
     [dataTask resume];
-
-    assertThatAfter(5, futureValueOf(@(httpResponse.statusCode)), is(@200));
 }
 
 @end
