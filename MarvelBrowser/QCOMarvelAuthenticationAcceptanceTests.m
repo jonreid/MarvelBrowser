@@ -14,18 +14,19 @@
 
 @implementation QCOMarvelAuthenticationAcceptanceTests
 
-- (void)testCallToMarvel_ShouldGetStatus200OK
+- (void)testValidCallToMarvel_ShouldGetHTTPStatusCode200
 {
-    QCOMarvelAuthentication *sut = [[QCOMarvelAuthentication alloc] init];
-    NSString *URLString = [@"http://gateway.marvel.com/v1/public/characters?nameStartsWith=Spider" stringByAppendingString:[sut URLParameters]];
-    NSURL *url = [NSURL URLWithString:URLString];
+    NSString *validQueryMissingAuthentication = @"http://gateway.marvel.com/v1/public/characters?nameStartsWith=Spider";
+    QCOMarvelAuthentication *authentication = [[QCOMarvelAuthentication alloc] init];
+    NSURL *validQueryURL = [NSURL URLWithString:
+            [validQueryMissingAuthentication stringByAppendingString:[authentication URLParameters]]];
+
     NSURLSessionConfiguration *sessionConfig = [NSURLSessionConfiguration defaultSessionConfiguration];
     NSURLSession *session = [NSURLSession sessionWithConfiguration:sessionConfig
                                                           delegate:nil
                                                      delegateQueue:nil];
-
     __block NSHTTPURLResponse *httpResponse;
-    NSURLSessionDataTask *dataTask = [session dataTaskWithURL:url
+    NSURLSessionDataTask *dataTask = [session dataTaskWithURL:validQueryURL
                                             completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
                                                 httpResponse = (NSHTTPURLResponse *)response;
                                             }];
