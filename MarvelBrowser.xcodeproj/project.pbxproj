@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0E384D451B6C941C00BDC687 /* MarvelKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E384D441B6C941C00BDC687 /* MarvelKeys.m */; };
 		0E854BD41B49F00B00559E1E /* TestingAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7462DD201AB6313C00EE429E /* TestingAppDelegate.m */; };
 		609E985DF300A893AD02B8B3 /* QCOMarvelAuthentication.m in Sources */ = {isa = PBXBuildFile; fileRef = 609E950D6BA8062FC0F214A8 /* QCOMarvelAuthentication.m */; };
 		609E99A7842D4BC05E1F6182 /* QCOMarvelAuthenticationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 609E98B120EF92D11321CCAF /* QCOMarvelAuthenticationTests.m */; };
@@ -40,8 +39,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0E384D431B6C940A00BDC687 /* MarvelKeys.m-template */ = {isa = PBXFileReference; lastKnownFileType = text; path = "MarvelKeys.m-template"; sourceTree = "<group>"; };
-		0E384D441B6C941C00BDC687 /* MarvelKeys.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarvelKeys.m; sourceTree = "<group>"; };
 		0E7709941B50C1CD0056472E /* AcceptanceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AcceptanceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EF1B44EC821AA4181A91800 /* libPods-AcceptanceTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AcceptanceTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		58E8F77FEED9CAC00FB0196D /* Pods-AcceptanceTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AcceptanceTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AcceptanceTests/Pods-AcceptanceTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -134,8 +131,6 @@
 		74CC7A861A1D9036007FCA40 /* MarvelBrowser */ = {
 			isa = PBXGroup;
 			children = (
-				0E384D431B6C940A00BDC687 /* MarvelKeys.m-template */,
-				0E384D441B6C941C00BDC687 /* MarvelKeys.m */,
 				74CC7A8B1A1D9036007FCA40 /* AppDelegate.h */,
 				74CC7A8C1A1D9036007FCA40 /* AppDelegate.m */,
 				7462DD1F1AB6313C00EE429E /* TestingAppDelegate.h */,
@@ -380,7 +375,6 @@
 			files = (
 				74CC7A901A1D9036007FCA40 /* ViewController.m in Sources */,
 				74CC7A8D1A1D9036007FCA40 /* AppDelegate.m in Sources */,
-				0E384D451B6C941C00BDC687 /* MarvelKeys.m in Sources */,
 				74CC7A8A1A1D9036007FCA40 /* main.m in Sources */,
 				609E985DF300A893AD02B8B3 /* QCOMarvelAuthentication.m in Sources */,
 			);
