@@ -1,0 +1,7 @@
+/*
+  Copy this file to MarvelKeys.m and edit it, filling in your own keys from
+  developer.marvel.com
+*/
+
+static NSString *const MarvelPublicKey = @"YOUR_PUBLIC_KEY";
+static NSString *const MarvelPrivateKey = @"YOUR_PRIVATE_KEY";

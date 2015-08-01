@@ -1,5 +1,4 @@
-Marvel Browser
-==============
+# Marvel Browser: A TDD Case Study
 
 This is slowly becoming an iOS sample app to showcase Test Driven Development
 (TDD). The commit log shows you my sub-steps and thoughts as I progress.
@@ -7,15 +6,10 @@ This is slowly becoming an iOS sample app to showcase Test Driven Development
 To build the project:
 
   1. Get your own keys from http://developer.marvel.com
-  2. Create a folder MarvelBrowserKeys next to the MarvelBrowser folder
-  3. Inside MarvelBrowserKeys, create a file MarvelKeys.m that looks like this:
+  2. Inside MarvelBrowser/MarvelBrowser, copy MarvelKeys.m-template to MarvelKeys.m
+  3. Edit MarvelKeys.m, filling in your own keys. This file is ignored by Git.
 
-```obj-c
-    static NSString *const MarvelPublicKey = @"your-public-key-here";
-    static NSString *const MarvelPrivateKey = @"your-private-key-here";
-```
-
-Relevant posts so far:
+## Relevant posts so far:
 
   1. [TDD Sample App: 20 Topics that May Spill Out](http://qualitycoding.org/tdd-sample-app/)
   2. [Xcode Warnings: Turn Them Up to Eleven](http://qualitycoding.org/xcode-warnings/)
