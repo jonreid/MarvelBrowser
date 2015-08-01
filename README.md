@@ -10,8 +10,10 @@ To build the project:
   2. Create a folder MarvelBrowserKeys next to the MarvelBrowser folder
   3. Inside MarvelBrowserKeys, create a file MarvelKeys.m that looks like this:
 
+```obj-c
     static NSString *const MarvelPublicKey = @"your-public-key-here";
     static NSString *const MarvelPrivateKey = @"your-private-key-here";
+```
 
 Relevant posts so far:
 
