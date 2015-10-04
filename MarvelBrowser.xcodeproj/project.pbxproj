@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0E854BD41B49F00B00559E1E /* TestingAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7462DD201AB6313C00EE429E /* TestingAppDelegate.m */; };
 		609E985DF300A893AD02B8B3 /* QCOMarvelAuthentication.m in Sources */ = {isa = PBXBuildFile; fileRef = 609E950D6BA8062FC0F214A8 /* QCOMarvelAuthentication.m */; };
 		609E99A7842D4BC05E1F6182 /* QCOMarvelAuthenticationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 609E98B120EF92D11321CCAF /* QCOMarvelAuthenticationTests.m */; };
 		609E9B2883ABF6432AC9CEDF /* QCOMarvelAuthenticationAcceptanceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 609E968CEE92C91EA1889520 /* QCOMarvelAuthenticationAcceptanceTests.m */; };
@@ -48,8 +47,6 @@
 		609E9AD95579A176D1F76003 /* QCOMarvelAuthentication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCOMarvelAuthentication.h; sourceTree = "<group>"; };
 		6AFA03FB9F50B129AD932DBF /* Pods-MarvelBrowserTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelBrowserTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MarvelBrowserTests/Pods-MarvelBrowserTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6B74D511F27A6489FBBDC271 /* libPods-MarvelBrowserTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MarvelBrowserTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7462DD1F1AB6313C00EE429E /* TestingAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestingAppDelegate.h; sourceTree = "<group>"; };
-		7462DD201AB6313C00EE429E /* TestingAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestingAppDelegate.m; sourceTree = "<group>"; };
 		747AF50F1A34C16E005EC86B /* XcodeWarnings.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = XcodeWarnings.xcconfig; sourceTree = "<group>"; };
 		74CC7A841A1D9036007FCA40 /* MarvelBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarvelBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74CC7A881A1D9036007FCA40 /* App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "App-Info.plist"; sourceTree = "<group>"; };
@@ -133,8 +130,6 @@
 			children = (
 				74CC7A8B1A1D9036007FCA40 /* AppDelegate.h */,
 				74CC7A8C1A1D9036007FCA40 /* AppDelegate.m */,
-				7462DD1F1AB6313C00EE429E /* TestingAppDelegate.h */,
-				7462DD201AB6313C00EE429E /* TestingAppDelegate.m */,
 				74CC7A8E1A1D9036007FCA40 /* ViewController.h */,
 				74CC7A8F1A1D9036007FCA40 /* ViewController.m */,
 				74CC7A911A1D9036007FCA40 /* Main.storyboard */,
@@ -384,7 +379,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E854BD41B49F00B00559E1E /* TestingAppDelegate.m in Sources */,
 				609E99A7842D4BC05E1F6182 /* QCOMarvelAuthenticationTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
