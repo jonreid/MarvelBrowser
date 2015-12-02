@@ -3,10 +3,8 @@
 
 #import "QCOMarvelAuthentication.h"
 
-#import <XCTest/XCTest.h>
-
-#define HC_SHORTHAND
 #import <OCHamcrest/OCHamcrest.h>
+#import <XCTest/XCTest.h>
 
 
 @interface QCOMarvelAuthenticationTests : XCTestCase
@@ -28,7 +26,7 @@
     NSString *ts1 = sut.timestamp;
     NSString *ts2 = sut.timestamp;
 
-    assertThat(ts1, equalTo(ts2));
+    assertThat(ts1, is(equalTo(ts2)));
 }
 
 - (void)testTimestamp_ShouldChangeAcrossDifferentInstances

@@ -1,7 +1,7 @@
 target :MarvelBrowserTests, :exclusive => true do
-  pod 'OCHamcrest', '~> 4.0'
+  pod 'OCHamcrest', '~> 5.0'
 end
 
 target :AcceptanceTests, :exclusive => true do
-  pod 'OCHamcrest', '~> 4.0'
+  pod 'OCHamcrest', '~> 5.0'
 end

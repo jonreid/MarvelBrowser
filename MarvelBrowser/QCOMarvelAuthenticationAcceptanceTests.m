@@ -3,10 +3,8 @@
 
 #import "QCOMarvelAuthentication.h"
 
-#import <XCTest/XCTest.h>
-
-#define HC_SHORTHAND
 #import <OCHamcrest/OCHamcrest.h>
+#import <XCTest/XCTest.h>
 
 
 @interface QCOMarvelAuthenticationAcceptanceTests : XCTestCase
@@ -26,7 +24,7 @@
              httpResponse = (NSHTTPURLResponse *)response;
          }];
 
-    assertThatAfter(5, futureValueOf(@(httpResponse.statusCode)), is(@200));
+    assertWithTimeout(5, thatEventually(@(httpResponse.statusCode)), is(@200));
 }
 
 - (void)startGETRequestToURL:(NSURL *)url
