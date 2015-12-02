@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0E854BD41B49F00B00559E1E /* TestingAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7462DD201AB6313C00EE429E /* TestingAppDelegate.m */; };
+		0E8814661C0EB699003B2731 /* TestingAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7462DD201AB6313C00EE429E /* TestingAppDelegate.m */; };
 		609E985DF300A893AD02B8B3 /* QCOMarvelAuthentication.m in Sources */ = {isa = PBXBuildFile; fileRef = 609E950D6BA8062FC0F214A8 /* QCOMarvelAuthentication.m */; };
 		609E99A7842D4BC05E1F6182 /* QCOMarvelAuthenticationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 609E98B120EF92D11321CCAF /* QCOMarvelAuthenticationTests.m */; };
 		609E9B2883ABF6432AC9CEDF /* QCOMarvelAuthenticationAcceptanceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 609E968CEE92C91EA1889520 /* QCOMarvelAuthenticationAcceptanceTests.m */; };
@@ -376,6 +376,7 @@
 				74CC7A901A1D9036007FCA40 /* ViewController.m in Sources */,
 				74CC7A8D1A1D9036007FCA40 /* AppDelegate.m in Sources */,
 				74CC7A8A1A1D9036007FCA40 /* main.m in Sources */,
+				0E8814661C0EB699003B2731 /* TestingAppDelegate.m in Sources */,
 				609E985DF300A893AD02B8B3 /* QCOMarvelAuthentication.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -384,7 +385,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E854BD41B49F00B00559E1E /* TestingAppDelegate.m in Sources */,
 				609E99A7842D4BC05E1F6182 /* QCOMarvelAuthenticationTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
