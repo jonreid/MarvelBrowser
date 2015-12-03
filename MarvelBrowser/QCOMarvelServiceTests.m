@@ -13,7 +13,7 @@
 
 - (void)testSessionConfiguration_ShouldBeNSURLSessionConfiguration
 {
-    [[QCOMarvelService alloc] init];
+    QCOMarvelService *sut = [[QCOMarvelService alloc] init];
 }
 
 @end
