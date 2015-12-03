@@ -11,6 +11,7 @@
 		609E985DF300A893AD02B8B3 /* QCOMarvelAuthentication.m in Sources */ = {isa = PBXBuildFile; fileRef = 609E950D6BA8062FC0F214A8 /* QCOMarvelAuthentication.m */; };
 		609E99A7842D4BC05E1F6182 /* QCOMarvelAuthenticationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 609E98B120EF92D11321CCAF /* QCOMarvelAuthenticationTests.m */; };
 		609E9B2883ABF6432AC9CEDF /* QCOMarvelAuthenticationAcceptanceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 609E968CEE92C91EA1889520 /* QCOMarvelAuthenticationAcceptanceTests.m */; };
+		609E9ED670D468FF94105A93 /* QCOMarvelServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 609E9A8AC61A8BCC6F21946E /* QCOMarvelServiceTests.m */; };
 		6B46E511E10333FF9D708553 /* libPods-MarvelBrowserTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B74D511F27A6489FBBDC271 /* libPods-MarvelBrowserTests.a */; };
 		732FCB74B036702FC961E0F4 /* libPods-AcceptanceTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EF1B44EC821AA4181A91800 /* libPods-AcceptanceTests.a */; };
 		74CC7A8A1A1D9036007FCA40 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CC7A891A1D9036007FCA40 /* main.m */; };
@@ -45,6 +46,7 @@
 		609E950D6BA8062FC0F214A8 /* QCOMarvelAuthentication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCOMarvelAuthentication.m; sourceTree = "<group>"; };
 		609E968CEE92C91EA1889520 /* QCOMarvelAuthenticationAcceptanceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCOMarvelAuthenticationAcceptanceTests.m; sourceTree = "<group>"; };
 		609E98B120EF92D11321CCAF /* QCOMarvelAuthenticationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCOMarvelAuthenticationTests.m; sourceTree = "<group>"; };
+		609E9A8AC61A8BCC6F21946E /* QCOMarvelServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCOMarvelServiceTests.m; sourceTree = "<group>"; };
 		609E9AD95579A176D1F76003 /* QCOMarvelAuthentication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCOMarvelAuthentication.h; sourceTree = "<group>"; };
 		6AFA03FB9F50B129AD932DBF /* Pods-MarvelBrowserTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelBrowserTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MarvelBrowserTests/Pods-MarvelBrowserTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6B74D511F27A6489FBBDC271 /* libPods-MarvelBrowserTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MarvelBrowserTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -145,6 +147,7 @@
 				609E9AD95579A176D1F76003 /* QCOMarvelAuthentication.h */,
 				609E950D6BA8062FC0F214A8 /* QCOMarvelAuthentication.m */,
 				609E968CEE92C91EA1889520 /* QCOMarvelAuthenticationAcceptanceTests.m */,
+				609E9A8AC61A8BCC6F21946E /* QCOMarvelServiceTests.m */,
 			);
 			path = MarvelBrowser;
 			sourceTree = "<group>";
@@ -418,6 +421,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				609E99A7842D4BC05E1F6182 /* QCOMarvelAuthenticationTests.m in Sources */,
+				609E9ED670D468FF94105A93 /* QCOMarvelServiceTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
