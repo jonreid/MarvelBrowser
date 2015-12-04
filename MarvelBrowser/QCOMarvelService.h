@@ -5,4 +5,6 @@
 
 
 @interface QCOMarvelService : NSObject
+
+@property (nonatomic, strong) NSURLSessionConfiguration *sessionConfiguration;
 @end
