@@ -3,6 +3,7 @@
 
 #import "QCOMarvelService.h"
 
+#import <OCHamcrest/OCHamcrest.h>
 #import <XCTest/XCTest.h>
 
 
@@ -16,6 +17,8 @@
     QCOMarvelService *sut = [[QCOMarvelService alloc] init];
 
     NSURLSessionConfiguration *sessionConfiguration = sut.sessionConfiguration;
+
+    assertThat(sessionConfiguration, isA([NSURLSessionConfiguration class]));
 }
 
 @end
