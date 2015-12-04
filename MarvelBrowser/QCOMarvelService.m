@@ -5,4 +5,13 @@
 
 
 @implementation QCOMarvelService
+
+- (NSURLSessionConfiguration *)sessionConfiguration
+{
+    if (!_sessionConfiguration) {
+        _sessionConfiguration = [[NSURLSessionConfiguration alloc] init];
+    }
+    return _sessionConfiguration;
+}
+
 @end
