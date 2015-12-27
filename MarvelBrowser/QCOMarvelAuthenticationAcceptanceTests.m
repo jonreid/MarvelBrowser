@@ -14,7 +14,7 @@
 
 - (void)testValidCallToMarvel_ShouldGetHTTPStatusCode200
 {
-    NSString *validQueryMissingAuthentication = @"http://gateway.marvel.com/v1/public/characters?nameStartsWith=Spider";
+    NSString *validQueryMissingAuthentication = @"https://gateway.marvel.com/v1/public/characters?nameStartsWith=Spider";
     NSURL *validQueryURL = [NSURL URLWithString:
             [validQueryMissingAuthentication stringByAppendingString:[QCOMarvelAuthentication URLParameters]]];
 
