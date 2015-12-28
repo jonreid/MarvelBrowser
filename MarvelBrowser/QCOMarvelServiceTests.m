@@ -11,14 +11,4 @@
 @end
 
 @implementation QCOMarvelServiceTests
-
-- (void)testSessionConfiguration_ShouldBeNSURLSessionConfiguration
-{
-    QCOMarvelService *sut = [[QCOMarvelService alloc] init];
-
-    NSURLSessionConfiguration *sessionConfiguration = sut.sessionConfiguration;
-
-    assertThat(sessionConfiguration, isA([NSURLSessionConfiguration class]));
-}
-
 @end

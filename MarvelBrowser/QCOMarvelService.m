@@ -5,12 +5,4 @@
 
 
 @implementation QCOMarvelService
-
-- (NSURLSessionConfiguration *)sessionConfiguration
-{
-    if (!_sessionConfiguration)
-        _sessionConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
-    return _sessionConfiguration;
-}
-
 @end
