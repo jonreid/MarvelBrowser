@@ -30,10 +30,7 @@
 - (void)startGETRequestToURL:(NSURL *)url
        withCompletionHandler:(void (^)(NSData *, NSURLResponse *, NSError *))completionHandler
 {
-    NSURLSessionConfiguration *sessionConfig = [NSURLSessionConfiguration defaultSessionConfiguration];
-    NSURLSession *session = [NSURLSession sessionWithConfiguration:sessionConfig
-                                                          delegate:nil
-                                                     delegateQueue:nil];
+    NSURLSession *session = [NSURLSession sharedSession];
     NSURLSessionDataTask *dataTask = [session dataTaskWithURL:url completionHandler:completionHandler];
     [dataTask resume];
 }
