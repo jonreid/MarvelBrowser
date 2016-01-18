@@ -26,4 +26,17 @@
     [verify(mockSession) dataTaskWithURL:anything() completionHandler:anything()];
 }
 
+- (void)testFetchCharacters_ShouldMakeDataTaskForMarvelComicsAPI
+{
+    NSURLSession *mockSession = mock([NSURLSession class]);
+    QCOFetchCharactersMarvelService *sut = [[QCOFetchCharactersMarvelService alloc] initWithSession:mockSession];
+    QCOFetchCharactersRequestModel *requestModel = [[QCOFetchCharactersRequestModel alloc]
+            initWithNamePrefix:@"DUMMY" pageSize:10 offset:30];
+
+    [sut fetchCharacters:requestModel];
+
+    [verify(mockSession) dataTaskWithURL:hasProperty(@"host", @"gateway.marvel.com")
+                       completionHandler:anything()];
+}
+
 @end
