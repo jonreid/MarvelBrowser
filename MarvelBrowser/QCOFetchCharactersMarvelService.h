@@ -3,9 +3,12 @@
 
 #import <Foundation/Foundation.h>
 
+@class QCOFetchCharactersRequestModel;
+
 
 @interface QCOFetchCharactersMarvelService : NSObject
 
 - (instancetype)initWithSession:(NSURLSession *)session;
+- (void)fetchCharacters:(QCOFetchCharactersRequestModel *)requestModel;
 
 @end
