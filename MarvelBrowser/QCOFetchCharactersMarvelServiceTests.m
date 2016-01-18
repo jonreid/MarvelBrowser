@@ -16,6 +16,7 @@
 - (void)testFoo_ShouldBar
 {
     NSURLSession *mockSession = mock([NSURLSession class]);
+    [[QCOFetchCharactersMarvelService alloc] initWithSession:mockSession];
 }
 
 @end
