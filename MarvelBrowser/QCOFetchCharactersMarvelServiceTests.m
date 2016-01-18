@@ -2,6 +2,7 @@
 //  Copyright 2016 Jonathan M. Reid. See LICENSE.txt
 
 #import "QCOFetchCharactersMarvelService.h"
+#import "QCOFetchCharactersRequestModel.h"
 
 #import <OCHamcrest/OCHamcrest.h>
 #import <OCMockito/OCMockito.h>
@@ -16,7 +17,11 @@
 - (void)testFoo_ShouldBar
 {
     NSURLSession *mockSession = mock([NSURLSession class]);
-    [[QCOFetchCharactersMarvelService alloc] initWithSession:mockSession];
+    QCOFetchCharactersMarvelService *sut = [[QCOFetchCharactersMarvelService alloc] initWithSession:mockSession];
+    QCOFetchCharactersRequestModel *requestModel = [[QCOFetchCharactersRequestModel alloc]
+            initWithNamePrefix:@"DUMMY" pageSize:10 offset:30];
+
+    [sut fetchCharacters:requestModel];
 }
 
 @end
