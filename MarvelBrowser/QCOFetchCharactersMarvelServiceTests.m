@@ -14,7 +14,7 @@
 
 @implementation QCOFetchCharactersMarvelServiceTests
 
-- (void)testFoo_ShouldBar
+- (void)testFetchCharacters_ShouldAskURLSessionToCreateDataTask
 {
     NSURLSession *mockSession = mock([NSURLSession class]);
     QCOFetchCharactersMarvelService *sut = [[QCOFetchCharactersMarvelService alloc] initWithSession:mockSession];
@@ -22,6 +22,8 @@
             initWithNamePrefix:@"DUMMY" pageSize:10 offset:30];
 
     [sut fetchCharacters:requestModel];
+
+    [verify(mockSession) dataTaskWithURL:anything() completionHandler:anything()];
 }
 
 @end
