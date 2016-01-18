@@ -4,5 +4,5 @@
 #import <Foundation/Foundation.h>
 
 
-@interface QCOMarvelService : NSObject
+@interface QCOFetchCharactersMarvelService : NSObject
 @end
