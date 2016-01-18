@@ -5,4 +5,7 @@
 
 
 @interface QCOFetchCharactersMarvelService : NSObject
+
+- (instancetype)initWithSession:(NSURLSession *)session;
+
 @end

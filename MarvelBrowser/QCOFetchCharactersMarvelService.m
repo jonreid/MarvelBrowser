@@ -5,4 +5,11 @@
 
 
 @implementation QCOFetchCharactersMarvelService
+
+- (instancetype)initWithSession:(NSURLSession *)session
+{
+    self = [super init];
+    return self;
+}
+
 @end
