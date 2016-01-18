@@ -5,11 +5,17 @@
 #import "QCOFetchCharactersRequestModel.h"
 
 
+@interface QCOFetchCharactersMarvelService ()
+@property (nonatomic, strong, readonly) NSURLSession *session;
+@end
+
 @implementation QCOFetchCharactersMarvelService
 
 - (instancetype)initWithSession:(NSURLSession *)session
 {
     self = [super init];
+    if (self)
+        _session = session;
     return self;
 }
 
