@@ -21,6 +21,9 @@
 
 - (void)fetchCharacters:(QCOFetchCharactersRequestModel *)requestModel
 {
+    NSURL *url = [[NSURL alloc] initWithString:@"foo://bar"];
+    [self.session dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+    }];
 }
 
 @end
