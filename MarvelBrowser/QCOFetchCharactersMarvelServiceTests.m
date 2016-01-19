@@ -2,6 +2,7 @@
 //  Copyright 2016 Jonathan M. Reid. See LICENSE.txt
 
 #import "QCOFetchCharactersMarvelService.h"
+
 #import "QCOFetchCharactersRequestModel.h"
 
 #import <OCHamcrest/OCHamcrest.h>
@@ -13,13 +14,33 @@
 @end
 
 @implementation QCOFetchCharactersMarvelServiceTests
+{
+    NSURLSession *mockSession;
+    QCOFetchCharactersMarvelService *sut;
+}
+
+- (void)setUp
+{
+    [super setUp];
+    mockSession = mock([NSURLSession class]);
+    sut = [[QCOFetchCharactersMarvelService alloc] initWithSession:mockSession];
+}
+
+- (void)tearDown
+{
+    sut = nil;
+    [super tearDown];
+}
+
+- (QCOFetchCharactersRequestModel *)dummyRequestModel
+{
+    return [[QCOFetchCharactersRequestModel alloc]
+            initWithNamePrefix:@"DUMMY" pageSize:10 offset:30];
+}
 
 - (void)testFetchCharacters_ShouldMakeDataTaskForMarvelComicsAPI
 {
-    NSURLSession *mockSession = mock([NSURLSession class]);
-    QCOFetchCharactersMarvelService *sut = [[QCOFetchCharactersMarvelService alloc] initWithSession:mockSession];
-    QCOFetchCharactersRequestModel *requestModel = [[QCOFetchCharactersRequestModel alloc]
-            initWithNamePrefix:@"DUMMY" pageSize:10 offset:30];
+    QCOFetchCharactersRequestModel *requestModel = [self dummyRequestModel];
 
     [sut fetchCharacters:requestModel];
 
@@ -29,10 +50,7 @@
 
 - (void)testFetchCharacters_ShouldMakeDataTaskWithSecureConnection
 {
-    NSURLSession *mockSession = mock([NSURLSession class]);
-    QCOFetchCharactersMarvelService *sut = [[QCOFetchCharactersMarvelService alloc] initWithSession:mockSession];
-    QCOFetchCharactersRequestModel *requestModel = [[QCOFetchCharactersRequestModel alloc]
-            initWithNamePrefix:@"DUMMY" pageSize:10 offset:30];
+    QCOFetchCharactersRequestModel *requestModel = [self dummyRequestModel];
 
     [sut fetchCharacters:requestModel];
 
