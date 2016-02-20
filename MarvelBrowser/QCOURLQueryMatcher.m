@@ -26,6 +26,9 @@
 
 - (BOOL)matches:(id)item
 {
+    if (![item isKindOfClass:[NSURL class]])
+        return NO;
+
     NSURLComponents *urlComponents = [NSURLComponents componentsWithURL:item
                                                 resolvingAgainstBaseURL:NO];
     NSArray<NSURLQueryItem *> *queryItems = urlComponents.queryItems;

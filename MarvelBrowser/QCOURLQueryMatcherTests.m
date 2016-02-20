@@ -57,4 +57,14 @@
     assertThat(description.description, is(@"a URL with \"key1\" = \"value1\""));
 }
 
+- (void)testShouldNotMatchNonURL
+{
+    assertThat([[NSObject alloc] init], isNot(hasQuery(@"DUMMY", @"DUMMY")));
+}
+
+- (void)testShouldNotMatchNil
+{
+    assertThat(nil, isNot(hasQuery(@"DUMMY", @"DUMMY")));
+}
+
 @end
