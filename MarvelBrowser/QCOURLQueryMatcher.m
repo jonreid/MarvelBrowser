@@ -34,8 +34,17 @@
                                                 resolvingAgainstBaseURL:NO];
     NSArray<NSURLQueryItem *> *queryItems = urlComponents.queryItems;
     for (NSURLQueryItem *queryItem in queryItems)
-        if ([queryItem.name isEqualToString:self.name])
-            return [self.valueMatcher matches:queryItem.value];
+        if ([queryItem.name isEqualToString:self.name]) {
+            if ([self.valueMatcher matches:queryItem.value])
+                return YES;
+            [[[[[mismatchDescription
+                    appendDescriptionOf:self.name]
+                    appendText:@" had value "]
+                    appendDescriptionOf:queryItem.value]
+                    appendText:@" in "]
+                    appendText:urlComponents.query];
+            return NO;
+        }
 
     [[[[mismatchDescription
             appendText:@"no "]
