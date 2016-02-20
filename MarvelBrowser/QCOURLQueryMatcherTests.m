@@ -12,11 +12,18 @@
 
 @implementation QCOURLQueryMatcherTests
 
-- (void)testHasQuery_WithURLContainingMatchingKeyAndValue_ShouldMatch
+- (void)testHasQuery_WithURLContainingMatchingKeyAndValueInFirstPosition_ShouldMatch
 {
     NSURL *url = [NSURL URLWithString:@"http://dummy.com/dummy?key1=value1"];
 
     assertThat(url, hasQuery(@"key1", equalTo(@"value1")));
+}
+
+- (void)testHasQuery_WithURLContainingMatchingKeyAndValueInSecondPosition_ShouldMatch
+{
+    NSURL *url = [NSURL URLWithString:@"http://dummy.com/dummy?key1=value1&key2=value2"];
+
+    assertThat(url, hasQuery(@"key2", equalTo(@"value2")));
 }
 
 - (void)testHasQuery_WithURLNotContainingMatchingKey_ShouldNotMatch

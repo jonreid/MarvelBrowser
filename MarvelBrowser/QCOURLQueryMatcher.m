@@ -27,9 +27,9 @@
     NSURLComponents *urlComponents = [NSURLComponents componentsWithURL:item
                                                 resolvingAgainstBaseURL:NO];
     NSArray<NSURLQueryItem *> *queryItems = urlComponents.queryItems;
-    NSURLQueryItem *queryItem = queryItems.firstObject;
-    if ([queryItem.name isEqualToString:self.name])
-        return [self.valueMatcher matches:queryItem.value];
+    for (NSURLQueryItem *queryItem in queryItems)
+        if ([queryItem.name isEqualToString:self.name])
+            return [self.valueMatcher matches:queryItem.value];
     return NO;
 }
 
