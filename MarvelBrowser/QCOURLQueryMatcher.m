@@ -3,6 +3,8 @@
 
 #import "QCOURLQueryMatcher.h"
 
+#import <OCHamcrest/HCWrapInMatcher.h>
+
 
 @interface QCOURLQueryMatcher ()
 @property (nonatomic, copy, readonly) NSString *name;
@@ -42,5 +44,5 @@
 
 id hasQuery(NSString *name, id valueMatcher)
 {
-    return [[QCOURLQueryMatcher alloc] initWithName:name valueMatcher:valueMatcher];
+    return [[QCOURLQueryMatcher alloc] initWithName:name valueMatcher:HCWrapInMatcher(valueMatcher)];
 }

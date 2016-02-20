@@ -40,4 +40,11 @@
     assertThat(url, isNot(hasQuery(@"key1", equalTo(@"value1"))));
 }
 
+- (void)testHasQuery_ShouldProvideConvenientShortcutForMatchingValueWithEqualTo
+{
+    NSURL *url = [NSURL URLWithString:@"http://dummy.com/dummy?key1=value1"];
+
+    assertThat(url, hasQuery(@"key1", @"value1"));
+}
+
 @end
