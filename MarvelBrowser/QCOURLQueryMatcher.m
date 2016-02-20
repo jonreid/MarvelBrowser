@@ -3,6 +3,7 @@
 
 #import "QCOURLQueryMatcher.h"
 
+#import <OCHamcrest/HCRequireNonNilObject.h>
 #import <OCHamcrest/HCWrapInMatcher.h>
 
 
@@ -52,5 +53,7 @@
 
 id hasQuery(NSString *name, id valueMatcher)
 {
+    HCRequireNonNilObject(name);
+    HCRequireNonNilObject(valueMatcher);
     return [[QCOURLQueryMatcher alloc] initWithName:name valueMatcher:HCWrapInMatcher(valueMatcher)];
 }

@@ -67,4 +67,14 @@
     assertThat(nil, isNot(hasQuery(@"DUMMY", @"DUMMY")));
 }
 
+- (void)testCreatingMatcherWithNilName_ShouldThrowException
+{
+    assertThat(^{ hasQuery(nil, @"value1"); }, throwsException(anything()));
+}
+
+- (void)testCreatingMatcherWithNilValue_ShouldThrowException
+{
+    assertThat(^{ hasQuery(@"key1", nil); }, throwsException(anything()));
+}
+
 @end
