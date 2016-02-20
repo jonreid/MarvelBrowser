@@ -6,7 +6,7 @@
 
 @interface QCOURLQueryMatcher : HCBaseMatcher
 
-- (instancetype)initWithName:(NSString *)name valueMatcher:(id)valueMatcher;
+- (instancetype)initWithName:(NSString *)name valueMatcher:(id <HCMatcher>)valueMatcher;
 
 @end
 

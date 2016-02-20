@@ -6,16 +6,18 @@
 
 @interface QCOURLQueryMatcher ()
 @property (nonatomic, copy, readonly) NSString *name;
+@property (nonatomic, readonly) id <HCMatcher> valueMatcher;
 @end
 
 @implementation QCOURLQueryMatcher
 
-- (instancetype)initWithName:(NSString *)name valueMatcher:(id)valueMatcher
+- (instancetype)initWithName:(NSString *)name valueMatcher:(id <HCMatcher>)valueMatcher
 {
     self = [super init];
     if (self)
     {
         _name = [name copy];
+        _valueMatcher = valueMatcher;
     }
     return self;
 }
@@ -26,7 +28,9 @@
                                                 resolvingAgainstBaseURL:NO];
     NSArray<NSURLQueryItem *> *queryItems = urlComponents.queryItems;
     NSURLQueryItem *queryItem = queryItems.firstObject;
-    return [queryItem.name isEqualToString:self.name];
+    if ([queryItem.name isEqualToString:self.name])
+        return [self.valueMatcher matches:queryItem.value];
+    return NO;
 }
 
 - (void)describeTo:(id <HCDescription>)description
