@@ -19,4 +19,11 @@
     assertThat(url, hasQuery(@"key1", equalTo(@"value1")));
 }
 
+- (void)testHasQuery_WithURLNotContainingMatchingKey_ShouldNotMatch
+{
+    NSURL *url = [NSURL URLWithString:@"http://dummy.com/dummy?WRONGKEY=value1"];
+
+    assertThat(url, isNot(hasQuery(@"key1", equalTo(@"value1"))));
+}
+
 @end
