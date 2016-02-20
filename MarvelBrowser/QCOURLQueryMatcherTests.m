@@ -77,4 +77,15 @@
     assertThat(^{ hasQuery(@"key1", nil); }, throwsException(anything()));
 }
 
+- (void)testMismatchDescriptionOfURLNotContainingMatchingKey
+{
+    id <HCMatcher> matcher = hasQuery(@"key1", @"value1");
+    NSURL *url = [NSURL URLWithString:@"http://dummy.com/dummy?WRONGKEY=value1"];
+    HCStringDescription *description = [HCStringDescription stringDescription];
+
+    [matcher describeMismatchOf:url to:description];
+
+    assertThat(description.description, is(@"no \"key1\" name in WRONGKEY=value1"));
+}
+
 @end

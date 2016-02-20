@@ -25,7 +25,7 @@
     return self;
 }
 
-- (BOOL)matches:(id)item
+- (BOOL)matches:(id)item describingMismatchTo:(id <HCDescription>)mismatchDescription
 {
     if (![item isKindOfClass:[NSURL class]])
         return NO;
@@ -36,6 +36,12 @@
     for (NSURLQueryItem *queryItem in queryItems)
         if ([queryItem.name isEqualToString:self.name])
             return [self.valueMatcher matches:queryItem.value];
+
+    [[[[mismatchDescription
+            appendText:@"no "]
+            appendDescriptionOf:self.name]
+            appendText:@" name in "]
+            appendText:urlComponents.query];
     return NO;
 }
 

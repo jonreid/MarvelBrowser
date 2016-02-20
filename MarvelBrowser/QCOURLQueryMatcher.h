@@ -1,10 +1,10 @@
 //  TDD sample app MarvelBrowser by Jon Reid, http://qualitycoding.org/about/
 //  Copyright 2016 Jonathan M. Reid. See LICENSE.txt
 
-#import <OCHamcrest/HCBaseMatcher.h>
+#import <OCHamcrest/HCDiagnosingMatcher.h>
 
 
-@interface QCOURLQueryMatcher : HCBaseMatcher
+@interface QCOURLQueryMatcher : HCDiagnosingMatcher
 
 - (instancetype)initWithName:(NSString *)name valueMatcher:(id <HCMatcher>)valueMatcher;
 
