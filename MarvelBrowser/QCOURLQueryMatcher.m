@@ -37,6 +37,11 @@
 
 - (void)describeTo:(id <HCDescription>)description
 {
+    [[[[description
+            appendText:@"a URL with "]
+            appendDescriptionOf:self.name]
+            appendText:@" = "]
+            appendDescriptionOf:self.valueMatcher];
 }
 
 @end

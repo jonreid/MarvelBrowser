@@ -12,39 +12,49 @@
 
 @implementation QCOURLQueryMatcherTests
 
-- (void)testHasQuery_WithURLContainingMatchingKeyAndValueInFirstPosition_ShouldMatch
+- (void)testShouldMatchURLContainingMatchingKeyAndValueInFirstPosition
 {
     NSURL *url = [NSURL URLWithString:@"http://dummy.com/dummy?key1=value1"];
 
     assertThat(url, hasQuery(@"key1", equalTo(@"value1")));
 }
 
-- (void)testHasQuery_WithURLContainingMatchingKeyAndValueInSecondPosition_ShouldMatch
+- (void)testShouldMatchURLContainingMatchingKeyAndValueInSecondPosition
 {
     NSURL *url = [NSURL URLWithString:@"http://dummy.com/dummy?key1=value1&key2=value2"];
 
     assertThat(url, hasQuery(@"key2", equalTo(@"value2")));
 }
 
-- (void)testHasQuery_WithURLNotContainingMatchingKey_ShouldNotMatch
+- (void)testShouldNotMatchURLNotContainingMatchingKey
 {
     NSURL *url = [NSURL URLWithString:@"http://dummy.com/dummy?WRONGKEY=value1"];
 
     assertThat(url, isNot(hasQuery(@"key1", equalTo(@"value1"))));
 }
 
-- (void)testHasQuery_WithURLContainingMatchingKeyButWrongValue_ShouldNotMatch
+- (void)testShouldNotMatchURLContainingMatchingKeyButWrongValue
 {
     NSURL *url = [NSURL URLWithString:@"http://dummy.com/dummy?key1=WRONGVALUE"];
 
     assertThat(url, isNot(hasQuery(@"key1", equalTo(@"value1"))));
 }
 
-- (void)testHasQuery_ShouldProvideConvenientShortcutForMatchingValueWithEqualTo
+- (void)testShouldProvideConvenientShortcutForMatchingValueWithEqualTo
 {
     NSURL *url = [NSURL URLWithString:@"http://dummy.com/dummy?key1=value1"];
 
     assertThat(url, hasQuery(@"key1", @"value1"));
+}
+
+- (void)testMatcherShouldHaveReadableDescription
+{
+    id <HCMatcher> matcher = hasQuery(@"key1", @"value1");
+    HCStringDescription *description = [HCStringDescription stringDescription];
+
+    [description appendDescriptionOf:matcher];
+
+    assertThat(description.description, is(@"a URL with \"key1\" = \"value1\""));
 }
 
 @end
