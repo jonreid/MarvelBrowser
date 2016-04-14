@@ -110,4 +110,12 @@
     assertThat(description.description, is(@"\"key1\" had value \"WRONGVALUE\" in key1=WRONGVALUE"));
 }
 
+- (void)testShouldMatchURLContainingMatchingKeyAndPercentEncodedValue
+{
+    NSURL *url = [NSURL URLWithString:@"http://dummy.com/dummy?key1=ab%20cd"];
+
+    assertThat(url, hasQuery(@"key1", equalTo(@"ab%20cd")));
+}
+
+
 @end

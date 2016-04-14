@@ -37,10 +37,12 @@
     {
         if ([queryItem.name isEqualToString:self.name])
         {
-            if ([self.valueMatcher matches:queryItem.value])
+            NSString *value = [queryItem.value stringByAddingPercentEncodingWithAllowedCharacters:
+                    [NSCharacterSet URLQueryAllowedCharacterSet]];
+            if ([self.valueMatcher matches:value])
                 return YES;
             [self reportQuery:urlComponents.query
-                  actualValue:queryItem.value
+                  actualValue:value
                 toDescription:mismatchDescription];
             return NO;
         }
