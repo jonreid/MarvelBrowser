@@ -21,7 +21,10 @@
 
 - (void)fetchCharacters:(QCOFetchCharactersRequestModel *)requestModel
 {
-    NSURL *url = [[NSURL alloc] initWithString:@"https://gateway.marvel.com/v1/public/characters"];
+    NSString *urlString = [NSString stringWithFormat:
+            @"https://gateway.marvel.com/v1/public/characters?nameStartsWith=%@",
+            requestModel.namePrefix];
+    NSURL *url = [[NSURL alloc] initWithString:urlString];
     [self.session dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
     }];
 }

@@ -5,6 +5,7 @@
 
 #import "QCOFetchCharactersRequestModel.h"
 
+#import "QCOURLQueryMatcher.h"
 #import <OCHamcrest/OCHamcrest.h>
 #import <OCMockito/OCMockito.h>
 #import <XCTest/XCTest.h>
@@ -65,6 +66,17 @@
     [sut fetchCharacters:requestModel];
 
     [verify(mockSession) dataTaskWithURL:hasProperty(@"path", @"/v1/public/characters")
+                       completionHandler:anything()];
+}
+
+- (void)testFetchCharacters_WithNamePrefix_ShouldMakeDataTaskWithQueryForNameStartsWith
+{
+    QCOFetchCharactersRequestModel *requestModel = [[QCOFetchCharactersRequestModel alloc]
+            initWithNamePrefix:@"NAME" pageSize:10 offset:30];
+
+    [sut fetchCharacters:requestModel];
+
+    [verify(mockSession) dataTaskWithURL:hasQuery(@"nameStartsWith", @"NAME")
                        completionHandler:anything()];
 }
 
