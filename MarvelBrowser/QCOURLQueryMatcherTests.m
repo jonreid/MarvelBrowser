@@ -77,6 +77,16 @@
     assertThat(^{ hasQuery(@"key1", nil); }, throwsException(anything()));
 }
 
+- (void)testMismatchDescriptionOfNonURL
+{
+    id <HCMatcher> matcher = hasQuery(@"key1", @"value1");
+    HCStringDescription *description = [HCStringDescription stringDescription];
+
+    [matcher describeMismatchOf:@"ABC" to:description];
+
+    assertThat(description.description, is(@"was \"ABC\""));
+}
+
 - (void)testMismatchDescriptionOfURLNotContainingMatchingKey
 {
     id <HCMatcher> matcher = hasQuery(@"key1", @"value1");

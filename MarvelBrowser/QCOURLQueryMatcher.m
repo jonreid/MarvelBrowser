@@ -28,7 +28,10 @@
 - (BOOL)matches:(id)item describingMismatchTo:(id <HCDescription>)mismatchDescription
 {
     if (![item isKindOfClass:[NSURL class]])
+    {
+        [self reportNonURL:item toDescription:mismatchDescription];
         return NO;
+    }
 
     NSURLComponents *urlComponents = [NSURLComponents componentsWithURL:item
                                                 resolvingAgainstBaseURL:NO];
@@ -55,24 +58,31 @@
     return NO;
 }
 
+- (void)reportNonURL:(id)item toDescription:(id <HCDescription>)mismatchDescription
+{
+    [[mismatchDescription
+            appendText:@"was "]
+            appendDescriptionOf:item];
+}
+
 - (void)reportQuery:(NSString *)query
         actualValue:(NSString *)value
       toDescription:(id <HCDescription>)mismatchDescription
 {
     [[[[[mismatchDescription
             appendDescriptionOf:self.name]
-                    appendText:@" had value "]
-                    appendDescriptionOf:value]
-                    appendText:@" in "]
-                    appendText:query];
+            appendText:@" had value "]
+            appendDescriptionOf:value]
+            appendText:@" in "]
+            appendText:query];
 }
 
 - (void)reportNoQueryInURL:(id)URL
              toDescription:(id <HCDescription>)mismatchDescription
 {
     [[mismatchDescription
-                appendText:@"no query in "]
-                appendDescriptionOf:URL];
+            appendText:@"no query in "]
+            appendDescriptionOf:URL];
 }
 
 - (void)reportNameNotFoundInQuery:(NSString *)query
@@ -81,8 +91,8 @@
     [[[[mismatchDescription
             appendText:@"no "]
             appendDescriptionOf:self.name]
-                appendText:@" name in "]
-                appendText:query];
+            appendText:@" name in "]
+            appendText:query];
 }
 
 - (void)describeTo:(id <HCDescription>)description
