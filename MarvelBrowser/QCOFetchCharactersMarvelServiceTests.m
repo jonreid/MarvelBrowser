@@ -38,7 +38,7 @@
             initWithNamePrefix:@"DUMMY" pageSize:10 offset:30];
 }
 
-- (void)testFetchCharacters_ShouldMakeDataTaskForMarvelComicsAPI
+- (void)testFetchCharacters_ShouldMakeDataTaskForMarvelEndpoint
 {
     QCOFetchCharactersRequestModel *requestModel = [self dummyRequestModel];
 
@@ -55,6 +55,16 @@
     [sut fetchCharacters:requestModel];
 
     [verify(mockSession) dataTaskWithURL:hasProperty(@"scheme", @"https")
+                       completionHandler:anything()];
+}
+
+- (void)testFetchCharacters_ShouldMakeDataTaskForCharactersAPI
+{
+    QCOFetchCharactersRequestModel *requestModel = [self dummyRequestModel];
+
+    [sut fetchCharacters:requestModel];
+
+    [verify(mockSession) dataTaskWithURL:hasProperty(@"path", @"/v1/public/characters")
                        completionHandler:anything()];
 }
 
