@@ -34,24 +34,53 @@
                                                 resolvingAgainstBaseURL:NO];
     NSArray<NSURLQueryItem *> *queryItems = urlComponents.queryItems;
     for (NSURLQueryItem *queryItem in queryItems)
-        if ([queryItem.name isEqualToString:self.name]) {
+    {
+        if ([queryItem.name isEqualToString:self.name])
+        {
             if ([self.valueMatcher matches:queryItem.value])
                 return YES;
-            [[[[[mismatchDescription
-                    appendDescriptionOf:self.name]
-                    appendText:@" had value "]
-                    appendDescriptionOf:queryItem.value]
-                    appendText:@" in "]
-                    appendText:urlComponents.query];
+            [self reportQuery:urlComponents.query
+                  actualValue:queryItem.value
+                toDescription:mismatchDescription];
             return NO;
         }
+    }
 
+    if (!urlComponents.query)
+        [self reportNoQueryInURL:item toDescription:mismatchDescription];
+    else
+        [self reportNameNotFoundInQuery:urlComponents.query toDescription:mismatchDescription];
+    return NO;
+}
+
+- (void)reportQuery:(NSString *)query
+        actualValue:(NSString *)value
+      toDescription:(id <HCDescription>)mismatchDescription
+{
+    [[[[[mismatchDescription
+            appendDescriptionOf:self.name]
+                    appendText:@" had value "]
+                    appendDescriptionOf:value]
+                    appendText:@" in "]
+                    appendText:query];
+}
+
+- (void)reportNoQueryInURL:(id)URL
+             toDescription:(id <HCDescription>)mismatchDescription
+{
+    [[mismatchDescription
+                appendText:@"no query in "]
+                appendDescriptionOf:URL];
+}
+
+- (void)reportNameNotFoundInQuery:(NSString *)query
+                    toDescription:(id <HCDescription>)mismatchDescription
+{
     [[[[mismatchDescription
             appendText:@"no "]
             appendDescriptionOf:self.name]
-            appendText:@" name in "]
-            appendText:urlComponents.query];
-    return NO;
+                appendText:@" name in "]
+                appendText:query];
 }
 
 - (void)describeTo:(id <HCDescription>)description
