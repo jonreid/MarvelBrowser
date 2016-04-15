@@ -80,4 +80,15 @@
                        completionHandler:anything()];
 }
 
+- (void)testFetchCharacters_WithNamePrefix_ShouldPercentEncodeNameStartsWith
+{
+    QCOFetchCharactersRequestModel *requestModel = [[QCOFetchCharactersRequestModel alloc]
+            initWithNamePrefix:@"ab cd" pageSize:10 offset:30];
+
+    [sut fetchCharacters:requestModel];
+
+    [verify(mockSession) dataTaskWithURL:hasQuery(@"nameStartsWith", @"ab%20cd")
+                       completionHandler:anything()];
+}
+
 @end

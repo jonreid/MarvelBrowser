@@ -21,9 +21,11 @@
 
 - (void)fetchCharacters:(QCOFetchCharactersRequestModel *)requestModel
 {
+    NSString *escapedName = [requestModel.namePrefix stringByAddingPercentEncodingWithAllowedCharacters:
+            [NSCharacterSet URLQueryAllowedCharacterSet]];
     NSString *urlString = [NSString stringWithFormat:
             @"https://gateway.marvel.com/v1/public/characters?nameStartsWith=%@",
-            requestModel.namePrefix];
+            escapedName];
     NSURL *url = [[NSURL alloc] initWithString:urlString];
     [self.session dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
     }];
