@@ -54,7 +54,7 @@
 
     [description appendDescriptionOf:matcher];
 
-    assertThat(description.description, is(@"a URL with \"key1\" = \"value1\""));
+    assertThat(description.description, is(@"URL with \"key1\" = \"value1\""));
 }
 
 - (void)testShouldNotMatchNonURL
