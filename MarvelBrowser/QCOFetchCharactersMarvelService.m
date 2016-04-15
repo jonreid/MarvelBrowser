@@ -24,8 +24,10 @@
     NSString *escapedName = [requestModel.namePrefix stringByAddingPercentEncodingWithAllowedCharacters:
             [NSCharacterSet URLQueryAllowedCharacterSet]];
     NSString *urlString = [NSString stringWithFormat:
-            @"https://gateway.marvel.com/v1/public/characters?nameStartsWith=%@",
-            escapedName];
+            @"https://gateway.marvel.com/v1/public/characters?nameStartsWith=%@&limit=%lu",
+            escapedName,
+            (unsigned long)requestModel.pageSize
+    ];
     NSURL *url = [[NSURL alloc] initWithString:urlString];
     [self.session dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
     }];
