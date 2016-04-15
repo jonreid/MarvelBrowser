@@ -102,4 +102,15 @@
                        completionHandler:anything()];
 }
 
+- (void)testFetchCharacters_WithOffset_ShouldMakeDataTaskWithQueryForOffset
+{
+    QCOFetchCharactersRequestModel *requestModel = [[QCOFetchCharactersRequestModel alloc]
+            initWithNamePrefix:@"DUMMY" pageSize:10 offset:30];
+
+    [sut fetchCharacters:requestModel];
+
+    [verify(mockSession) dataTaskWithURL:hasQuery(@"offset", @"30")
+                       completionHandler:anything()];
+}
+
 @end
