@@ -163,4 +163,15 @@
     [verify(mockDataTask) cancel];
 }
 
+- (void)testCancel_AfterFetch_ShouldReleaseDataTask
+{
+    [given([mockSession dataTaskWithURL:anything() completionHandler:anything()])
+            willReturn:mockDataTask];
+    [sut fetchCharactersWithRequestModel:[self dummyRequestModel]];
+
+    [sut cancel];
+
+    assertThat(sut.dataTask, is(nilValue()));
+}
+
 @end

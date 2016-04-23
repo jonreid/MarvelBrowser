@@ -51,6 +51,7 @@
 - (void)cancel
 {
     [self.dataTask cancel];
+    self.dataTask = nil;
 }
 
 @end
