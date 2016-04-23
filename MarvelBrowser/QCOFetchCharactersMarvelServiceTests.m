@@ -152,4 +152,15 @@
     assertThat(sut.dataTask, is(sameInstance(mockDataTask)));
 }
 
+- (void)testCancel_AfterFetch_ShouldCancelDataTask
+{
+    [given([mockSession dataTaskWithURL:anything() completionHandler:anything()])
+            willReturn:mockDataTask];
+    [sut fetchCharactersWithRequestModel:[self dummyRequestModel]];
+
+    [sut cancel];
+
+    [verify(mockDataTask) cancel];
+}
+
 @end
