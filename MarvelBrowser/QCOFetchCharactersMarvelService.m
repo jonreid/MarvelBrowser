@@ -28,6 +28,7 @@
 
 - (void)fetchCharactersWithRequestModel:(QCOFetchCharactersRequestModel *)requestModel
 {
+    NSAssert(!self.dataTask, @"Fetch already in progress");
     NSURL *url = [self URLForRequestModel:requestModel];
     self.dataTask = [self.session dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
     }];
