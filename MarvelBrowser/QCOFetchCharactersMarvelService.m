@@ -50,7 +50,7 @@
 
 - (void)cancel
 {
-
+    [self.dataTask cancel];
 }
 
 @end
