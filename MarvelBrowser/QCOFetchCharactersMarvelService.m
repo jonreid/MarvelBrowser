@@ -48,4 +48,9 @@
     return [[NSURL alloc] initWithString:urlString];
 }
 
+- (void)cancel
+{
+
+}
+
 @end
