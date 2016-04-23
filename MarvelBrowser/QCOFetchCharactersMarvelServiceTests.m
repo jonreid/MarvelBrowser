@@ -174,4 +174,14 @@
     assertThat(sut.dataTask, is(nilValue()));
 }
 
+- (void)testAttemptingSecondFetch_WithOneInProgress_ShouldRaiseException
+{
+    [given([mockSession dataTaskWithURL:anything() completionHandler:anything()])
+            willReturn:mockDataTask];
+    [sut fetchCharactersWithRequestModel:[self dummyRequestModel]];
+
+    assertThat(^{ [sut fetchCharactersWithRequestModel:[self dummyRequestModel]]; },
+            throwsException(anything()));
+}
+
 @end
