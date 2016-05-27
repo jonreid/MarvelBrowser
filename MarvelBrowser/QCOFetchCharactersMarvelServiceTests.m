@@ -18,6 +18,7 @@
 {
     NSURLSession *mockSession;
     QCOFetchCharactersMarvelService *sut;
+    NSURLSessionDataTask *mockDataTask;
 }
 
 - (void)setUp
@@ -28,6 +29,7 @@
                                            authParametersGenerator:^NSString * {
                                                return @"";
                                            }];
+    mockDataTask = mock([NSURLSessionDataTask class]);
 }
 
 - (void)tearDown
@@ -130,7 +132,6 @@
 
 - (void)testFetchCharacters_ShouldStartDataTask
 {
-    NSURLSessionDataTask *mockDataTask = mock([NSURLSessionDataTask class]);
     [given([mockSession dataTaskWithURL:anything() completionHandler:anything()])
             willReturn:mockDataTask];
 
@@ -141,7 +142,6 @@
 
 - (void)testFetchCharacters_ShouldHoldDataTaskAsPropertyToKeepTaskAlive
 {
-    NSURLSessionDataTask *mockDataTask = mock([NSURLSessionDataTask class]);
     [given([mockSession dataTaskWithURL:anything() completionHandler:anything()])
             willReturn:mockDataTask];
 
