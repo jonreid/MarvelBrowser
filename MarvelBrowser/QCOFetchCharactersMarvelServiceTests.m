@@ -116,4 +116,19 @@
                        completionHandler:anything()];
 }
 
+- (void)testFetchCharacters_ShouldIncludeGeneratedAuthenticationParameters
+{
+    QCOFetchCharactersMarvelService *sutWithAuthParameters =
+            [[QCOFetchCharactersMarvelService alloc] initWithSession:mockSession
+                                             authParametersGenerator:^NSString * {
+                                                 return @"&FOO=BAR";
+                                             }];
+    QCOFetchCharactersRequestModel *requestModel = [self dummyRequestModel];
+
+    [sutWithAuthParameters fetchCharactersWithRequestModel:requestModel];
+
+    [verify(mockSession) dataTaskWithURL:hasQuery(@"FOO", @"BAR")
+                       completionHandler:anything()];
+}
+
 @end
