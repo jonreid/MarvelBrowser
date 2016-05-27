@@ -8,7 +8,8 @@
 
 @interface QCOFetchCharactersMarvelService : NSObject
 
-- (instancetype)initWithSession:(NSURLSession *)session;
+- (instancetype)initWithSession:(NSURLSession *)session
+        authParametersGenerator:(NSString *(^)())authParametersGenerator;
 - (void)fetchCharactersWithRequestModel:(QCOFetchCharactersRequestModel *)requestModel;
 
 @end

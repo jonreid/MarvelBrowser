@@ -24,7 +24,10 @@
 {
     [super setUp];
     mockSession = mock([NSURLSession class]);
-    sut = [[QCOFetchCharactersMarvelService alloc] initWithSession:mockSession];
+    sut = [[QCOFetchCharactersMarvelService alloc] initWithSession:mockSession
+                                           authParametersGenerator:^NSString * {
+                                               return nil;
+                                           }];
 }
 
 - (void)tearDown

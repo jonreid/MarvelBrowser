@@ -12,6 +12,7 @@
 @implementation QCOFetchCharactersMarvelService
 
 - (instancetype)initWithSession:(NSURLSession *)session
+        authParametersGenerator:(NSString *(^)())authParametersGenerator
 {
     self = [super init];
     if (self)
