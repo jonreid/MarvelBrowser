@@ -131,4 +131,16 @@
                        completionHandler:anything()];
 }
 
+- (void)testFetchCharacters_ShouldStartDataTask
+{
+    QCOFetchCharactersRequestModel *requestModel = [self dummyRequestModel];
+    NSURLSessionDataTask *mockDataTask = mock([NSURLSessionDataTask class]);
+    [given([mockSession dataTaskWithURL:anything() completionHandler:anything()])
+            willReturn:mockDataTask];
+
+    [sut fetchCharactersWithRequestModel:requestModel];
+
+    [verify(mockDataTask) resume];
+}
+
 @end
