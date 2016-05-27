@@ -36,9 +36,9 @@
     ];
     urlString = [urlString stringByAppendingString:self.authParametersGenerator()];
     NSURL *url = [[NSURL alloc] initWithString:urlString];
-    NSURLSessionDataTask *task = [self.session dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+    self.dataTask = [self.session dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
     }];
-    [task resume];
+    [self.dataTask resume];
 }
 
 @end
