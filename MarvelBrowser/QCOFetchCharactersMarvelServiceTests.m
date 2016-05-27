@@ -44,9 +44,8 @@
 
 - (void)testFetchCharacters_ShouldMakeDataTaskForMarvelEndpoint
 {
-    QCOFetchCharactersRequestModel *requestModel = [self dummyRequestModel];
 
-    [sut fetchCharactersWithRequestModel:requestModel];
+    [sut fetchCharactersWithRequestModel:[self dummyRequestModel]];
 
     [verify(mockSession) dataTaskWithURL:hasProperty(@"host", @"gateway.marvel.com")
                        completionHandler:anything()];
@@ -54,9 +53,8 @@
 
 - (void)testFetchCharacters_ShouldMakeDataTaskWithSecureConnection
 {
-    QCOFetchCharactersRequestModel *requestModel = [self dummyRequestModel];
 
-    [sut fetchCharactersWithRequestModel:requestModel];
+    [sut fetchCharactersWithRequestModel:[self dummyRequestModel]];
 
     [verify(mockSession) dataTaskWithURL:hasProperty(@"scheme", @"https")
                        completionHandler:anything()];
@@ -123,9 +121,8 @@
                                              authParametersGenerator:^NSString * {
                                                  return @"&FOO=BAR";
                                              }];
-    QCOFetchCharactersRequestModel *requestModel = [self dummyRequestModel];
 
-    [sutWithAuthParameters fetchCharactersWithRequestModel:requestModel];
+    [sutWithAuthParameters fetchCharactersWithRequestModel:[self dummyRequestModel]];
 
     [verify(mockSession) dataTaskWithURL:hasQuery(@"FOO", @"BAR")
                        completionHandler:anything()];
@@ -133,24 +130,22 @@
 
 - (void)testFetchCharacters_ShouldStartDataTask
 {
-    QCOFetchCharactersRequestModel *requestModel = [self dummyRequestModel];
     NSURLSessionDataTask *mockDataTask = mock([NSURLSessionDataTask class]);
     [given([mockSession dataTaskWithURL:anything() completionHandler:anything()])
             willReturn:mockDataTask];
 
-    [sut fetchCharactersWithRequestModel:requestModel];
+    [sut fetchCharactersWithRequestModel:[self dummyRequestModel]];
 
     [verify(mockDataTask) resume];
 }
 
 - (void)testFetchCharacters_ShouldHoldDataTaskAsPropertyToKeepTaskAlive
 {
-    QCOFetchCharactersRequestModel *requestModel = [self dummyRequestModel];
     NSURLSessionDataTask *mockDataTask = mock([NSURLSessionDataTask class]);
     [given([mockSession dataTaskWithURL:anything() completionHandler:anything()])
             willReturn:mockDataTask];
 
-    [sut fetchCharactersWithRequestModel:requestModel];
+    [sut fetchCharactersWithRequestModel:[self dummyRequestModel]];
 
     assertThat(sut.dataTask, is(sameInstance(mockDataTask)));
 }
