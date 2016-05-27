@@ -4,6 +4,7 @@
 #import "QCOFetchCharactersMarvelService.h"
 
 #import "QCOFetchCharactersRequestModel.h"
+#import "QCOMarvelAuthentication.h"
 
 
 @interface QCOFetchCharactersMarvelService ()
@@ -30,7 +31,7 @@
             (unsigned long)requestModel.pageSize,
             (unsigned long)requestModel.offset
     ];
-    urlString = [urlString stringByAppendingString:@"&ts=FOO&apikey=BAR&hash=BAZ"];
+    urlString = [urlString stringByAppendingString:[QCOMarvelAuthentication URLParameters]];
     NSURL *url = [[NSURL alloc] initWithString:urlString];
     [self.session dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
     }];
