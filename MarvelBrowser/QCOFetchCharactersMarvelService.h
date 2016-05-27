@@ -8,6 +8,8 @@
 
 @interface QCOFetchCharactersMarvelService : NSObject
 
+@property (nonatomic, strong) NSURLSessionDataTask *dataTask;
+
 - (instancetype)initWithSession:(NSURLSession *)session
         authParametersGenerator:(NSString *(^)())authParametersGenerator;
 - (void)fetchCharactersWithRequestModel:(QCOFetchCharactersRequestModel *)requestModel;

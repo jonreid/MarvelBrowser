@@ -143,4 +143,16 @@
     [verify(mockDataTask) resume];
 }
 
+- (void)testFetchCharacters_ShouldHoldDataTaskAsPropertyToKeepTaskAlive
+{
+    QCOFetchCharactersRequestModel *requestModel = [self dummyRequestModel];
+    NSURLSessionDataTask *mockDataTask = mock([NSURLSessionDataTask class]);
+    [given([mockSession dataTaskWithURL:anything() completionHandler:anything()])
+            willReturn:mockDataTask];
+
+    [sut fetchCharactersWithRequestModel:requestModel];
+
+    assertThat(sut.dataTask, is(sameInstance(mockDataTask)));
+}
+
 @end
