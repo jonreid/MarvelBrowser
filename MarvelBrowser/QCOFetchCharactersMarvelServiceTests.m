@@ -113,4 +113,18 @@
                        completionHandler:anything()];
 }
 
+- (void)testFetchCharacters_ShouldIncludeAuthentication
+{
+    QCOFetchCharactersRequestModel *requestModel = [self dummyRequestModel];
+
+    [sut fetchCharactersWithRequestModel:requestModel];
+
+    [verify(mockSession) dataTaskWithURL:allOfIn(@[
+                    hasQuery(@"ts", anything()),
+                    hasQuery(@"apikey", anything()),
+                    hasQuery(@"hash", anything()),
+            ])
+                       completionHandler:anything()];
+}
+
 @end
