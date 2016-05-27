@@ -43,7 +43,7 @@
 {
     QCOFetchCharactersRequestModel *requestModel = [self dummyRequestModel];
 
-    [sut fetchCharacters:requestModel];
+    [sut fetchCharactersWithRequestModel:requestModel];
 
     [verify(mockSession) dataTaskWithURL:hasProperty(@"host", @"gateway.marvel.com")
                        completionHandler:anything()];
@@ -53,7 +53,7 @@
 {
     QCOFetchCharactersRequestModel *requestModel = [self dummyRequestModel];
 
-    [sut fetchCharacters:requestModel];
+    [sut fetchCharactersWithRequestModel:requestModel];
 
     [verify(mockSession) dataTaskWithURL:hasProperty(@"scheme", @"https")
                        completionHandler:anything()];
@@ -63,7 +63,7 @@
 {
     QCOFetchCharactersRequestModel *requestModel = [self dummyRequestModel];
 
-    [sut fetchCharacters:requestModel];
+    [sut fetchCharactersWithRequestModel:requestModel];
 
     [verify(mockSession) dataTaskWithURL:hasProperty(@"path", @"/v1/public/characters")
                        completionHandler:anything()];
@@ -74,7 +74,7 @@
     QCOFetchCharactersRequestModel *requestModel = [[QCOFetchCharactersRequestModel alloc]
             initWithNamePrefix:@"NAME" pageSize:10 offset:30];
 
-    [sut fetchCharacters:requestModel];
+    [sut fetchCharactersWithRequestModel:requestModel];
 
     [verify(mockSession) dataTaskWithURL:hasQuery(@"nameStartsWith", @"NAME")
                        completionHandler:anything()];
@@ -85,7 +85,7 @@
     QCOFetchCharactersRequestModel *requestModel = [[QCOFetchCharactersRequestModel alloc]
             initWithNamePrefix:@"ab cd" pageSize:10 offset:30];
 
-    [sut fetchCharacters:requestModel];
+    [sut fetchCharactersWithRequestModel:requestModel];
 
     [verify(mockSession) dataTaskWithURL:hasQuery(@"nameStartsWith", @"ab%20cd")
                        completionHandler:anything()];
@@ -96,7 +96,7 @@
     QCOFetchCharactersRequestModel *requestModel = [[QCOFetchCharactersRequestModel alloc]
             initWithNamePrefix:@"DUMMY" pageSize:10 offset:30];
 
-    [sut fetchCharacters:requestModel];
+    [sut fetchCharactersWithRequestModel:requestModel];
 
     [verify(mockSession) dataTaskWithURL:hasQuery(@"limit", @"10")
                        completionHandler:anything()];
@@ -107,7 +107,7 @@
     QCOFetchCharactersRequestModel *requestModel = [[QCOFetchCharactersRequestModel alloc]
             initWithNamePrefix:@"DUMMY" pageSize:10 offset:30];
 
-    [sut fetchCharacters:requestModel];
+    [sut fetchCharactersWithRequestModel:requestModel];
 
     [verify(mockSession) dataTaskWithURL:hasQuery(@"offset", @"30")
                        completionHandler:anything()];

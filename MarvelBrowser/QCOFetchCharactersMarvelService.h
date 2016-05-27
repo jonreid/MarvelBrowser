@@ -9,6 +9,6 @@
 @interface QCOFetchCharactersMarvelService : NSObject
 
 - (instancetype)initWithSession:(NSURLSession *)session;
-- (void)fetchCharacters:(QCOFetchCharactersRequestModel *)requestModel;
+- (void)fetchCharactersWithRequestModel:(QCOFetchCharactersRequestModel *)requestModel;
 
 @end

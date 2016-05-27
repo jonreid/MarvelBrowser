@@ -19,7 +19,7 @@
     return self;
 }
 
-- (void)fetchCharacters:(QCOFetchCharactersRequestModel *)requestModel
+- (void)fetchCharactersWithRequestModel:(QCOFetchCharactersRequestModel *)requestModel
 {
     NSString *encodedNamePrefix = [requestModel.namePrefix stringByAddingPercentEncodingWithAllowedCharacters:
             [NSCharacterSet URLQueryAllowedCharacterSet]];
