@@ -27,6 +27,14 @@
 
 - (void)fetchCharactersWithRequestModel:(QCOFetchCharactersRequestModel *)requestModel
 {
+    NSURL *url = [self URLForRequestModel:requestModel];
+    self.dataTask = [self.session dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+    }];
+    [self.dataTask resume];
+}
+
+- (NSURL *)URLForRequestModel:(QCOFetchCharactersRequestModel *)requestModel
+{
     NSString *encodedNamePrefix = [requestModel.namePrefix stringByAddingPercentEncodingWithAllowedCharacters:
             [NSCharacterSet URLQueryAllowedCharacterSet]];
     NSString *urlString = [NSString stringWithFormat:
@@ -36,10 +44,7 @@
             (unsigned long)requestModel.offset
     ];
     urlString = [urlString stringByAppendingString:self.authParametersGenerator()];
-    NSURL *url = [[NSURL alloc] initWithString:urlString];
-    self.dataTask = [self.session dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-    }];
-    [self.dataTask resume];
+    return [[NSURL alloc] initWithString:urlString];
 }
 
 @end
