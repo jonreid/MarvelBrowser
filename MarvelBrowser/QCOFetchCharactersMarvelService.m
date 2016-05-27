@@ -7,6 +7,7 @@
 
 @interface QCOFetchCharactersMarvelService ()
 @property (nonatomic, strong, readonly) NSURLSession *session;
+@property (nonatomic, copy) NSString *(^authParametersGenerator)();
 @end
 
 @implementation QCOFetchCharactersMarvelService
@@ -15,8 +16,10 @@
         authParametersGenerator:(NSString *(^)())authParametersGenerator
 {
     self = [super init];
-    if (self)
+    if (self) {
         _session = session;
+        _authParametersGenerator = [authParametersGenerator copy];
+    }
     return self;
 }
 
@@ -30,6 +33,7 @@
             (unsigned long)requestModel.pageSize,
             (unsigned long)requestModel.offset
     ];
+    urlString = [urlString stringByAppendingString:self.authParametersGenerator()];
     NSURL *url = [[NSURL alloc] initWithString:urlString];
     [self.session dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
     }];
