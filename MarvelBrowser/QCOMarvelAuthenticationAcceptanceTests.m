@@ -21,6 +21,8 @@
     __block NSHTTPURLResponse *httpResponse;
     [self startGETRequestToURL:validQueryURL
          withCompletionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+             if (error)
+                 XCTFail(@"%@", error);
              httpResponse = (NSHTTPURLResponse *)response;
          }];
 
