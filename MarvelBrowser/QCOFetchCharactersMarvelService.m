@@ -2,6 +2,7 @@
 //  Copyright 2016 Jonathan M. Reid. See LICENSE.txt
 
 #import "QCOFetchCharactersMarvelService.h"
+
 #import "QCOFetchCharactersRequestModel.h"
 
 
