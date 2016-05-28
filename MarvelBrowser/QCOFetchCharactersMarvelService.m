@@ -18,7 +18,8 @@
         authParametersGenerator:(NSString *(^)())authParametersGenerator
 {
     self = [super init];
-    if (self) {
+    if (self)
+    {
         _session = session;
         _authParametersGenerator = [authParametersGenerator copy];
     }
