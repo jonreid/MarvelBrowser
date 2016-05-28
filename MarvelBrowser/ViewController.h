@@ -3,8 +3,5 @@
 
 #import <UIKit/UIKit.h>
 
-@class QCOFetchCharactersMarvelService;
-
-
 @interface ViewController : UIViewController
 @end
