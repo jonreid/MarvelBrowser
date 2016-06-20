@@ -196,12 +196,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0E77099E1B50C1CD0056472E /* Build configuration list for PBXNativeTarget "AcceptanceTests" */;
 			buildPhases = (
-				05B10DC965ED0CF7479D75A5 /* 📦 Check Pods Manifest.lock */,
+				05B10DC965ED0CF7479D75A5 /* [CP] Check Pods Manifest.lock */,
 				0E7709901B50C1CD0056472E /* Sources */,
 				0E7709911B50C1CD0056472E /* Frameworks */,
 				0E7709921B50C1CD0056472E /* Resources */,
-				71EEFA39715F55C5CD2B798D /* 📦 Embed Pods Frameworks */,
-				58ED8CD6F1AC2BA4AA266DE3 /* 📦 Copy Pods Resources */,
+				71EEFA39715F55C5CD2B798D /* [CP] Embed Pods Frameworks */,
+				58ED8CD6F1AC2BA4AA266DE3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -234,12 +234,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 74CC7AAA1A1D9036007FCA40 /* Build configuration list for PBXNativeTarget "MarvelBrowserTests" */;
 			buildPhases = (
-				2130736AED2E66625E95A0A8 /* 📦 Check Pods Manifest.lock */,
+				2130736AED2E66625E95A0A8 /* [CP] Check Pods Manifest.lock */,
 				74CC7A991A1D9036007FCA40 /* Sources */,
 				74CC7A9A1A1D9036007FCA40 /* Frameworks */,
 				74CC7A9B1A1D9036007FCA40 /* Resources */,
-				B28CFC08BE3EBC340E79654E /* 📦 Embed Pods Frameworks */,
-				9B6B1B1CDFB6684E0F07710E /* 📦 Copy Pods Resources */,
+				B28CFC08BE3EBC340E79654E /* [CP] Embed Pods Frameworks */,
+				9B6B1B1CDFB6684E0F07710E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -321,14 +321,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		05B10DC965ED0CF7479D75A5 /* 📦 Check Pods Manifest.lock */ = {
+		05B10DC965ED0CF7479D75A5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -336,14 +336,14 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		2130736AED2E66625E95A0A8 /* 📦 Check Pods Manifest.lock */ = {
+		2130736AED2E66625E95A0A8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -351,14 +351,14 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		58ED8CD6F1AC2BA4AA266DE3 /* 📦 Copy Pods Resources */ = {
+		58ED8CD6F1AC2BA4AA266DE3 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -366,14 +366,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AcceptanceTests/Pods-AcceptanceTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		71EEFA39715F55C5CD2B798D /* 📦 Embed Pods Frameworks */ = {
+		71EEFA39715F55C5CD2B798D /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -381,14 +381,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AcceptanceTests/Pods-AcceptanceTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		9B6B1B1CDFB6684E0F07710E /* 📦 Copy Pods Resources */ = {
+		9B6B1B1CDFB6684E0F07710E /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -396,14 +396,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MarvelBrowserTests/Pods-MarvelBrowserTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B28CFC08BE3EBC340E79654E /* 📦 Embed Pods Frameworks */ = {
+		B28CFC08BE3EBC340E79654E /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -509,7 +509,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "MarvelBrowser/Tests-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.qualitycoding.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -541,7 +541,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "MarvelBrowser/Tests-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.qualitycoding.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -570,7 +570,6 @@
 					"$(inherited)",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -591,7 +590,6 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -607,6 +605,7 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 				);
 				INFOPLIST_FILE = "MarvelBrowser/App-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.qualitycoding.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -622,6 +621,7 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 				);
 				INFOPLIST_FILE = "MarvelBrowser/App-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.qualitycoding.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -638,6 +638,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "MarvelBrowser/Tests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.qualitycoding.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -651,6 +652,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = "MarvelBrowser/Tests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.qualitycoding.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
