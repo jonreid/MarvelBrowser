@@ -17,10 +17,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.service = [[QCOFetchCharactersMarvelService alloc] initWithSession:[NSURLSession sharedSession] authParametersGenerator:^NSString * {
-        return [QCOMarvelAuthentication URLParameters];
-    }];
-    QCOFetchCharactersRequestModel *requestModel = [[QCOFetchCharactersRequestModel alloc] initWithNamePrefix:@"Spider" pageSize:1 offset:0];
+    self.service =
+            [[QCOFetchCharactersMarvelService alloc] initWithSession:[NSURLSession sharedSession]
+                                             authParametersGenerator:^NSString * {
+                                                 return [QCOMarvelAuthentication URLParameters];
+                                             }];
+    QCOFetchCharactersRequestModel *requestModel =
+            [[QCOFetchCharactersRequestModel alloc] initWithNamePrefix:@"Spider" pageSize:1 offset:0];
     [self.service fetchCharactersWithRequestModel:requestModel];
 }
 @end
