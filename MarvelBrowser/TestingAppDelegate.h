@@ -1,10 +1,7 @@
 //  TDD sample app MarvelBrowser by Jon Reid, http://qualitycoding.org/about/
 //  Copyright 2016 Jonathan M. Reid. See LICENSE.txt
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
-@interface TestingAppDelegate : UIResponder <UIApplicationDelegate>
-
-@property (nonatomic, strong) UIWindow *window;
-
+@interface TestingAppDelegate : NSObject
 @end
