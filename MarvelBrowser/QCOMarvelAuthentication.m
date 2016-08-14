@@ -14,18 +14,15 @@
     return [[[self alloc] init] URLParameters];
 }
 
-- (NSString *)publicKey
+- (instancetype)init
 {
-    if (!_publicKey)
-        _publicKey = MarvelPublicKey;
-    return _publicKey;
-}
-
-- (NSString *)privateKey
-{
-    if (!_privateKey)
-        _privateKey = MarvelPrivateKey;
-    return _privateKey;
+    self = [super init];
+    if (self)
+    {
+        _publicKey = [MarvelPublicKey copy];
+        _privateKey = [MarvelPrivateKey copy];
+    }
+    return self;
 }
 
 - (NSString *(^)(NSString *))calculateMD5
