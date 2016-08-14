@@ -14,13 +14,6 @@
     return [[[self alloc] init] URLParameters];
 }
 
-- (NSString *)timestamp
-{
-    if (!_timestamp)
-        _timestamp = @([NSDate date].timeIntervalSinceReferenceDate).stringValue;
-    return _timestamp;
-}
-
 - (NSString *)publicKey
 {
     if (!_publicKey)
@@ -56,13 +49,13 @@
 
 - (NSString *)URLParameters
 {
-    return [NSString stringWithFormat:@"&ts=%@&apikey=%@&hash=%@",
-                    self.timestamp, self.publicKey, self.calculateMD5([self timestampedKeys])];
+    return [self URLParametersWithTimestamp:@([NSDate date].timeIntervalSinceReferenceDate).stringValue];
 }
 
-- (NSString *)timestampedKeys
+- (NSString *)URLParametersWithTimestamp:(NSString *)timestamp
 {
-    return [NSString stringWithFormat:@"%@%@%@", self.timestamp, self.privateKey, self.publicKey];
+    NSString *hash = self.calculateMD5([NSString stringWithFormat:@"%@%@%@", timestamp, self.privateKey, self.publicKey]);
+    return [NSString stringWithFormat:@"&ts=%@&apikey=%@&hash=%@", timestamp, self.publicKey, hash];
 }
 
 @end

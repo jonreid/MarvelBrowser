@@ -21,22 +21,6 @@
     sut = [[QCOMarvelAuthentication alloc] init];
 }
 
-- (void)testTimestamp_ShouldNotChangeOnTheSameInstance
-{
-    NSString *ts1 = sut.timestamp;
-    NSString *ts2 = sut.timestamp;
-
-    assertThat(ts1, is(equalTo(ts2)));
-}
-
-- (void)testTimestamp_ShouldChangeAcrossDifferentInstances
-{
-    NSString *ts1 = sut.timestamp;
-    NSString *ts2 = [[QCOMarvelAuthentication alloc] init].timestamp;
-
-    assertThat(ts1, isNot(equalTo(ts2)));
-}
-
 - (void)testPublicKey_ShouldHave32Characters
 {
     NSString *key = sut.publicKey;
@@ -58,16 +42,23 @@
     assertThat(md5, is(@"900150983cd24fb0d6963f7d28e17f72"));
 }
 
-- (void)testURLParameters_ShouldHaveTimestampPublicKeyAndHashedConcatenation
+- (void)testURLParametersWithTimestamp_ShouldHaveTimestampPublicKeyAndHashedConcatenation
 {
-    sut.timestamp = @"Timestamp";
     sut.privateKey = @"Private";
     sut.publicKey = @"Public";
     sut.calculateMD5 = ^(NSString *str){ return [NSString stringWithFormat:@"MD5%@MD5", str]; };
 
-    NSString *params = [sut URLParameters];
+    NSString *params = [sut URLParametersWithTimestamp:@"Timestamp"];
 
     assertThat(params, is(@"&ts=Timestamp&apikey=Public&hash=MD5TimestampPrivatePublicMD5"));
+}
+
+- (void)testURLParameters_ShouldChangeAcrossDifferentInvocations
+{
+    NSString *params1 = [sut URLParameters];
+    NSString *params2 = [sut URLParameters];
+    
+    assertThat(params1, isNot(equalTo(params2)));
 }
 
 @end

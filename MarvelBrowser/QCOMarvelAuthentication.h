@@ -7,11 +7,11 @@
 
 + (NSString *)URLParameters;
 
-@property (nonatomic, copy) NSString *timestamp;
 @property (nonatomic, copy) NSString *publicKey;
 @property (nonatomic, copy) NSString *privateKey;
 @property (nonatomic, copy) NSString *(^calculateMD5)(NSString *);
 
 - (NSString *)URLParameters;
+- (NSString *)URLParametersWithTimestamp:(NSString *)timestamp;
 
 @end
