@@ -46,7 +46,12 @@
 
 - (NSString *)URLParameters
 {
-    return [self URLParametersWithTimestamp:@([NSDate date].timeIntervalSinceReferenceDate).stringValue];
+    return [self URLParametersWithTimestamp:[self timestamp]];
+}
+
+- (NSString *)timestamp
+{
+    return @([NSDate date].timeIntervalSinceReferenceDate).stringValue;
 }
 
 - (NSString *)URLParametersWithTimestamp:(NSString *)timestamp
