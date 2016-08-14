@@ -21,6 +21,12 @@
     sut = [[QCOMarvelAuthentication alloc] init];
 }
 
+- (void)tearDown
+{
+    sut = nil;
+    [super tearDown];
+}
+
 - (void)testPublicKey_ShouldHave32Characters
 {
     NSString *key = sut.publicKey;
