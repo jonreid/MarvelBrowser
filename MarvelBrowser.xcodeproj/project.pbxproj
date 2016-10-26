@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0E1EC9441C781FA600AE074F /* QCOURLQueryMatcherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E1EC9431C781FA600AE074F /* QCOURLQueryMatcherTests.m */; };
-		0E8814661C0EB699003B2731 /* TestingAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7462DD201AB6313C00EE429E /* TestingAppDelegate.m */; };
+		4873A2331DC054AA00E8C9A2 /* TestingAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7462DD201AB6313C00EE429E /* TestingAppDelegate.m */; };
 		609E92ABD787275AC313A4AB /* QCOFetchCharactersMarvelService.m in Sources */ = {isa = PBXBuildFile; fileRef = 609E9250F3997E3D1CC14A9B /* QCOFetchCharactersMarvelService.m */; };
 		609E985DF300A893AD02B8B3 /* QCOMarvelAuthentication.m in Sources */ = {isa = PBXBuildFile; fileRef = 609E950D6BA8062FC0F214A8 /* QCOMarvelAuthentication.m */; };
 		609E99A7842D4BC05E1F6182 /* QCOMarvelAuthenticationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 609E98B120EF92D11321CCAF /* QCOMarvelAuthenticationTests.m */; };
@@ -429,7 +429,6 @@
 				74CC7A901A1D9036007FCA40 /* ViewController.m in Sources */,
 				74CC7A8D1A1D9036007FCA40 /* AppDelegate.m in Sources */,
 				74CC7A8A1A1D9036007FCA40 /* main.m in Sources */,
-				0E8814661C0EB699003B2731 /* TestingAppDelegate.m in Sources */,
 				609E985DF300A893AD02B8B3 /* QCOMarvelAuthentication.m in Sources */,
 				609E92ABD787275AC313A4AB /* QCOFetchCharactersMarvelService.m in Sources */,
 				609E9EC82DB962E5B26058C3 /* QCOFetchCharactersRequestModel.m in Sources */,
@@ -443,6 +442,7 @@
 				609E99A7842D4BC05E1F6182 /* QCOMarvelAuthenticationTests.m in Sources */,
 				609E9ED670D468FF94105A93 /* QCOFetchCharactersMarvelServiceTests.m in Sources */,
 				0E1EC9441C781FA600AE074F /* QCOURLQueryMatcherTests.m in Sources */,
+				4873A2331DC054AA00E8C9A2 /* TestingAppDelegate.m in Sources */,
 				609E9FE53E50AFB4B38CD955 /* QCOURLQueryMatcher.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

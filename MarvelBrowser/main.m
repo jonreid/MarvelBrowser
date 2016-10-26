@@ -3,13 +3,13 @@
 
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
-#import "TestingAppDelegate.h"
 
 int main(int argc, char *argv[])
 {
     @autoreleasepool {
-        BOOL isTesting = NSClassFromString(@"XCTestCase") != Nil;
-        Class appDelegateClass = isTesting ? [TestingAppDelegate class] : [AppDelegate class];
+        Class appDelegateClass = NSClassFromString(@"TestingAppDelegate");
+        if (!appDelegateClass)
+            appDelegateClass = [AppDelegate class];
         return UIApplicationMain(argc, argv, nil, NSStringFromClass(appDelegateClass));
     }
 }
