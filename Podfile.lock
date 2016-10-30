@@ -1,16 +1,16 @@
 PODS:
-  - OCHamcrest (5.4.0)
-  - OCMockito (3.0.1):
-    - OCHamcrest (~> 5.1)
+  - OCHamcrest (6.0.0)
+  - OCMockito (4.0.1):
+    - OCHamcrest (~> 6.0)
 
 DEPENDENCIES:
-  - OCHamcrest (~> 5.1)
-  - OCMockito (~> 3.0)
+  - OCHamcrest (~> 6.0)
+  - OCMockito (~> 4.0)
 
 SPEC CHECKSUMS:
-  OCHamcrest: 5c1d441c5a82fb18ac17c2aeb52ec1a99edb971b
-  OCMockito: 9eee3c61e42f7cb8aa015d66f8cc16849701d973
+  OCHamcrest: fc8ab38149b97df8db8029a3f2157c951bf9081d
+  OCMockito: 62ddc6afff6a883f2864d51224b1dfdc0e9a7df7
 
-PODFILE CHECKSUM: 8acfda53e09a3284a58b8ffa0e26edecda7bd033
+PODFILE CHECKSUM: 838c2ad6b0645aafc1e8816d53cd37465d178247
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.1.1
