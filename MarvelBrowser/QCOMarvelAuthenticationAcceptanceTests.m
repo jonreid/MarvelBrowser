@@ -18,15 +18,19 @@
     NSURL *validQueryURL = [NSURL URLWithString:
             [validQueryMissingAuthentication stringByAppendingString:[QCOMarvelAuthentication URLParameters]]];
 
+    __block BOOL completionHandlerInvoked;
     __block NSHTTPURLResponse *httpResponse;
+    __block NSError *responseError;
     [self startGETRequestToURL:validQueryURL
          withCompletionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-             if (error)
-                 XCTFail(@"%@", error);
              httpResponse = (NSHTTPURLResponse *)response;
+             responseError = error;
+             completionHandlerInvoked = YES;
          }];
+    assertWithTimeout(5, thatEventually(@(completionHandlerInvoked)), is(@YES));
 
-    assertWithTimeout(5, thatEventually(@(httpResponse.statusCode)), is(@200));
+    assertThat(responseError, is(nilValue()));
+    assertThat(@(httpResponse.statusCode), is(@200));
 }
 
 - (void)startGETRequestToURL:(NSURL *)url
