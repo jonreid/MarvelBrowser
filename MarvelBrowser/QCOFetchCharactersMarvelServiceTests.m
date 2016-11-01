@@ -34,7 +34,9 @@
 
 - (void)tearDown
 {
+    mockSession = nil;
     sut = nil;
+    mockDataTask = nil;
     [super tearDown];
 }
 
