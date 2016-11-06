@@ -152,36 +152,4 @@
     assertThat(sut.dataTask, is(sameInstance(mockDataTask)));
 }
 
-- (void)testCancel_AfterFetch_ShouldCancelDataTask
-{
-    [given([mockSession dataTaskWithURL:anything() completionHandler:anything()])
-            willReturn:mockDataTask];
-    [sut fetchCharactersWithRequestModel:[self dummyRequestModel]];
-
-    [sut cancel];
-
-    [verify(mockDataTask) cancel];
-}
-
-- (void)testCancel_AfterFetch_ShouldReleaseDataTask
-{
-    [given([mockSession dataTaskWithURL:anything() completionHandler:anything()])
-            willReturn:mockDataTask];
-    [sut fetchCharactersWithRequestModel:[self dummyRequestModel]];
-
-    [sut cancel];
-
-    assertThat(sut.dataTask, is(nilValue()));
-}
-
-- (void)testAttemptingSecondFetch_WithOneInProgress_ShouldRaiseException
-{
-    [given([mockSession dataTaskWithURL:anything() completionHandler:anything()])
-            willReturn:mockDataTask];
-    [sut fetchCharactersWithRequestModel:[self dummyRequestModel]];
-
-    assertThat(^{ [sut fetchCharactersWithRequestModel:[self dummyRequestModel]]; },
-            throwsException(anything()));
-}
-
 @end

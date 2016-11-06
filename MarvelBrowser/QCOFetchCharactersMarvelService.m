@@ -28,7 +28,6 @@
 
 - (void)fetchCharactersWithRequestModel:(QCOFetchCharactersRequestModel *)requestModel
 {
-    NSAssert(!self.dataTask, @"Fetch already in progress");
     NSURL *url = [self URLForRequestModel:requestModel];
     self.dataTask = [self.session dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
     }];
@@ -47,12 +46,6 @@
     ];
     urlString = [urlString stringByAppendingString:self.authParametersGenerator()];
     return [[NSURL alloc] initWithString:urlString];
-}
-
-- (void)cancel
-{
-    [self.dataTask cancel];
-    self.dataTask = nil;
 }
 
 @end

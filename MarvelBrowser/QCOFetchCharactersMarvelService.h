@@ -13,6 +13,5 @@
 - (instancetype)initWithSession:(NSURLSession *)session
         authParametersGenerator:(NSString *(^)())authParametersGenerator;
 - (void)fetchCharactersWithRequestModel:(QCOFetchCharactersRequestModel *)requestModel;
-- (void)cancel;
 
 @end
