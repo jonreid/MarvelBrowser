@@ -40,8 +40,7 @@
     {
         if ([queryItem.name isEqualToString:self.name])
         {
-            NSString *value = [queryItem.value stringByAddingPercentEncodingWithAllowedCharacters:
-                    [NSCharacterSet URLQueryAllowedCharacterSet]];
+            NSString *value = queryItem.value;
             if ([self.valueMatcher matches:value])
                 return YES;
             [self reportQuery:urlComponents.query

@@ -48,7 +48,6 @@
 
 - (void)testFetchCharacters_ShouldMakeDataTaskForMarvelEndpoint
 {
-
     [sut fetchCharactersWithRequestModel:[self dummyRequestModel]];
 
     [verify(mockSession) dataTaskWithURL:hasProperty(@"host", @"gateway.marvel.com")
@@ -57,7 +56,6 @@
 
 - (void)testFetchCharacters_ShouldMakeDataTaskWithSecureConnection
 {
-
     [sut fetchCharactersWithRequestModel:[self dummyRequestModel]];
 
     [verify(mockSession) dataTaskWithURL:hasProperty(@"scheme", @"https")
@@ -66,9 +64,7 @@
 
 - (void)testFetchCharacters_ShouldMakeDataTaskForCharactersAPI
 {
-    QCOFetchCharactersRequestModel *requestModel = [self dummyRequestModel];
-
-    [sut fetchCharactersWithRequestModel:requestModel];
+    [sut fetchCharactersWithRequestModel:[self dummyRequestModel]];
 
     [verify(mockSession) dataTaskWithURL:hasProperty(@"path", @"/v1/public/characters")
                        completionHandler:anything()];
@@ -85,14 +81,14 @@
                        completionHandler:anything()];
 }
 
-- (void)testFetchCharacters_WithNamePrefix_ShouldPercentEncodeNameStartsWith
+- (void)testFetchCharacters_WithNamePrefix_ShouldHandleSpacesInNameStartsWith
 {
     QCOFetchCharactersRequestModel *requestModel = [[QCOFetchCharactersRequestModel alloc]
             initWithNamePrefix:@"ab cd" pageSize:10 offset:30];
 
     [sut fetchCharactersWithRequestModel:requestModel];
 
-    [verify(mockSession) dataTaskWithURL:hasQuery(@"nameStartsWith", @"ab%20cd")
+    [verify(mockSession) dataTaskWithURL:hasQuery(@"nameStartsWith", @"ab cd")
                        completionHandler:anything()];
 }
 
