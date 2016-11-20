@@ -138,7 +138,7 @@
     [verify(mockDataTask) resume];
 }
 
-- (void)testFetchCharacters_ShouldHoldDataTaskAsPropertyToKeepTaskAlive
+- (void)testFetchCharacters_ShouldHoldDataTaskAsProperty
 {
     [given([mockSession dataTaskWithURL:anything() completionHandler:anything()])
             willReturn:mockDataTask];
