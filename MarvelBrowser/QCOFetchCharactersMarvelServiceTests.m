@@ -138,14 +138,14 @@
     [verify(mockDataTask) resume];
 }
 
-- (void)testFetchCharacters_ShouldHoldDataTaskAsProperty
-{
-    [given([mockSession dataTaskWithURL:anything() completionHandler:anything()])
-            willReturn:mockDataTask];
-
-    [sut fetchCharactersWithRequestModel:[self dummyRequestModel]];
-
-    assertThat(sut.dataTask, is(sameInstance(mockDataTask)));
-}
+//- (void)testFetchCharacters_ShouldHoldDataTaskAsProperty
+//{
+//    [given([mockSession dataTaskWithURL:anything() completionHandler:anything()])
+//            willReturn:mockDataTask];
+//
+//    [sut fetchCharactersWithRequestModel:[self dummyRequestModel]];
+//
+//    assertThat(sut.dataTask, is(sameInstance(mockDataTask)));
+//}
 
 @end

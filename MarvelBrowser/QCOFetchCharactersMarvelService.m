@@ -9,7 +9,6 @@
 @interface QCOFetchCharactersMarvelService ()
 @property (nonatomic, strong, readonly) NSURLSession *session;
 @property (nonatomic, copy, readonly) NSString *(^authParametersGenerator)();
-@property (nonatomic, strong, readwrite) NSURLSessionDataTask *dataTask;
 @end
 
 @implementation QCOFetchCharactersMarvelService
@@ -29,9 +28,13 @@
 - (void)fetchCharactersWithRequestModel:(QCOFetchCharactersRequestModel *)requestModel
 {
     NSURL *url = [self URLForRequestModel:requestModel];
-    self.dataTask = [self.session dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+    NSURLSessionDataTask *dataTask = [self.session dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        NSLog(@"error: %@", error);
+        NSLog(@"response: %@", response);
+        NSString *str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        NSLog(@"data: %@", str);
     }];
-    [self.dataTask resume];
+    [dataTask resume];
 }
 
 - (NSURL *)URLForRequestModel:(QCOFetchCharactersRequestModel *)requestModel
