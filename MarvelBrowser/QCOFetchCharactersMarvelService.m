@@ -28,7 +28,8 @@
 - (void)fetchCharactersWithRequestModel:(QCOFetchCharactersRequestModel *)requestModel
 {
     NSURL *url = [self URLForRequestModel:requestModel];
-    NSURLSessionDataTask *dataTask = [self.session dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+    NSURLSessionDataTask *dataTask = [self.session dataTaskWithURL:url
+                                                 completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         NSLog(@"error: %@", error);
         NSLog(@"response: %@", response);
         NSString *str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];

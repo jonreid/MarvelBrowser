@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0E1EC9441C781FA600AE074F /* QCOURLQueryMatcherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E1EC9431C781FA600AE074F /* QCOURLQueryMatcherTests.m */; };
+		481247A51DEBB80D00B95720 /* QCOFetchCharactersResponseBuilderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 481247A41DEBB80D00B95720 /* QCOFetchCharactersResponseBuilderTests.m */; };
 		4873A2331DC054AA00E8C9A2 /* TestingAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7462DD201AB6313C00EE429E /* TestingAppDelegate.m */; };
 		609E92ABD787275AC313A4AB /* QCOFetchCharactersMarvelService.m in Sources */ = {isa = PBXBuildFile; fileRef = 609E9250F3997E3D1CC14A9B /* QCOFetchCharactersMarvelService.m */; };
 		609E985DF300A893AD02B8B3 /* QCOMarvelAuthentication.m in Sources */ = {isa = PBXBuildFile; fileRef = 609E950D6BA8062FC0F214A8 /* QCOMarvelAuthentication.m */; };
@@ -24,6 +25,8 @@
 		74CC7A951A1D9036007FCA40 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74CC7A941A1D9036007FCA40 /* Images.xcassets */; };
 		74CC7A981A1D9036007FCA40 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74CC7A961A1D9036007FCA40 /* LaunchScreen.xib */; };
 		8D3BD2FB46F1B04390B9065E /* libPods-MarvelBrowserTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DB140229E203CF67F2C670E0 /* libPods-MarvelBrowserTests.a */; };
+		BB17036BA888B6A651EF56FF /* QCOFetchCharactersResponseBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = BB170EB9F28E5B3451977009 /* QCOFetchCharactersResponseBuilder.m */; };
+		BB170EA19C8564DD2701B8B4 /* QCOFetchCharactersResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BB170D246257B43E17269506 /* QCOFetchCharactersResponseModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,7 @@
 		24785E2828932317A9FFF690 /* Pods-MarvelBrowserTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelBrowserTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MarvelBrowserTests/Pods-MarvelBrowserTests.debug.xcconfig"; sourceTree = "<group>"; };
 		38188BACA897CA99C095E0C0 /* Pods-AcceptanceTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AcceptanceTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AcceptanceTests/Pods-AcceptanceTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3FE3A426F643037B48A46FF5 /* libPods-AcceptanceTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AcceptanceTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		481247A41DEBB80D00B95720 /* QCOFetchCharactersResponseBuilderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCOFetchCharactersResponseBuilderTests.m; sourceTree = "<group>"; };
 		609E91893F8F324ECD9EF3DC /* QCOFetchCharactersRequestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCOFetchCharactersRequestModel.h; sourceTree = "<group>"; };
 		609E9250F3997E3D1CC14A9B /* QCOFetchCharactersMarvelService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCOFetchCharactersMarvelService.m; sourceTree = "<group>"; };
 		609E9469988A9317A915402E /* QCOURLQueryMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCOURLQueryMatcher.m; sourceTree = "<group>"; };
@@ -77,6 +81,10 @@
 		74CC7AA21A1D9036007FCA40 /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Tests-Info.plist"; path = "MarvelBrowser/Tests-Info.plist"; sourceTree = SOURCE_ROOT; };
 		8810199690EE399F9C8C93FC /* Pods-AcceptanceTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AcceptanceTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AcceptanceTests/Pods-AcceptanceTests.release.xcconfig"; sourceTree = "<group>"; };
 		9FBBCFAD0086053CEB04F8CE /* Pods-MarvelBrowserTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelBrowserTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MarvelBrowserTests/Pods-MarvelBrowserTests.release.xcconfig"; sourceTree = "<group>"; };
+		BB170A4E8566582ED85EFC16 /* QCOFetchCharactersResponseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCOFetchCharactersResponseModel.h; sourceTree = "<group>"; };
+		BB170D246257B43E17269506 /* QCOFetchCharactersResponseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCOFetchCharactersResponseModel.m; sourceTree = "<group>"; };
+		BB170EB9F28E5B3451977009 /* QCOFetchCharactersResponseBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCOFetchCharactersResponseBuilder.m; sourceTree = "<group>"; };
+		BB170F8EE62542DBD3B9EBD4 /* QCOFetchCharactersResponseBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCOFetchCharactersResponseBuilder.h; sourceTree = "<group>"; };
 		DB140229E203CF67F2C670E0 /* libPods-MarvelBrowserTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MarvelBrowserTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -157,13 +165,18 @@
 				609E9A8AC61A8BCC6F21946E /* QCOFetchCharactersMarvelServiceTests.m */,
 				609E91893F8F324ECD9EF3DC /* QCOFetchCharactersRequestModel.h */,
 				609E95C3EA7D949667F5A771 /* QCOFetchCharactersRequestModel.m */,
+				BB170A4E8566582ED85EFC16 /* QCOFetchCharactersResponseModel.h */,
+				BB170D246257B43E17269506 /* QCOFetchCharactersResponseModel.m */,
+				BB170F8EE62542DBD3B9EBD4 /* QCOFetchCharactersResponseBuilder.h */,
+				BB170EB9F28E5B3451977009 /* QCOFetchCharactersResponseBuilder.m */,
+				481247A41DEBB80D00B95720 /* QCOFetchCharactersResponseBuilderTests.m */,
 				609E98B120EF92D11321CCAF /* QCOMarvelAuthenticationTests.m */,
 				609E9AD95579A176D1F76003 /* QCOMarvelAuthentication.h */,
 				609E950D6BA8062FC0F214A8 /* QCOMarvelAuthentication.m */,
 				609E968CEE92C91EA1889520 /* QCOMarvelAuthenticationAcceptanceTests.m */,
-				0E1EC9431C781FA600AE074F /* QCOURLQueryMatcherTests.m */,
-				609E9469988A9317A915402E /* QCOURLQueryMatcher.m */,
 				609E9EF09C33C78261E5C0CB /* QCOURLQueryMatcher.h */,
+				609E9469988A9317A915402E /* QCOURLQueryMatcher.m */,
+				0E1EC9431C781FA600AE074F /* QCOURLQueryMatcherTests.m */,
 			);
 			path = MarvelBrowser;
 			sourceTree = "<group>";
@@ -432,6 +445,8 @@
 				609E985DF300A893AD02B8B3 /* QCOMarvelAuthentication.m in Sources */,
 				609E92ABD787275AC313A4AB /* QCOFetchCharactersMarvelService.m in Sources */,
 				609E9EC82DB962E5B26058C3 /* QCOFetchCharactersRequestModel.m in Sources */,
+				BB17036BA888B6A651EF56FF /* QCOFetchCharactersResponseBuilder.m in Sources */,
+				BB170EA19C8564DD2701B8B4 /* QCOFetchCharactersResponseModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,6 +459,7 @@
 				0E1EC9441C781FA600AE074F /* QCOURLQueryMatcherTests.m in Sources */,
 				4873A2331DC054AA00E8C9A2 /* TestingAppDelegate.m in Sources */,
 				609E9FE53E50AFB4B38CD955 /* QCOURLQueryMatcher.m in Sources */,
+				481247A51DEBB80D00B95720 /* QCOFetchCharactersResponseBuilderTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
