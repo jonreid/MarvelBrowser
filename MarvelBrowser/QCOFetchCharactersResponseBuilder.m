@@ -13,6 +13,9 @@
     NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:jsonData
                                                          options:(NSJSONReadingOptions)0
                                                            error:NULL];
+    if (!dict)
+        return nil;
+    
     NSNumber *code = dict[@"code"];
     return [[QCOFetchCharactersResponseModel alloc] initWithCode:code.integerValue];
 }
