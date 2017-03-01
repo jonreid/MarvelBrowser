@@ -53,4 +53,13 @@ static NSData *jsonData(NSString *json)
     assertThat(@(response.code), is(@409));
 }
 
+- (void)testParseJSONData_WithMalformedJSON_ShouldYieldNil
+{
+    NSString *json = @"{\"cod";
+    
+    QCOFetchCharactersResponseModel* response = [sut parseJSONData:jsonData(json)];
+    
+    assertThat(response, is(nilValue()));
+}
+
 @end
