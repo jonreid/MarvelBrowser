@@ -10,13 +10,12 @@
 
 - (QCOFetchCharactersResponseModel *)parseJSONData:(NSData *)jsonData
 {
-    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:jsonData
-                                                         options:(NSJSONReadingOptions)0
-                                                           error:NULL];
-    if (!dict)
+    id object = [NSJSONSerialization JSONObjectWithData:jsonData
+                                                options:(NSJSONReadingOptions)0
+                                                  error:NULL];
+    if (![object isKindOfClass:[NSDictionary class]])
         return nil;
-    if (![dict isKindOfClass:[NSDictionary class]])
-        return nil;
+    NSDictionary *dict = object;
     
     NSNumber *code = dict[@"code"];
     return [[QCOFetchCharactersResponseModel alloc] initWithCode:code.integerValue];
