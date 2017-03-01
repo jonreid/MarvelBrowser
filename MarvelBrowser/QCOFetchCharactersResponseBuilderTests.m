@@ -53,7 +53,7 @@ static NSData *jsonData(NSString *json)
     assertThat(@(response.code), is(@409));
 }
 
-- (void)testParseJSONData_WithMalformedJSON_ShouldYieldNil
+- (void)testParseJSONData_WithMalformedJSON_ShouldReturnNil
 {
     NSString *json = @"{\"cod";
     
@@ -62,7 +62,7 @@ static NSData *jsonData(NSString *json)
     assertThat(response, is(nilValue()));
 }
 
-- (void)testParseJSONData_WithJSONArrayInsteadOfDictionary_ShouldYieldNil
+- (void)testParseJSONData_WithJSONArrayInsteadOfDictionary_ShouldReturnNil
 {
     NSString *json = @"[]";
     
@@ -71,7 +71,7 @@ static NSData *jsonData(NSString *json)
     assertThat(response, is(nilValue()));
 }
 
-- (void)testParseJSONData_WithNonIntegerCode_ShouldYieldNil
+- (void)testParseJSONData_WithNonIntegerCode_ShouldReturnNil
 {
     NSString *json = @"{\"code\":\"409\"}";
     
