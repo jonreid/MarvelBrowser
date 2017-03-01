@@ -10,7 +10,9 @@
 
 - (QCOFetchCharactersResponseModel *)parseJSONData:(NSData *)jsonData
 {
-    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:NULL];
+    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:jsonData
+                                                         options:(NSJSONReadingOptions)0
+                                                           error:NULL];
     NSNumber *code = dict[@"code"];
     return [[QCOFetchCharactersResponseModel alloc] initWithCode:code.integerValue];
 }

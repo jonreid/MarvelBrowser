@@ -9,6 +9,12 @@
 #import <XCTest/XCTest.h>
 
 
+static NSData *jsonData(NSString *json)
+{
+    return [json dataUsingEncoding:NSUTF8StringEncoding];
+}
+
+
 @interface QCOFetchCharactersResponseBuilderTests : XCTestCase
 @end
 
@@ -31,20 +37,18 @@
 
 - (void)testParseJSONData_WithCode200
 {
-    NSData *jsonData = [@"{\"code\":200}"
-            dataUsingEncoding:NSUTF8StringEncoding];
+    NSString *json = @"{\"code\":200}";
     
-    QCOFetchCharactersResponseModel* response = [sut parseJSONData:jsonData];
+    QCOFetchCharactersResponseModel* response = [sut parseJSONData:jsonData(json)];
     
     assertThat(@(response.code), is(@200));
 }
 
 - (void)testParseJSONData_WithCode409
 {
-    NSData *jsonData = [@"{\"code\":409}"
-            dataUsingEncoding:NSUTF8StringEncoding];
+    NSString *json = @"{\"code\":409}";
     
-    QCOFetchCharactersResponseModel* response = [sut parseJSONData:jsonData];
+    QCOFetchCharactersResponseModel* response = [sut parseJSONData:jsonData(json)];
     
     assertThat(@(response.code), is(@409));
 }
