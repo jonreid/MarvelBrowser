@@ -62,4 +62,13 @@ static NSData *jsonData(NSString *json)
     assertThat(response, is(nilValue()));
 }
 
+- (void)testParseJSONData_WithJSONArrayInsteadOfDictionary_ShouldYieldNil
+{
+    NSString *json = @"[]";
+    
+    QCOFetchCharactersResponseModel* response = [sut parseJSONData:jsonData(json)];
+    
+    assertThat(response, is(nilValue()));
+}
+
 @end
