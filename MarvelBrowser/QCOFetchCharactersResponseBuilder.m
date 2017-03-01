@@ -17,7 +17,10 @@
         return nil;
     NSDictionary *dict = object;
     
-    NSNumber *code = dict[@"code"];
+    id attr = dict[@"code"];
+    if (![attr isKindOfClass:[NSNumber class]])
+        return nil;
+    NSNumber *code = attr;
     return [[QCOFetchCharactersResponseModel alloc] initWithCode:code.integerValue];
 }
 
