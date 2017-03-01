@@ -10,18 +10,29 @@
 
 - (QCOFetchCharactersResponseModel *)parseJSONData:(NSData *)jsonData
 {
-    id object = [NSJSONSerialization JSONObjectWithData:jsonData
-                                                options:(NSJSONReadingOptions)0
-                                                  error:NULL];
+    NSDictionary *dict = [self requireDictionary:[NSJSONSerialization JSONObjectWithData:jsonData
+                                                                                 options:(NSJSONReadingOptions)0
+                                                                                   error:NULL]];
+    if (!dict)
+        return nil;
+    NSNumber *code = [self requireNumber:dict[@"code"]];
+    if (!code)
+        return nil;
+    return [[QCOFetchCharactersResponseModel alloc] initWithCode:code.integerValue];
+}
+
+- (NSDictionary *)requireDictionary:(id)object
+{
     if (![object isKindOfClass:[NSDictionary class]])
         return nil;
-    NSDictionary *dict = object;
-    
-    id attr = dict[@"code"];
-    if (![attr isKindOfClass:[NSNumber class]])
+    return object;
+}
+
+- (NSNumber *)requireNumber:(id)object
+{
+    if (![object isKindOfClass:[NSNumber class]])
         return nil;
-    NSNumber *code = attr;
-    return [[QCOFetchCharactersResponseModel alloc] initWithCode:code.integerValue];
+    return object;
 }
 
 @end
