@@ -71,4 +71,13 @@ static NSData *jsonData(NSString *json)
     assertThat(response, is(nilValue()));
 }
 
+- (void)testParseJSONData_WithNonIntegerCode_ShouldYieldNil
+{
+    NSString *json = @"{\"code\":\"409\"}";
+    
+    QCOFetchCharactersResponseModel* response = [sut parseJSONData:jsonData(json)];
+    
+    assertThat(response, is(nilValue()));
+}
+
 @end
