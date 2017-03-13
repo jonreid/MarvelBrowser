@@ -102,12 +102,23 @@
 - (void)testParseDictionary_WithNonArrayResult_ShouldCaptureNilInBuilder
 {
     NSDictionary *dict = @{ @"results":
-            @{ @"name": @"ONE" }
+            @{ @"name": @"DUMMY" }
     };
     
     [sut parseDictionary:dict];
     
     assertThat(sut.results, is(nilValue()));
+}
+
+- (void)testParseDictionary_WithOneResultThatIsNotDictionary_ShouldCaptureArraySizeZeroInBuilder
+{
+    NSDictionary *dict = @{ @"results": @[
+            @[ @"DUMMY" ],
+    ] };
+    
+    [sut parseDictionary:dict];
+    
+    assertThat(sut.results, hasCountOf(0));
 }
 
 - (void)testParseDictionary_WithOneResult_ShouldCaptureOneCharacterInBuilder
@@ -123,15 +134,19 @@
     ]));
 }
 
-- (void)testParseDictionary_WithOneResultThatIsNotDictionary_ShouldCaptureArraySizeZeroInBuilder
+- (void)testParseDictionary_WithTwoResult_ShouldCaptureTwoCharacterInBuilder
 {
     NSDictionary *dict = @{ @"results": @[
-            @[ @"DUMMY" ],
+            @{ @"name": @"ONE" },
+            @{ @"name": @"TWO" },
     ] };
     
     [sut parseDictionary:dict];
     
-    assertThat(sut.results, hasCountOf(0));
+    assertThat(sut.results, containsIn(@[
+            hasProperty(@"name", @"ONE"),
+            hasProperty(@"name", @"TWO"),
+    ]));
 }
 
 @end
