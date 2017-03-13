@@ -123,4 +123,15 @@
     ]));
 }
 
+- (void)testParseDictionary_WithOneResultThatIsNotDictionary_ShouldCaptureArraySizeZeroInBuilder
+{
+    NSDictionary *dict = @{ @"results": @[
+            @[ @"DUMMY" ],
+    ] };
+    
+    [sut parseDictionary:dict];
+    
+    assertThat(sut.results, hasCountOf(0));
+}
+
 @end
