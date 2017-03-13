@@ -8,6 +8,8 @@
 
 @property (nonatomic, strong) NSNumber *offset;
 @property (nonatomic, strong) NSNumber *limit;
+@property (nonatomic, strong) NSNumber *total;
+@property (nonatomic, strong) NSNumber *count;
 
 - (void)parseDictionary:(NSDictionary *)dict;
 

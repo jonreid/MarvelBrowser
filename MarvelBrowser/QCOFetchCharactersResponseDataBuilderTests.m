@@ -63,4 +63,40 @@
     assertThat(sut.limit, is(@123));
 }
 
+- (void)testParseDictionary_WithNonIntegerTotal_ShouldCaptureNilInBuilder
+{
+    NSDictionary *dict = @{@"total": @"123"};
+    
+    [sut parseDictionary:dict];
+    
+    assertThat(sut.total, is(nilValue()));
+}
+
+- (void)testParseDictionary_WithTotal_ShouldCaptureValueInBuilder
+{
+    NSDictionary *dict = @{@"total": @123};
+    
+    [sut parseDictionary:dict];
+    
+    assertThat(sut.total, is(@123));
+}
+
+- (void)testParseDictionary_WithNonIntegerCount_ShouldCaptureNilInBuilder
+{
+    NSDictionary *dict = @{@"count": @"123"};
+    
+    [sut parseDictionary:dict];
+    
+    assertThat(sut.count, is(nilValue()));
+}
+
+- (void)testParseDictionary_WithCount_ShouldCaptureValueInBuilder
+{
+    NSDictionary *dict = @{@"count": @123};
+    
+    [sut parseDictionary:dict];
+    
+    assertThat(sut.count, is(@123));
+}
+
 @end

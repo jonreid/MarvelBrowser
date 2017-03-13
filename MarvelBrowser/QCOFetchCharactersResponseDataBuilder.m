@@ -12,6 +12,8 @@
 {
     self.offset = QCORequireNumber(dict[@"offset"]);
     self.limit = QCORequireNumber(dict[@"limit"]);
+    self.total = QCORequireNumber(dict[@"total"]);
+    self.count = QCORequireNumber(dict[@"count"]);
 }
 
 @end
