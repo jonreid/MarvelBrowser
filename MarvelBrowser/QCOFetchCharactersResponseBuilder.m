@@ -16,6 +16,7 @@
     if (!dict)
         return;
     self.code = [self requireNumber:dict[@"code"]];
+    self.status = [self requireString:dict[@"status"]];
 }
 
 - (NSDictionary *)requireDictionary:(id)object
@@ -28,6 +29,13 @@
 - (NSNumber *)requireNumber:(id)object
 {
     if (![object isKindOfClass:[NSNumber class]])
+        return nil;
+    return object;
+}
+
+- (NSString *)requireString:(id)object
+{
+    if (![object isKindOfClass:[NSString class]])
         return nil;
     return object;
 }
