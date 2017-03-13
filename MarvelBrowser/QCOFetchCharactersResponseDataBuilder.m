@@ -8,7 +8,14 @@
 
 - (void)parseDictionary:(NSDictionary *)dict
 {
-    self.offset = nil;
+    self.offset = [self requireNumber:dict[@"offset"]];
+}
+
+- (NSNumber *)requireNumber:(id)object
+{
+    if (![object isKindOfClass:[NSNumber class]])
+        return nil;
+    return object;
 }
 
 @end
