@@ -11,28 +11,14 @@
 
 - (void)parseJSONData:(NSData *)jsonData
 {
-    NSDictionary *dict = [self requireDictionary:[NSJSONSerialization JSONObjectWithData:jsonData
-                                                                                 options:(NSJSONReadingOptions)0
-                                                                                   error:NULL]];
+    id object = [NSJSONSerialization JSONObjectWithData:jsonData
+                                                options:(NSJSONReadingOptions)0
+                                                  error:NULL];
+    NSDictionary *dict = QCORequireDictionary(object);
     if (!dict)
         return;
-    self.code = [self requireNumber:dict[@"code"]];
-    self.status = [self requireString:dict[@"status"]];
-}
-
-- (NSDictionary *)requireDictionary:(id)object
-{
-    return QCORequireDictionary(object);
-}
-
-- (NSNumber *)requireNumber:(id)object
-{
-    return QCORequireNumber(object);
-}
-
-- (NSString *)requireString:(id)object
-{
-    return QCORequireString(object);
+    self.code = QCORequireNumber(dict[@"code"]);
+    self.status = QCORequireString(dict[@"status"]);
 }
 
 - (QCOFetchCharactersResponseModel *)build

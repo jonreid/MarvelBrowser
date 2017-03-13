@@ -10,12 +10,7 @@
 
 - (void)parseDictionary:(NSDictionary *)dict
 {
-    self.offset = [self requireNumber:dict[@"offset"]];
-}
-
-- (NSNumber *)requireNumber:(id)object
-{
-    return QCORequireNumber(object);
+    self.offset = QCORequireNumber(dict[@"offset"]);
 }
 
 @end
