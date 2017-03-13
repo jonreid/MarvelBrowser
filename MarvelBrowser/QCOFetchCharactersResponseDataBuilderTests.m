@@ -11,27 +11,38 @@
 @end
 
 @implementation QCOFetchCharactersResponseDataBuilderTests
+{
+    QCOFetchCharactersResponseDataBuilder *sut;
+}
+
+- (void)setUp
+{
+    [super setUp];
+    sut = [[QCOFetchCharactersResponseDataBuilder alloc] init];
+}
+
+- (void)tearDown
+{
+    sut = nil;
+    [super tearDown];
+}
 
 - (void)testParseDictionary_WithNonIntegerOffset_ShouldCaptureNilInBuilder
 {
     NSDictionary *dict = @{@"offset": @"123"};
-    QCOFetchCharactersResponseDataBuilder *sut = [[QCOFetchCharactersResponseDataBuilder alloc] init];
     
     [sut parseDictionary:dict];
     
-    NSNumber *result = sut.offset;
-    assertThat(result, is(nilValue()));
+    assertThat(sut.offset, is(nilValue()));
 }
 
 - (void)testParseDictionary_WithOffset_ShouldCaptureValueInBuilder
 {
     NSDictionary *dict = @{@"offset": @123};
-    QCOFetchCharactersResponseDataBuilder *sut = [[QCOFetchCharactersResponseDataBuilder alloc] init];
     
     [sut parseDictionary:dict];
     
-    NSNumber *result = sut.offset;
-    assertThat(result, is(@123));
+    assertThat(sut.offset, is(@123));
 }
 
 @end
