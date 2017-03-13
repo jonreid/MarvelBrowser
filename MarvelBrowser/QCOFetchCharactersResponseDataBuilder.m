@@ -15,8 +15,10 @@
     self.limit = QCORequireNumber(dict[@"limit"]);
     self.total = QCORequireNumber(dict[@"total"]);
     self.count = QCORequireNumber(dict[@"count"]);
-    NSArray *r = dict[@"results"];
-    NSDictionary *c = r[0];
+    NSArray *array = QCORequireArray(dict[@"results"]);
+    if (!array)
+        return;
+    NSDictionary *c = array[0];
     QCOFetchCharactersResponseCharacterBuilder *characterBuilder = [[QCOFetchCharactersResponseCharacterBuilder alloc] init];
     [characterBuilder parseDictionary:c];
     self.results = @[ characterBuilder ];

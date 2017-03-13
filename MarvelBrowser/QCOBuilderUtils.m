@@ -10,6 +10,11 @@ static id requireType(id object, Class type) {
     return object;
 }
 
+NSArray *QCORequireArray(id object)
+{
+    return requireType(object, [NSArray class]);
+}
+
 NSDictionary *QCORequireDictionary(id object)
 {
     return requireType(object, [NSDictionary class]);

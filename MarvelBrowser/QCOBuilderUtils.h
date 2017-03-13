@@ -4,6 +4,7 @@
 #import <Foundation/Foundation.h>
 
 
+NSArray *QCORequireArray(id object);
 NSDictionary *QCORequireDictionary(id object);
 NSNumber *QCORequireNumber(id object);
 NSString *QCORequireString(id object);
