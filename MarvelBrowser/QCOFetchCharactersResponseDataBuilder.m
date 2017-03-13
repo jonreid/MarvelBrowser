@@ -15,19 +15,24 @@
     self.limit = QCORequireNumber(dict[@"limit"]);
     self.total = QCORequireNumber(dict[@"total"]);
     self.count = QCORequireNumber(dict[@"count"]);
-    NSArray *array = QCORequireArray(dict[@"results"]);
-    if (!array)
-        return;
+    NSArray *resultsArray = QCORequireArray(dict[@"results"]);
+    if (resultsArray) {
+        self.results = [self parseResultsFromArray:resultsArray];
+    }
+}
+
+- (NSArray *)parseResultsFromArray:(NSArray *)array
+{
     NSMutableArray *characterAccumulator = [[NSMutableArray alloc] init];
-    for (id element in array) {
-        NSDictionary *characterDict = QCORequireDictionary(element);
+    for (id result in array) {
+        NSDictionary *characterDict = QCORequireDictionary(result);
         if (characterDict) {
             QCOFetchCharactersResponseCharacterBuilder *characterBuilder = [[QCOFetchCharactersResponseCharacterBuilder alloc] init];
             [characterBuilder parseDictionary:characterDict];
             [characterAccumulator addObject:characterBuilder];
         }
     }
-    self.results = characterAccumulator;
+    return characterAccumulator;
 }
 
 @end
