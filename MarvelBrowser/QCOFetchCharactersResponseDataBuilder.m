@@ -15,26 +15,33 @@
     self.limit = QCORequireNumber(dict[@"limit"]);
     self.total = QCORequireNumber(dict[@"total"]);
     self.count = QCORequireNumber(dict[@"count"]);
-    NSArray *resultsArray = QCORequireArray(dict[@"results"]);
-    if (resultsArray)
-        self.results = [self parseResultsFromArray:resultsArray];
+    self.results = [self parseResultsFromObject:dict[@"results"]];
 }
 
-- (NSArray *)parseResultsFromArray:(NSArray<QCOFetchCharactersResponseCharacterBuilder *> *)array
+- (NSArray<QCOFetchCharactersResponseCharacterBuilder *> *)parseResultsFromObject:(id)object
 {
-    NSMutableArray<QCOFetchCharactersResponseCharacterBuilder *> *characterAccumulator = [[NSMutableArray alloc] init];
-    for (id result in array)
-        [self accumulateCharacterDict:QCORequireDictionary(result) into:characterAccumulator];
-    return characterAccumulator;
+    NSArray *array = QCORequireArray(object);
+    if (!array)
+        return nil;
+    return [self parseResultsFromArray:array];
 }
 
-- (void)accumulateCharacterDict:(NSDictionary *)dict into:(NSMutableArray<QCOFetchCharactersResponseCharacterBuilder *> *)accumulator
+- (NSArray<QCOFetchCharactersResponseCharacterBuilder *> *)parseResultsFromArray:(NSArray *)array
+{
+    NSMutableArray<QCOFetchCharactersResponseCharacterBuilder *> *accumulator = [[NSMutableArray alloc] init];
+    for (id result in array)
+        [self addDictionary:QCORequireDictionary(result) to:accumulator];
+    return accumulator;
+}
+
+- (void)addDictionary:(NSDictionary *)dict
+                   to:(NSMutableArray<QCOFetchCharactersResponseCharacterBuilder *> *)accumulator
 {
     if (!dict)
         return;
-    QCOFetchCharactersResponseCharacterBuilder *characterBuilder = [[QCOFetchCharactersResponseCharacterBuilder alloc] init];
-    [characterBuilder parseDictionary:dict];
-    [accumulator addObject:characterBuilder];
+    QCOFetchCharactersResponseCharacterBuilder *builder = [[QCOFetchCharactersResponseCharacterBuilder alloc] init];
+    [builder parseDictionary:dict];
+    [accumulator addObject:builder];
 }
 
 @end
