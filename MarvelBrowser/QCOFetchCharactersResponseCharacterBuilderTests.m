@@ -29,7 +29,7 @@
 
 - (void)testParseDictionary_WithNonStringName_ShouldCaptureNilInBuilder
 {
-    NSDictionary *dict = @{@"name": @123};
+    NSDictionary *dict = @{ @"name": @123 };
     
     [sut parseDictionary:dict];
     
@@ -38,7 +38,7 @@
 
 - (void)testParseDictionary_WithName_ShouldCaptureValueInBuilder
 {
-    NSDictionary *dict = @{@"name": @"NAME"};
+    NSDictionary *dict = @{ @"name": @"NAME" };
     
     [sut parseDictionary:dict];
     

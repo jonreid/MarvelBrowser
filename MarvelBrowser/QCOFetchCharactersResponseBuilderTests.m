@@ -65,9 +65,9 @@ static NSData *jsonData(NSString *json)
 - (void)testParseJSONData_WithStatus_ShouldCaptureValueInBuilder
 {
     NSString *json = @"{\"status\":\"STATUS\"}";
-
+    
     [sut parseJSONData:jsonData(json)];
-
+    
     assertThat(sut.status, is(@"STATUS"));
 }
 
@@ -76,7 +76,7 @@ static NSData *jsonData(NSString *json)
     NSString *json = @"{\"cod";
     
     [sut parseJSONData:jsonData(json)];
-    QCOFetchCharactersResponseModel* response = [sut build];
+    QCOFetchCharactersResponseModel *response = [sut build];
     
     assertThat(response, is(nilValue()));
 }
@@ -86,7 +86,7 @@ static NSData *jsonData(NSString *json)
     NSString *json = @"[]";
     
     [sut parseJSONData:jsonData(json)];
-    QCOFetchCharactersResponseModel* response = [sut build];
+    QCOFetchCharactersResponseModel *response = [sut build];
     
     assertThat(response, is(nilValue()));
 }

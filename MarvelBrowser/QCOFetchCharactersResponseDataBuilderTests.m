@@ -29,7 +29,7 @@
 
 - (void)testParseDictionary_WithNonIntegerOffset_ShouldCaptureNilInBuilder
 {
-    NSDictionary *dict = @{@"offset": @"123"};
+    NSDictionary *dict = @{ @"offset": @"123" };
     
     [sut parseDictionary:dict];
     
@@ -38,7 +38,7 @@
 
 - (void)testParseDictionary_WithOffset_ShouldCaptureValueInBuilder
 {
-    NSDictionary *dict = @{@"offset": @123};
+    NSDictionary *dict = @{ @"offset": @123 };
     
     [sut parseDictionary:dict];
     
@@ -47,7 +47,7 @@
 
 - (void)testParseDictionary_WithNonIntegerLimit_ShouldCaptureNilInBuilder
 {
-    NSDictionary *dict = @{@"limit": @"123"};
+    NSDictionary *dict = @{ @"limit": @"123" };
     
     [sut parseDictionary:dict];
     
@@ -56,7 +56,7 @@
 
 - (void)testParseDictionary_WithLimit_ShouldCaptureValueInBuilder
 {
-    NSDictionary *dict = @{@"limit": @123};
+    NSDictionary *dict = @{ @"limit": @123 };
     
     [sut parseDictionary:dict];
     
@@ -65,7 +65,7 @@
 
 - (void)testParseDictionary_WithNonIntegerTotal_ShouldCaptureNilInBuilder
 {
-    NSDictionary *dict = @{@"total": @"123"};
+    NSDictionary *dict = @{ @"total": @"123" };
     
     [sut parseDictionary:dict];
     
@@ -74,7 +74,7 @@
 
 - (void)testParseDictionary_WithTotal_ShouldCaptureValueInBuilder
 {
-    NSDictionary *dict = @{@"total": @123};
+    NSDictionary *dict = @{ @"total": @123 };
     
     [sut parseDictionary:dict];
     
@@ -83,7 +83,7 @@
 
 - (void)testParseDictionary_WithNonIntegerCount_ShouldCaptureNilInBuilder
 {
-    NSDictionary *dict = @{@"count": @"123"};
+    NSDictionary *dict = @{ @"count": @"123" };
     
     [sut parseDictionary:dict];
     
@@ -92,18 +92,29 @@
 
 - (void)testParseDictionary_WithCount_ShouldCaptureValueInBuilder
 {
-    NSDictionary *dict = @{@"count": @123};
+    NSDictionary *dict = @{ @"count": @123 };
     
     [sut parseDictionary:dict];
     
     assertThat(sut.count, is(@123));
 }
 
+- (void)testParseDictionary_WithNonArrayResult_ShouldCaptureNilInBuilder
+{
+    NSDictionary *dict = @{ @"results":
+            @{ @"name": @"ONE" }
+    };
+    
+    [sut parseDictionary:dict];
+    
+    assertThat(sut.results, is(nilValue()));
+}
+
 - (void)testParseDictionary_WithOneResult_ShouldCaptureOneCharacterInBuilder
 {
-    NSDictionary *dict = @{@"results": @[
-            @{@"name": @"ONE"},
-    ]};
+    NSDictionary *dict = @{ @"results": @[
+            @{ @"name": @"ONE" },
+    ] };
     
     [sut parseDictionary:dict];
     

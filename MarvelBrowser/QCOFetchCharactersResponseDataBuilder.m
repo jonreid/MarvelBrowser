@@ -19,7 +19,7 @@
     NSDictionary *c = r[0];
     QCOFetchCharactersResponseCharacterBuilder *characterBuilder = [[QCOFetchCharactersResponseCharacterBuilder alloc] init];
     [characterBuilder parseDictionary:c];
-    self.results = @[characterBuilder];
+    self.results = @[ characterBuilder ];
 }
 
 @end
