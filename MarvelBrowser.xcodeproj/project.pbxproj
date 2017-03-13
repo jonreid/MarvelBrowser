@@ -11,7 +11,7 @@
 		481247A51DEBB80D00B95720 /* QCOFetchCharactersResponseBuilderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 481247A41DEBB80D00B95720 /* QCOFetchCharactersResponseBuilderTests.m */; };
 		4873A2331DC054AA00E8C9A2 /* TestingAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7462DD201AB6313C00EE429E /* TestingAppDelegate.m */; };
 		48DDD2831E7621FC00D2DCE4 /* QCOFetchCharactersResponseDataBuilderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DDD2821E7621FC00D2DCE4 /* QCOFetchCharactersResponseDataBuilderTests.m */; };
-		48DDD2851E762E1C00D2DCE4 /* QCOFetchCharactersResponseCharacterBuilderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DDD2841E762E1C00D2DCE4 /* QCOFetchCharactersResponseCharacterBuilderTests.m */; };
+		48DDD2851E762E1C00D2DCE4 /* QCOCharacterResponseBuilderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DDD2841E762E1C00D2DCE4 /* QCOCharacterResponseBuilderTests.m */; };
 		609E92ABD787275AC313A4AB /* QCOFetchCharactersMarvelService.m in Sources */ = {isa = PBXBuildFile; fileRef = 609E9250F3997E3D1CC14A9B /* QCOFetchCharactersMarvelService.m */; };
 		609E985DF300A893AD02B8B3 /* QCOMarvelAuthentication.m in Sources */ = {isa = PBXBuildFile; fileRef = 609E950D6BA8062FC0F214A8 /* QCOMarvelAuthentication.m */; };
 		609E99A7842D4BC05E1F6182 /* QCOMarvelAuthenticationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 609E98B120EF92D11321CCAF /* QCOMarvelAuthenticationTests.m */; };
@@ -27,7 +27,7 @@
 		74CC7A951A1D9036007FCA40 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74CC7A941A1D9036007FCA40 /* Images.xcassets */; };
 		74CC7A981A1D9036007FCA40 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74CC7A961A1D9036007FCA40 /* LaunchScreen.xib */; };
 		8D3BD2FB46F1B04390B9065E /* libPods-MarvelBrowserTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DB140229E203CF67F2C670E0 /* libPods-MarvelBrowserTests.a */; };
-		BB1701C2DC0FB8D46D2C2F5D /* QCOFetchCharactersResponseCharacterBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = BB17032C47EF3F644689C4C8 /* QCOFetchCharactersResponseCharacterBuilder.m */; };
+		BB1701C2DC0FB8D46D2C2F5D /* QCOCharacterResponseBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = BB17032C47EF3F644689C4C8 /* QCOCharacterResponseBuilder.m */; };
 		BB17036BA888B6A651EF56FF /* QCOFetchCharactersResponseBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = BB170EB9F28E5B3451977009 /* QCOFetchCharactersResponseBuilder.m */; };
 		BB170745C014107EEA495350 /* QCOFetchCharactersResponseDataBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = BB1702D49819D1E23BFEB80F /* QCOFetchCharactersResponseDataBuilder.m */; };
 		BB1709E8E850D2558BD872B5 /* QCOBuilderUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = BB17090309549AC797F8802E /* QCOBuilderUtils.m */; };
@@ -59,7 +59,7 @@
 		3FE3A426F643037B48A46FF5 /* libPods-AcceptanceTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AcceptanceTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		481247A41DEBB80D00B95720 /* QCOFetchCharactersResponseBuilderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCOFetchCharactersResponseBuilderTests.m; sourceTree = "<group>"; };
 		48DDD2821E7621FC00D2DCE4 /* QCOFetchCharactersResponseDataBuilderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCOFetchCharactersResponseDataBuilderTests.m; sourceTree = "<group>"; };
-		48DDD2841E762E1C00D2DCE4 /* QCOFetchCharactersResponseCharacterBuilderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCOFetchCharactersResponseCharacterBuilderTests.m; sourceTree = "<group>"; };
+		48DDD2841E762E1C00D2DCE4 /* QCOCharacterResponseBuilderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCOCharacterResponseBuilderTests.m; sourceTree = "<group>"; };
 		609E91893F8F324ECD9EF3DC /* QCOFetchCharactersRequestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCOFetchCharactersRequestModel.h; sourceTree = "<group>"; };
 		609E9250F3997E3D1CC14A9B /* QCOFetchCharactersMarvelService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCOFetchCharactersMarvelService.m; sourceTree = "<group>"; };
 		609E9469988A9317A915402E /* QCOURLQueryMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCOURLQueryMatcher.m; sourceTree = "<group>"; };
@@ -90,14 +90,14 @@
 		9FBBCFAD0086053CEB04F8CE /* Pods-MarvelBrowserTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelBrowserTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MarvelBrowserTests/Pods-MarvelBrowserTests.release.xcconfig"; sourceTree = "<group>"; };
 		BB1700A55BD18EA732D83AC3 /* QCOBuilderUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCOBuilderUtils.h; sourceTree = "<group>"; };
 		BB1702D49819D1E23BFEB80F /* QCOFetchCharactersResponseDataBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCOFetchCharactersResponseDataBuilder.m; sourceTree = "<group>"; };
-		BB17032C47EF3F644689C4C8 /* QCOFetchCharactersResponseCharacterBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCOFetchCharactersResponseCharacterBuilder.m; sourceTree = "<group>"; };
+		BB17032C47EF3F644689C4C8 /* QCOCharacterResponseBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCOCharacterResponseBuilder.m; sourceTree = "<group>"; };
 		BB17057FF1C612046AF272D8 /* QCOFetchCharactersResponseDataBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCOFetchCharactersResponseDataBuilder.h; sourceTree = "<group>"; };
 		BB17090309549AC797F8802E /* QCOBuilderUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCOBuilderUtils.m; sourceTree = "<group>"; };
 		BB170A4E8566582ED85EFC16 /* QCOFetchCharactersResponseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCOFetchCharactersResponseModel.h; sourceTree = "<group>"; };
 		BB170D246257B43E17269506 /* QCOFetchCharactersResponseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCOFetchCharactersResponseModel.m; sourceTree = "<group>"; };
 		BB170EB9F28E5B3451977009 /* QCOFetchCharactersResponseBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCOFetchCharactersResponseBuilder.m; sourceTree = "<group>"; };
 		BB170F8EE62542DBD3B9EBD4 /* QCOFetchCharactersResponseBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCOFetchCharactersResponseBuilder.h; sourceTree = "<group>"; };
-		BB170FA6B264C91149AB4597 /* QCOFetchCharactersResponseCharacterBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCOFetchCharactersResponseCharacterBuilder.h; sourceTree = "<group>"; };
+		BB170FA6B264C91149AB4597 /* QCOCharacterResponseBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCOCharacterResponseBuilder.h; sourceTree = "<group>"; };
 		DB140229E203CF67F2C670E0 /* libPods-MarvelBrowserTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MarvelBrowserTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -173,6 +173,9 @@
 				74CC7A941A1D9036007FCA40 /* Images.xcassets */,
 				74CC7A961A1D9036007FCA40 /* LaunchScreen.xib */,
 				74CC7A871A1D9036007FCA40 /* Supporting Files */,
+				BB170FA6B264C91149AB4597 /* QCOCharacterResponseBuilder.h */,
+				BB17032C47EF3F644689C4C8 /* QCOCharacterResponseBuilder.m */,
+				48DDD2841E762E1C00D2DCE4 /* QCOCharacterResponseBuilderTests.m */,
 				609E94FCC300D43E9052EFC8 /* QCOFetchCharactersMarvelService.h */,
 				609E9250F3997E3D1CC14A9B /* QCOFetchCharactersMarvelService.m */,
 				609E9A8AC61A8BCC6F21946E /* QCOFetchCharactersMarvelServiceTests.m */,
@@ -183,9 +186,6 @@
 				481247A41DEBB80D00B95720 /* QCOFetchCharactersResponseBuilderTests.m */,
 				BB170A4E8566582ED85EFC16 /* QCOFetchCharactersResponseModel.h */,
 				BB170D246257B43E17269506 /* QCOFetchCharactersResponseModel.m */,
-				BB170FA6B264C91149AB4597 /* QCOFetchCharactersResponseCharacterBuilder.h */,
-				BB17032C47EF3F644689C4C8 /* QCOFetchCharactersResponseCharacterBuilder.m */,
-				48DDD2841E762E1C00D2DCE4 /* QCOFetchCharactersResponseCharacterBuilderTests.m */,
 				BB17057FF1C612046AF272D8 /* QCOFetchCharactersResponseDataBuilder.h */,
 				BB1702D49819D1E23BFEB80F /* QCOFetchCharactersResponseDataBuilder.m */,
 				48DDD2821E7621FC00D2DCE4 /* QCOFetchCharactersResponseDataBuilderTests.m */,
@@ -470,7 +470,7 @@
 				BB170EA19C8564DD2701B8B4 /* QCOFetchCharactersResponseModel.m in Sources */,
 				BB170745C014107EEA495350 /* QCOFetchCharactersResponseDataBuilder.m in Sources */,
 				BB1709E8E850D2558BD872B5 /* QCOBuilderUtils.m in Sources */,
-				BB1701C2DC0FB8D46D2C2F5D /* QCOFetchCharactersResponseCharacterBuilder.m in Sources */,
+				BB1701C2DC0FB8D46D2C2F5D /* QCOCharacterResponseBuilder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -485,7 +485,7 @@
 				4873A2331DC054AA00E8C9A2 /* TestingAppDelegate.m in Sources */,
 				609E9FE53E50AFB4B38CD955 /* QCOURLQueryMatcher.m in Sources */,
 				481247A51DEBB80D00B95720 /* QCOFetchCharactersResponseBuilderTests.m in Sources */,
-				48DDD2851E762E1C00D2DCE4 /* QCOFetchCharactersResponseCharacterBuilderTests.m in Sources */,
+				48DDD2851E762E1C00D2DCE4 /* QCOCharacterResponseBuilderTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

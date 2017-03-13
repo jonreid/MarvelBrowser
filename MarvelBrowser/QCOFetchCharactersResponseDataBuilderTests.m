@@ -134,7 +134,7 @@
     ]));
 }
 
-- (void)testParseDictionary_WithTwoResult_ShouldCaptureTwoCharacterInBuilder
+- (void)testParseDictionary_WithTwoResult_ShouldCaptureTwoCharactersInBuilder
 {
     NSDictionary *dict = @{ @"results": @[
             @{ @"name": @"ONE" },

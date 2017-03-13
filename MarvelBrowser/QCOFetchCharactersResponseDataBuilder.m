@@ -4,7 +4,7 @@
 #import "QCOFetchCharactersResponseDataBuilder.h"
 
 #import "QCOBuilderUtils.h"
-#import "QCOFetchCharactersResponseCharacterBuilder.h"
+#import "QCOCharacterResponseBuilder.h"
 
 
 @implementation QCOFetchCharactersResponseDataBuilder
@@ -18,7 +18,7 @@
     self.results = [self parseResultsFromObject:dict[@"results"]];
 }
 
-- (NSArray<QCOFetchCharactersResponseCharacterBuilder *> *)parseResultsFromObject:(id)object
+- (NSArray<QCOCharacterResponseBuilder *> *)parseResultsFromObject:(id)object
 {
     NSArray *array = QCORequireArray(object);
     if (!array)
@@ -26,20 +26,20 @@
     return [self parseResultsFromArray:array];
 }
 
-- (NSArray<QCOFetchCharactersResponseCharacterBuilder *> *)parseResultsFromArray:(NSArray *)array
+- (NSArray<QCOCharacterResponseBuilder *> *)parseResultsFromArray:(NSArray *)array
 {
-    NSMutableArray<QCOFetchCharactersResponseCharacterBuilder *> *accumulator = [[NSMutableArray alloc] init];
+    NSMutableArray<QCOCharacterResponseBuilder *> *accumulator = [[NSMutableArray alloc] init];
     for (id result in array)
         [self addDictionary:QCORequireDictionary(result) to:accumulator];
     return accumulator;
 }
 
 - (void)addDictionary:(NSDictionary *)dict
-                   to:(NSMutableArray<QCOFetchCharactersResponseCharacterBuilder *> *)accumulator
+                   to:(NSMutableArray<QCOCharacterResponseBuilder *> *)accumulator
 {
     if (!dict)
         return;
-    QCOFetchCharactersResponseCharacterBuilder *builder = [[QCOFetchCharactersResponseCharacterBuilder alloc] init];
+    QCOCharacterResponseBuilder *builder = [[QCOCharacterResponseBuilder alloc] init];
     [builder parseDictionary:dict];
     [accumulator addObject:builder];
 }

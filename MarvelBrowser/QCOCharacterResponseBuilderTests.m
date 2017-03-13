@@ -1,24 +1,24 @@
 //  TDD sample app MarvelBrowser by Jon Reid, http://qualitycoding.org/about/
 //  Copyright 2017 Jonathan M. Reid. See LICENSE.txt
 
-#import "QCOFetchCharactersResponseCharacterBuilder.h"
+#import "QCOCharacterResponseBuilder.h"
 
 #import <OCHamcrest/OCHamcrest.h>
 #import <XCTest/XCTest.h>
 
 
-@interface QCOFetchCharactersResponseCharacterBuilderTests : XCTestCase
+@interface QCOCharacterResponseBuilderTests : XCTestCase
 @end
 
-@implementation QCOFetchCharactersResponseCharacterBuilderTests
+@implementation QCOCharacterResponseBuilderTests
 {
-    QCOFetchCharactersResponseCharacterBuilder *sut;
+    QCOCharacterResponseBuilder *sut;
 }
 
 - (void)setUp
 {
     [super setUp];
-    sut = [[QCOFetchCharactersResponseCharacterBuilder alloc] init];
+    sut = [[QCOCharacterResponseBuilder alloc] init];
 }
 
 - (void)tearDown
