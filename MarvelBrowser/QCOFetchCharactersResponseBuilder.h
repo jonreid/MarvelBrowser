@@ -9,7 +9,7 @@
 @interface QCOFetchCharactersResponseBuilder : NSObject
 
 @property (nonatomic, strong) NSNumber *code;
-@property (nonatomic, strong) NSString *status;
+@property (nonatomic, copy) NSString *status;
 
 - (void)parseJSONData:(NSData *)jsonData;
 - (QCOFetchCharactersResponseModel *)build;
