@@ -4,6 +4,7 @@
 #import "QCOFetchCharactersResponseBuilder.h"
 
 #import "QCOBuilderUtils.h"
+#import "QCOFetchCharactersResponseDataBuilder.h"
 #import "QCOFetchCharactersResponseModel.h"
 
 
@@ -19,6 +20,16 @@
         return;
     self.code = QCORequireNumber(dict[@"code"]);
     self.status = QCORequireString(dict[@"status"]);
+    self.data = [self parseDataFromDictionary:QCORequireDictionary(dict[@"data"])];
+}
+
+- (QCOFetchCharactersResponseDataBuilder *)parseDataFromDictionary:(NSDictionary *)dict
+{
+    if (!dict)
+        return nil;
+    QCOFetchCharactersResponseDataBuilder *builder = [[QCOFetchCharactersResponseDataBuilder alloc] init];
+    [builder parseDictionary:dict];
+    return builder;
 }
 
 - (QCOFetchCharactersResponseModel *)build

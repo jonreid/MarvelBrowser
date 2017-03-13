@@ -71,6 +71,24 @@ static NSData *jsonData(NSString *json)
     assertThat(sut.status, is(@"STATUS"));
 }
 
+- (void)testParseJSONData_WithNonDictionaryData_ShouldCaptureNilInBuilder
+{
+    NSString *json = @"{\"data\":123}";
+    
+    [sut parseJSONData:jsonData(json)];
+    
+    assertThat(sut.data, is(nilValue()));
+}
+
+- (void)testParseJSONData_WithData_ShouldCaptureValueInBuilder
+{
+    NSString *json = @"{\"data\":{\"offset\":123}}";
+    
+    [sut parseJSONData:jsonData(json)];
+    
+    assertThat(sut.data, hasProperty(@"offset", @123));
+}
+
 - (void)testBuild_FromMalformedJSON_ShouldReturnNil
 {
     NSString *json = @"{\"cod";

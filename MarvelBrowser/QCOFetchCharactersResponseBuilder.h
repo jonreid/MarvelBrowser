@@ -3,6 +3,7 @@
 
 #import <Foundation/Foundation.h>
 
+@class QCOFetchCharactersResponseDataBuilder;
 @class QCOFetchCharactersResponseModel;
 
 
@@ -10,6 +11,7 @@
 
 @property (nonatomic, strong) NSNumber *code;
 @property (nonatomic, copy) NSString *status;
+@property (nonatomic, strong) QCOFetchCharactersResponseDataBuilder *data;
 
 - (void)parseJSONData:(NSData *)jsonData;
 - (QCOFetchCharactersResponseModel *)build;
