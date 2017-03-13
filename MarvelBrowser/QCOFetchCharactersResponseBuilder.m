@@ -15,7 +15,11 @@
     id object = [NSJSONSerialization JSONObjectWithData:jsonData
                                                 options:(NSJSONReadingOptions)0
                                                   error:NULL];
-    NSDictionary *dict = QCORequireDictionary(object);
+    [self parseDictionary:QCORequireDictionary(object)];
+}
+
+- (void)parseDictionary:(NSDictionary *)dict
+{
     if (!dict)
         return;
     self.code = QCORequireNumber(dict[@"code"]);
