@@ -99,4 +99,17 @@
     assertThat(sut.count, is(@123));
 }
 
+- (void)testParseDictionary_WithOneResult_ShouldCaptureOneCharacterInBuilder
+{
+    NSDictionary *dict = @{@"results": @[
+            @{@"name": @"ONE"},
+    ]};
+    
+    [sut parseDictionary:dict];
+    
+    assertThat(sut.results, containsIn(@[
+            hasProperty(@"name", @"ONE"),
+    ]));
+}
+
 @end

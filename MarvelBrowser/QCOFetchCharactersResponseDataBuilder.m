@@ -4,6 +4,7 @@
 #import "QCOFetchCharactersResponseDataBuilder.h"
 
 #import "QCOBuilderUtils.h"
+#import "QCOFetchCharactersResponseCharacterBuilder.h"
 
 
 @implementation QCOFetchCharactersResponseDataBuilder

@@ -3,6 +3,8 @@
 
 #import <Foundation/Foundation.h>
 
+@class QCOFetchCharactersResponseCharacterBuilder;
+
 
 @interface QCOFetchCharactersResponseDataBuilder : NSObject
 
@@ -10,6 +12,7 @@
 @property (nonatomic, strong) NSNumber *limit;
 @property (nonatomic, strong) NSNumber *total;
 @property (nonatomic, strong) NSNumber *count;
+@property (nonatomic, copy) NSArray<QCOFetchCharactersResponseCharacterBuilder *> *results;
 
 - (void)parseDictionary:(NSDictionary *)dict;
 
