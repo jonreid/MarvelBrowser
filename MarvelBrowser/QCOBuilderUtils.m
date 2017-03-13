@@ -4,23 +4,23 @@
 #import "QCOBuilderUtils.h"
 
 
-NSDictionary *QCORequireDictionary(id object)
-{
-    if (![object isKindOfClass:[NSDictionary class]])
+static id requireType(id object, Class type) {
+    if (![object isKindOfClass:type])
         return nil;
     return object;
+}
+
+NSDictionary *QCORequireDictionary(id object)
+{
+    return requireType(object, [NSDictionary class]);
 }
 
 NSNumber *QCORequireNumber(id object)
 {
-    if (![object isKindOfClass:[NSNumber class]])
-        return nil;
-    return object;
+    return requireType(object, [NSNumber class]);
 }
 
 NSString *QCORequireString(id object)
 {
-    if (![object isKindOfClass:[NSString class]])
-        return nil;
-    return object;
+    return requireType(object, [NSString class]);
 }
