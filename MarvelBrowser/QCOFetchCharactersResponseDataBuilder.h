@@ -7,6 +7,7 @@
 @interface QCOFetchCharactersResponseDataBuilder : NSObject
 
 @property (nonatomic, strong) NSNumber *offset;
+@property (nonatomic, strong) NSNumber *limit;
 
 - (void)parseDictionary:(NSDictionary *)dict;
 

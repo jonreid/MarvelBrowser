@@ -11,6 +11,7 @@
 - (void)parseDictionary:(NSDictionary *)dict
 {
     self.offset = QCORequireNumber(dict[@"offset"]);
+    self.limit = QCORequireNumber(dict[@"limit"]);
 }
 
 @end
