@@ -8,17 +8,14 @@
 
 @implementation QCOFetchCharactersResponseBuilder
 
-- (QCOFetchCharactersResponseModel *)parseJSONData:(NSData *)jsonData
+- (void)parseJSONData:(NSData *)jsonData
 {
     NSDictionary *dict = [self requireDictionary:[NSJSONSerialization JSONObjectWithData:jsonData
                                                                                  options:(NSJSONReadingOptions)0
                                                                                    error:NULL]];
     if (!dict)
-        return nil;
-    NSNumber *code = [self requireNumber:dict[@"code"]];
-    if (!code)
-        return nil;
-    return [[QCOFetchCharactersResponseModel alloc] initWithCode:code.integerValue];
+        return;
+    self.code = [self requireNumber:dict[@"code"]];
 }
 
 - (NSDictionary *)requireDictionary:(id)object
@@ -33,6 +30,11 @@
     if (![object isKindOfClass:[NSNumber class]])
         return nil;
     return object;
+}
+
+- (QCOFetchCharactersResponseModel *)build
+{
+    return nil;
 }
 
 @end

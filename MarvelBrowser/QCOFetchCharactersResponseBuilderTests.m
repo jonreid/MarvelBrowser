@@ -35,47 +35,40 @@ static NSData *jsonData(NSString *json)
     [super tearDown];
 }
 
-- (void)testParseJSONData_WithCode200
-{
-    NSString *json = @"{\"code\":200}";
-    
-    QCOFetchCharactersResponseModel* response = [sut parseJSONData:jsonData(json)];
-    
-    assertThat(@(response.code), is(@200));
-}
-
-- (void)testParseJSONData_WithCode409
-{
-    NSString *json = @"{\"code\":409}";
-    
-    QCOFetchCharactersResponseModel* response = [sut parseJSONData:jsonData(json)];
-    
-    assertThat(@(response.code), is(@409));
-}
-
-- (void)testParseJSONData_WithMalformedJSON_ShouldReturnNil
-{
-    NSString *json = @"{\"cod";
-    
-    QCOFetchCharactersResponseModel* response = [sut parseJSONData:jsonData(json)];
-    
-    assertThat(response, is(nilValue()));
-}
-
-- (void)testParseJSONData_WithJSONArrayInsteadOfDictionary_ShouldReturnNil
-{
-    NSString *json = @"[]";
-    
-    QCOFetchCharactersResponseModel* response = [sut parseJSONData:jsonData(json)];
-    
-    assertThat(response, is(nilValue()));
-}
-
-- (void)testParseJSONData_WithNonIntegerCode_ShouldReturnNil
+- (void)testParseJSONData_WithNonIntegerCode_ShouldCaptureNilInBuilder
 {
     NSString *json = @"{\"code\":\"409\"}";
     
-    QCOFetchCharactersResponseModel* response = [sut parseJSONData:jsonData(json)];
+    [sut parseJSONData:jsonData(json)];
+    
+    assertThat(sut.code, is(nilValue()));
+}
+
+- (void)testParseJSONData_WithCode200_ShouldCaptureValueInBuilder
+{
+    NSString *json = @"{\"code\":200}";
+    
+    [sut parseJSONData:jsonData(json)];
+    
+    assertThat(sut.code, is(@200));
+}
+
+- (void)testBuild_FromMalformedJSON_ShouldReturnNil
+{
+    NSString *json = @"{\"cod";
+    
+    [sut parseJSONData:jsonData(json)];
+    QCOFetchCharactersResponseModel* response = [sut build];
+    
+    assertThat(response, is(nilValue()));
+}
+
+- (void)testBuild_FromJSONArrayInsteadOfDictionary_ShouldReturnNil
+{
+    NSString *json = @"[]";
+    
+    [sut parseJSONData:jsonData(json)];
+    QCOFetchCharactersResponseModel* response = [sut build];
     
     assertThat(response, is(nilValue()));
 }
