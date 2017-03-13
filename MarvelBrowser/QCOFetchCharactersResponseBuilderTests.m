@@ -53,6 +53,24 @@ static NSData *jsonData(NSString *json)
     assertThat(sut.code, is(@200));
 }
 
+- (void)testParseJSONData_WithNonStringStatus_ShouldCaptureNilInBuilder
+{
+    NSString *json = @"{\"status\":409}";
+    
+    [sut parseJSONData:jsonData(json)];
+    
+    assertThat(sut.status, is(nilValue()));
+}
+
+- (void)testParseJSONData_WithStatus_ShouldCaptureValueInBuilder
+{
+    NSString *json = @"{\"status\":\"STATUS\"}";
+
+    [sut parseJSONData:jsonData(json)];
+
+    assertThat(sut.status, is(@"STATUS"));
+}
+
 - (void)testBuild_FromMalformedJSON_ShouldReturnNil
 {
     NSString *json = @"{\"cod";
