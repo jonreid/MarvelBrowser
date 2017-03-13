@@ -3,6 +3,7 @@
 
 #import "QCOFetchCharactersResponseBuilder.h"
 
+#import "QCOBuilderUtils.h"
 #import "QCOFetchCharactersResponseModel.h"
 
 
@@ -21,23 +22,17 @@
 
 - (NSDictionary *)requireDictionary:(id)object
 {
-    if (![object isKindOfClass:[NSDictionary class]])
-        return nil;
-    return object;
+    return QCORequireDictionary(object);
 }
 
 - (NSNumber *)requireNumber:(id)object
 {
-    if (![object isKindOfClass:[NSNumber class]])
-        return nil;
-    return object;
+    return QCORequireNumber(object);
 }
 
 - (NSString *)requireString:(id)object
 {
-    if (![object isKindOfClass:[NSString class]])
-        return nil;
-    return object;
+    return QCORequireString(object);
 }
 
 - (QCOFetchCharactersResponseModel *)build

@@ -3,6 +3,8 @@
 
 #import "QCOFetchCharactersResponseDataBuilder.h"
 
+#import "QCOBuilderUtils.h"
+
 
 @implementation QCOFetchCharactersResponseDataBuilder
 
@@ -13,9 +15,7 @@
 
 - (NSNumber *)requireNumber:(id)object
 {
-    if (![object isKindOfClass:[NSNumber class]])
-        return nil;
-    return object;
+    return QCORequireNumber(object);
 }
 
 @end
