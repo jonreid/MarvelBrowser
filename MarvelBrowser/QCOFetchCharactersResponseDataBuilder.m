@@ -16,23 +16,25 @@
     self.total = QCORequireNumber(dict[@"total"]);
     self.count = QCORequireNumber(dict[@"count"]);
     NSArray *resultsArray = QCORequireArray(dict[@"results"]);
-    if (resultsArray) {
+    if (resultsArray)
         self.results = [self parseResultsFromArray:resultsArray];
-    }
 }
 
-- (NSArray *)parseResultsFromArray:(NSArray *)array
+- (NSArray *)parseResultsFromArray:(NSArray<QCOFetchCharactersResponseCharacterBuilder *> *)array
 {
-    NSMutableArray *characterAccumulator = [[NSMutableArray alloc] init];
-    for (id result in array) {
-        NSDictionary *characterDict = QCORequireDictionary(result);
-        if (characterDict) {
-            QCOFetchCharactersResponseCharacterBuilder *characterBuilder = [[QCOFetchCharactersResponseCharacterBuilder alloc] init];
-            [characterBuilder parseDictionary:characterDict];
-            [characterAccumulator addObject:characterBuilder];
-        }
-    }
+    NSMutableArray<QCOFetchCharactersResponseCharacterBuilder *> *characterAccumulator = [[NSMutableArray alloc] init];
+    for (id result in array)
+        [self accumulateCharacterDict:QCORequireDictionary(result) into:characterAccumulator];
     return characterAccumulator;
+}
+
+- (void)accumulateCharacterDict:(NSDictionary *)dict into:(NSMutableArray<QCOFetchCharactersResponseCharacterBuilder *> *)accumulator
+{
+    if (!dict)
+        return;
+    QCOFetchCharactersResponseCharacterBuilder *characterBuilder = [[QCOFetchCharactersResponseCharacterBuilder alloc] init];
+    [characterBuilder parseDictionary:dict];
+    [accumulator addObject:characterBuilder];
 }
 
 @end
