@@ -18,10 +18,14 @@
     NSArray *array = QCORequireArray(dict[@"results"]);
     if (!array)
         return;
-    NSDictionary *c = array[0];
-    QCOFetchCharactersResponseCharacterBuilder *characterBuilder = [[QCOFetchCharactersResponseCharacterBuilder alloc] init];
-    [characterBuilder parseDictionary:c];
-    self.results = @[ characterBuilder ];
+    NSMutableArray *characterAccumulator = [[NSMutableArray alloc] init];
+    NSDictionary *characterDict = QCORequireDictionary(array[0]);
+    if (characterDict) {
+        QCOFetchCharactersResponseCharacterBuilder *characterBuilder = [[QCOFetchCharactersResponseCharacterBuilder alloc] init];
+        [characterBuilder parseDictionary:characterDict];
+        [characterAccumulator addObject:characterBuilder];
+    }
+    self.results = characterAccumulator;
 }
 
 @end
