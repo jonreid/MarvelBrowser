@@ -44,7 +44,7 @@ static NSData *jsonData(NSString *json)
     assertThat(sut.code, is(nilValue()));
 }
 
-- (void)testParseJSONData_WithCode200_ShouldCaptureValueInBuilder
+- (void)testParseJSONData_WithCode_ShouldCaptureValueInBuilder
 {
     NSString *json = @"{\"code\":200}";
     

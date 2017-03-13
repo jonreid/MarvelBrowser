@@ -23,4 +23,15 @@
     assertThat(result, is(nilValue()));
 }
 
+- (void)testParseDictionary_WithOffset_ShouldCaptureValueInBuilder
+{
+    NSDictionary *dict = @{@"offset": @123};
+    QCOFetchCharactersResponseDataBuilder *sut = [[QCOFetchCharactersResponseDataBuilder alloc] init];
+    
+    [sut parseDictionary:dict];
+    
+    NSNumber *result = sut.offset;
+    assertThat(result, is(@123));
+}
+
 @end
