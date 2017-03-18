@@ -11,7 +11,6 @@
 @property (nonatomic, copy) NSString *name;
 
 - (void)parseDictionary:(NSDictionary *)dict;
-
 - (QCOCharacterResponse *)build;
 
 @end
