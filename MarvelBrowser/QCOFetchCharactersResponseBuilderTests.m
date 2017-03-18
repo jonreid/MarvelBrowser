@@ -116,13 +116,13 @@ static NSData *jsonData(NSString *json)
             "  \"code\": 200,"
             "  \"status\": \"Ok\","
             "  \"data\": {"
-            "    \"offset\": 0,"
-            "    \"limit\": 20,"
-            "    \"total\": 4,"
+            "    \"offset\": 1,"
+            "    \"limit\": 2,"
+            "    \"total\": 3,"
             "    \"count\": 4,"
             "    \"results\": ["
             "      {"
-            "        \"name\": \"Deadpool\""
+            "        \"name\": \"NAME\""
             "      }"
             "    ]"
             "  }"
@@ -143,6 +143,13 @@ static NSData *jsonData(NSString *json)
     QCOFetchCharactersResponseModel *response = [self buildModelFromSampleResponse];
     
     assertThat(response.status, is(@"Ok"));
+}
+
+- (void)testBuild_FromSampleResponse_ShouldYieldOffset1
+{
+    QCOFetchCharactersResponseModel *response = [self buildModelFromSampleResponse];
+    
+    assertThat(@(response.offset), is(@1));
 }
 
 @end

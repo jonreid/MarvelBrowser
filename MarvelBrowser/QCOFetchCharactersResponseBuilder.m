@@ -41,7 +41,8 @@
     if (!self.code)
         return nil;
     return [[QCOFetchCharactersResponseModel alloc] initWithCode:self.code.integerValue
-                                                          status:self.status];
+                                                          status:self.status
+                                                          offset:self.data.offset.integerValue];
 }
 
 @end

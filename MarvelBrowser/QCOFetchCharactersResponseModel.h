@@ -8,8 +8,8 @@
 
 @property (nonatomic, assign, readonly) NSInteger code;
 @property (nonatomic, copy, readonly) NSString *status;
+@property (nonatomic, assign, readonly) NSInteger offset;
 
-- (instancetype)initWithCode:(NSInteger)code status:(NSString *)status;
-
+- (instancetype)initWithCode:(NSInteger)code status:(NSString *)status offset:(NSInteger)offset;
 
 @end

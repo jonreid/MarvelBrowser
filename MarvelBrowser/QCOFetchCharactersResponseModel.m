@@ -6,16 +6,18 @@
 
 @implementation QCOFetchCharactersResponseModel
 
-- (instancetype)initWithCode:(NSInteger)code status:(NSString *)status
+- (instancetype)initWithCode:(NSInteger)code status:(NSString *)status offset:(NSInteger)offset
 {
     self = [super init];
     if (self)
     {
         _code = code;
         _status = [status copy];
+        _offset = offset;
     }
     
     return self;
 }
+
 
 @end
