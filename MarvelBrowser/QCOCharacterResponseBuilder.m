@@ -4,6 +4,7 @@
 #import "QCOCharacterResponseBuilder.h"
 
 #import "QCOBuilderUtils.h"
+#import "QCOCharacterResponse.h"
 
 
 @implementation QCOCharacterResponseBuilder
@@ -11,6 +12,11 @@
 - (void)parseDictionary:(NSDictionary *)dict
 {
     self.name = QCORequireString(dict[@"name"]);
+}
+
+- (QCOCharacterResponse *)build
+{
+    return nil;
 }
 
 @end

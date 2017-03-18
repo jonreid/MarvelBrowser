@@ -3,11 +3,15 @@
 
 #import <Foundation/Foundation.h>
 
+@class QCOCharacterResponse;
+
 
 @interface QCOCharacterResponseBuilder : NSObject
 
 @property (nonatomic, copy) NSString *name;
 
 - (void)parseDictionary:(NSDictionary *)dict;
+
+- (QCOCharacterResponse *)build;
 
 @end
