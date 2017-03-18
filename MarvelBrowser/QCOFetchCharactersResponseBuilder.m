@@ -45,7 +45,8 @@
                                                           offset:self.data.offset.integerValue
                                                            limit:self.data.limit.integerValue
                                                            total:self.data.total.integerValue
-                                                           count:self.data.count.integerValue];
+                                                           count:self.data.count.integerValue
+                                                      characters:nil];
 }
 
 @end

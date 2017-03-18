@@ -16,6 +16,6 @@
 @property (nonatomic, assign, readonly) NSInteger count;
 @property (nonatomic, copy, readonly) NSArray<QCOCharacterResponse *> *characters;
 
-- (instancetype)initWithCode:(NSInteger)code status:(NSString *)status offset:(NSInteger)offset limit:(NSInteger)limit total:(NSInteger)total count:(NSInteger)count;
+- (instancetype)initWithCode:(NSInteger)code status:(NSString *)status offset:(NSInteger)offset limit:(NSInteger)limit total:(NSInteger)total count:(NSInteger)count characters:(NSArray<QCOCharacterResponse *> *)characters;
 
 @end
