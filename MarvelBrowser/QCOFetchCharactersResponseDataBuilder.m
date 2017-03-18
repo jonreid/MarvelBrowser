@@ -1,10 +1,11 @@
 //  TDD sample app MarvelBrowser by Jon Reid, http://qualitycoding.org/about/
 //  Copyright 2017 Jonathan M. Reid. See LICENSE.txt
 
-#import "QCOFetchCharactersResponseDataBuilder.h"
+#import "QCOFetchCharactersResponseModel.h"
 
 #import "QCOBuilderUtils.h"
 #import "QCOCharacterResponseBuilder.h"
+#import "QCOFetchCharactersResponseDataBuilder.h"
 
 
 @implementation QCOFetchCharactersResponseDataBuilder
@@ -36,6 +37,14 @@
     QCOCharacterResponseBuilder *builder = [[QCOCharacterResponseBuilder alloc] init];
     [builder parseDictionary:dict];
     [accumulator addObject:builder];
+}
+
+- (NSMutableArray<QCOCharacterResponse *> *)buildCharacters
+{
+    NSMutableArray<QCOCharacterResponse *> *characters = [[NSMutableArray alloc] init];
+    for (QCOCharacterResponseBuilder *builder in self.results)
+        [characters addObject:[builder build]];
+    return characters;
 }
 
 @end

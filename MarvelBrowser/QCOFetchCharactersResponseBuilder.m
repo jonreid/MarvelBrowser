@@ -6,7 +6,6 @@
 #import "QCOBuilderUtils.h"
 #import "QCOFetchCharactersResponseDataBuilder.h"
 #import "QCOFetchCharactersResponseModel.h"
-#import "QCOCharacterResponseBuilder.h"
 
 
 @implementation QCOFetchCharactersResponseBuilder
@@ -47,15 +46,7 @@
                                                            limit:self.data.limit.integerValue
                                                            total:self.data.total.integerValue
                                                            count:self.data.count.integerValue
-                                                      characters:[self buildCharacters]];
-}
-
-- (NSMutableArray<QCOCharacterResponse *> *)buildCharacters
-{
-    NSMutableArray<QCOCharacterResponse *> *characters = [[NSMutableArray alloc] init];
-    for (QCOCharacterResponseBuilder *builder in self.data.results)
-        [characters addObject:[builder build]];
-    return characters;
+                                                      characters:[self.data buildCharacters]];
 }
 
 @end
