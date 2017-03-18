@@ -53,6 +53,8 @@
     [sut parseDictionary:dict];
     
     QCOCharacterResponse *response = [sut build];
+    
+    assertThat(response.name, is(@"NAME"));
 }
 
 @end
