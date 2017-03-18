@@ -7,7 +7,9 @@
 @interface QCOFetchCharactersResponseModel : NSObject
 
 @property (nonatomic, assign, readonly) NSInteger code;
+@property (nonatomic, copy, readonly) NSString *status;
 
-- (instancetype)initWithCode:(NSInteger)code;
+- (instancetype)initWithCode:(NSInteger)code status:(NSString *)status;
+
 
 @end

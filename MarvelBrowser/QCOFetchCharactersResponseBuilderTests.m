@@ -138,4 +138,14 @@ static NSData *jsonData(NSString *json)
     assertThat(@(response.code), is(@200));
 }
 
+- (void)testBuild_FromSampleResponse_ShouldYieldStatusOk
+{
+    NSString *json = [self sampleResponse];
+    
+    [sut parseJSONData:jsonData(json)];
+    QCOFetchCharactersResponseModel *response = [sut build];
+    
+    assertThat(response.status, is(@"Ok"));
+}
+
 @end

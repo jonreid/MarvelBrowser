@@ -40,7 +40,8 @@
 {
     if (!self.code)
         return nil;
-    return [[QCOFetchCharactersResponseModel alloc] initWithCode:self.code.integerValue];
+    return [[QCOFetchCharactersResponseModel alloc] initWithCode:self.code.integerValue
+                                                          status:self.status];
 }
 
 @end
