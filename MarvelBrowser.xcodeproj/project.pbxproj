@@ -31,6 +31,7 @@
 		BB17036BA888B6A651EF56FF /* QCOFetchCharactersResponseBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = BB170EB9F28E5B3451977009 /* QCOFetchCharactersResponseBuilder.m */; };
 		BB170745C014107EEA495350 /* QCOFetchCharactersResponseDataBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = BB1702D49819D1E23BFEB80F /* QCOFetchCharactersResponseDataBuilder.m */; };
 		BB1709E8E850D2558BD872B5 /* QCOBuilderUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = BB17090309549AC797F8802E /* QCOBuilderUtils.m */; };
+		BB170E3A9499EC956E66D49D /* QCOCharacterResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = BB17089BCF81FED6A142D947 /* QCOCharacterResponse.m */; };
 		BB170EA19C8564DD2701B8B4 /* QCOFetchCharactersResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BB170D246257B43E17269506 /* QCOFetchCharactersResponseModel.m */; };
 /* End PBXBuildFile section */
 
@@ -92,8 +93,10 @@
 		BB1702D49819D1E23BFEB80F /* QCOFetchCharactersResponseDataBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCOFetchCharactersResponseDataBuilder.m; sourceTree = "<group>"; };
 		BB17032C47EF3F644689C4C8 /* QCOCharacterResponseBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCOCharacterResponseBuilder.m; sourceTree = "<group>"; };
 		BB17057FF1C612046AF272D8 /* QCOFetchCharactersResponseDataBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCOFetchCharactersResponseDataBuilder.h; sourceTree = "<group>"; };
+		BB17089BCF81FED6A142D947 /* QCOCharacterResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCOCharacterResponse.m; sourceTree = "<group>"; };
 		BB17090309549AC797F8802E /* QCOBuilderUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCOBuilderUtils.m; sourceTree = "<group>"; };
 		BB170A4E8566582ED85EFC16 /* QCOFetchCharactersResponseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCOFetchCharactersResponseModel.h; sourceTree = "<group>"; };
+		BB170C1BD46E74C4BE0C1F3A /* QCOCharacterResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCOCharacterResponse.h; sourceTree = "<group>"; };
 		BB170D246257B43E17269506 /* QCOFetchCharactersResponseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCOFetchCharactersResponseModel.m; sourceTree = "<group>"; };
 		BB170EB9F28E5B3451977009 /* QCOFetchCharactersResponseBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCOFetchCharactersResponseBuilder.m; sourceTree = "<group>"; };
 		BB170F8EE62542DBD3B9EBD4 /* QCOFetchCharactersResponseBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCOFetchCharactersResponseBuilder.h; sourceTree = "<group>"; };
@@ -198,6 +201,8 @@
 				0E1EC9431C781FA600AE074F /* QCOURLQueryMatcherTests.m */,
 				BB17090309549AC797F8802E /* QCOBuilderUtils.m */,
 				BB1700A55BD18EA732D83AC3 /* QCOBuilderUtils.h */,
+				BB17089BCF81FED6A142D947 /* QCOCharacterResponse.m */,
+				BB170C1BD46E74C4BE0C1F3A /* QCOCharacterResponse.h */,
 			);
 			path = MarvelBrowser;
 			sourceTree = "<group>";
@@ -471,6 +476,7 @@
 				BB170745C014107EEA495350 /* QCOFetchCharactersResponseDataBuilder.m in Sources */,
 				BB1709E8E850D2558BD872B5 /* QCOBuilderUtils.m in Sources */,
 				BB1701C2DC0FB8D46D2C2F5D /* QCOCharacterResponseBuilder.m in Sources */,
+				BB170E3A9499EC956E66D49D /* QCOCharacterResponse.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
