@@ -6,7 +6,7 @@
 
 @implementation QCOFetchCharactersResponseModel
 
-- (instancetype)initWithCode:(NSInteger)code status:(NSString *)status offset:(NSInteger)offset
+- (instancetype)initWithCode:(NSInteger)code status:(NSString *)status offset:(NSInteger)offset limit:(NSInteger)limit
 {
     self = [super init];
     if (self)
@@ -14,10 +14,10 @@
         _code = code;
         _status = [status copy];
         _offset = offset;
+        _limit = limit;
     }
     
     return self;
 }
-
 
 @end

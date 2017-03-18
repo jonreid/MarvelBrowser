@@ -152,4 +152,11 @@ static NSData *jsonData(NSString *json)
     assertThat(@(response.offset), is(@1));
 }
 
+- (void)testBuild_FromSampleResponse_ShouldYieldLimit2
+{
+    QCOFetchCharactersResponseModel *response = [self buildModelFromSampleResponse];
+    
+    assertThat(@(response.limit), is(@2));
+}
+
 @end
