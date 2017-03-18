@@ -176,7 +176,7 @@ static NSData *jsonData(NSString *json)
     assertThat(@(response.count), is(@4));
 }
 
-- (void)XXXtestBuild_FromSampleResponse_ShouldHaveTwoCharacters
+- (void)testBuild_FromSampleResponse_ShouldHaveTwoCharacters
 {
     QCOFetchCharactersResponseModel *response = [self buildSampleResponse];
     
