@@ -109,9 +109,10 @@ static NSData *jsonData(NSString *json)
     assertThat(response, is(nilValue()));
 }
 
-- (NSString *)sampleResponse
+- (QCOFetchCharactersResponseModel *)buildModelFromSampleResponse
 {
-    return @"{"
+    NSString *sampleResponse =
+            @"{"
             "  \"code\": 200,"
             "  \"status\": \"Ok\","
             "  \"data\": {"
@@ -126,24 +127,20 @@ static NSData *jsonData(NSString *json)
             "    ]"
             "  }"
             "}";
+    [sut parseJSONData:jsonData(sampleResponse)];
+    return [sut build];
 }
 
 - (void)testBuild_FromSampleResponse_ShouldYieldCode200
 {
-    NSString *json = [self sampleResponse];
-    
-    [sut parseJSONData:jsonData(json)];
-    QCOFetchCharactersResponseModel *response = [sut build];
+    QCOFetchCharactersResponseModel *response = [self buildModelFromSampleResponse];
     
     assertThat(@(response.code), is(@200));
 }
 
 - (void)testBuild_FromSampleResponse_ShouldYieldStatusOk
 {
-    NSString *json = [self sampleResponse];
-    
-    [sut parseJSONData:jsonData(json)];
-    QCOFetchCharactersResponseModel *response = [sut build];
+    QCOFetchCharactersResponseModel *response = [self buildModelFromSampleResponse];
     
     assertThat(response.status, is(@"Ok"));
 }
