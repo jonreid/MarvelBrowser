@@ -57,4 +57,14 @@
     assertThat(response.name, is(@"NAME"));
 }
 
+- (void)testBuild_RequiresName
+{
+    NSDictionary *dict = @{};
+    [sut parseDictionary:dict];
+    
+    QCOCharacterResponse *response = [sut build];
+    
+    assertThat(response, is(nilValue()));
+}
+
 @end
