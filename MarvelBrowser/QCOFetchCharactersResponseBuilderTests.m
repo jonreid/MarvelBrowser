@@ -109,4 +109,33 @@ static NSData *jsonData(NSString *json)
     assertThat(response, is(nilValue()));
 }
 
+- (NSString *)sampleResponse
+{
+    return @"{"
+            "  \"code\": 200,"
+            "  \"status\": \"Ok\","
+            "  \"data\": {"
+            "    \"offset\": 0,"
+            "    \"limit\": 20,"
+            "    \"total\": 4,"
+            "    \"count\": 4,"
+            "    \"results\": ["
+            "      {"
+            "        \"name\": \"Deadpool\""
+            "      }"
+            "    ]"
+            "  }"
+            "}";
+}
+
+- (void)testBuild_FromSampleResponse_ShouldYieldCode200
+{
+    NSString *json = [self sampleResponse];
+    
+    [sut parseJSONData:jsonData(json)];
+    QCOFetchCharactersResponseModel *response = [sut build];
+    
+    assertThat(@(response.code), is(@200));
+}
+
 @end
