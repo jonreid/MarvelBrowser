@@ -122,7 +122,10 @@ static NSData *jsonData(NSString *json)
             "    \"count\": 4,"
             "    \"results\": ["
             "      {"
-            "        \"name\": \"NAME\""
+            "        \"name\": \"NAME1\""
+            "      },"
+            "      {"
+            "        \"name\": \"NAME2\""
             "      }"
             "    ]"
             "  }"
@@ -131,46 +134,55 @@ static NSData *jsonData(NSString *json)
     return [sut build];
 }
 
-- (void)testBuild_FromSampleResponse_ShouldYieldCode200
+- (void)testBuild_FromSampleResponse_ShouldHaveCode200
 {
     QCOFetchCharactersResponseModel *response = [self buildModelFromSampleResponse];
     
     assertThat(@(response.code), is(@200));
 }
 
-- (void)testBuild_FromSampleResponse_ShouldYieldStatusOk
+- (void)testBuild_FromSampleResponse_ShouldHaveStatusOk
 {
     QCOFetchCharactersResponseModel *response = [self buildModelFromSampleResponse];
     
     assertThat(response.status, is(@"Ok"));
 }
 
-- (void)testBuild_FromSampleResponse_ShouldYieldOffset1
+- (void)testBuild_FromSampleResponse_ShouldHaveOffset1
 {
     QCOFetchCharactersResponseModel *response = [self buildModelFromSampleResponse];
     
     assertThat(@(response.offset), is(@1));
 }
 
-- (void)testBuild_FromSampleResponse_ShouldYieldLimit2
+- (void)testBuild_FromSampleResponse_ShouldHaveLimit2
 {
     QCOFetchCharactersResponseModel *response = [self buildModelFromSampleResponse];
     
     assertThat(@(response.limit), is(@2));
 }
 
-- (void)testBuild_FromSampleResponse_ShouldYieldTotal3
+- (void)testBuild_FromSampleResponse_ShouldHaveTotal3
 {
     QCOFetchCharactersResponseModel *response = [self buildModelFromSampleResponse];
     
     assertThat(@(response.total), is(@3));
 }
 
-- (void)testBuild_FromSampleResponse_ShouldYieldCount4
+- (void)testBuild_FromSampleResponse_ShouldHaveCount4
 {
     QCOFetchCharactersResponseModel *response = [self buildModelFromSampleResponse];
     
     assertThat(@(response.count), is(@4));
+}
+
+- (void)testBuild_FromSampleResponse_ShouldHaveTwoCharacters
+{
+    QCOFetchCharactersResponseModel *response = [self buildModelFromSampleResponse];
+    
+    assertThat(response.characters, containsIn(@[
+            hasProperty(@"name", @"NAME1"),
+            hasProperty(@"name", @"NAME2")]));
 }
 
 @end
