@@ -8,4 +8,6 @@
 
 @property (nonatomic, copy, readonly) NSString *name;
 
+- (instancetype)initWithName:(NSString *)name;
+
 @end
