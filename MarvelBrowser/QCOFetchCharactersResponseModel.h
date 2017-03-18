@@ -11,7 +11,8 @@
 @property (nonatomic, assign, readonly) NSInteger offset;
 @property (nonatomic, assign, readonly) NSInteger limit;
 @property (nonatomic, assign, readonly) NSInteger total;
+@property (nonatomic, assign, readonly) NSInteger count;
 
-- (instancetype)initWithCode:(NSInteger)code status:(NSString *)status offset:(NSInteger)offset limit:(NSInteger)limit total:(NSInteger)total;
+- (instancetype)initWithCode:(NSInteger)code status:(NSString *)status offset:(NSInteger)offset limit:(NSInteger)limit total:(NSInteger)total count:(NSInteger)count;
 
 @end

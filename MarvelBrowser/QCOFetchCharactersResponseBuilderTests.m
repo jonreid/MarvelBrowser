@@ -159,11 +159,18 @@ static NSData *jsonData(NSString *json)
     assertThat(@(response.limit), is(@2));
 }
 
-- (void)testBuild_FromSampleResponse_ShouldYieldTotal2
+- (void)testBuild_FromSampleResponse_ShouldYieldTotal3
 {
     QCOFetchCharactersResponseModel *response = [self buildModelFromSampleResponse];
     
     assertThat(@(response.total), is(@3));
+}
+
+- (void)testBuild_FromSampleResponse_ShouldYieldCount4
+{
+    QCOFetchCharactersResponseModel *response = [self buildModelFromSampleResponse];
+    
+    assertThat(@(response.count), is(@4));
 }
 
 @end
