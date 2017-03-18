@@ -109,6 +109,16 @@ static NSData *jsonData(NSString *json)
     assertThat(response, is(nilValue()));
 }
 
+- (void)testBuild_RequiresCode
+{
+    NSString *json = @"{\"status\":\"STATUS\"}";
+    
+    [sut parseJSONData:jsonData(json)];
+    QCOFetchCharactersResponseModel *response = [sut build];
+    
+    assertThat(response, is(nilValue()));
+}
+
 - (QCOFetchCharactersResponseModel *)buildSampleResponse
 {
     NSString *sampleResponse =
