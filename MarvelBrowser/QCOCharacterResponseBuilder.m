@@ -16,6 +16,8 @@
 
 - (QCOCharacterResponse *)build
 {
+    if (!self.name)
+        return nil;
     return [[QCOCharacterResponse alloc] initWithName:self.name];
 }
 
