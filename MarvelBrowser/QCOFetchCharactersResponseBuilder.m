@@ -43,9 +43,7 @@
     return [[QCOFetchCharactersResponseModel alloc] initWithCode:self.code.integerValue
                                                           status:self.status
                                                           offset:self.data.offset.integerValue
-                                                           limit:self.data.limit.integerValue
                                                            total:self.data.total.integerValue
-                                                           count:self.data.count.integerValue
                                                       characters:[self.data buildCharacters]];
 }
 

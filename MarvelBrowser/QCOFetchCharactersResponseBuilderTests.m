@@ -117,9 +117,7 @@ static NSData *jsonData(NSString *json)
             "  \"status\": \"Ok\","
             "  \"data\": {"
             "    \"offset\": 1,"
-            "    \"limit\": 2,"
             "    \"total\": 3,"
-            "    \"count\": 4,"
             "    \"results\": ["
             "      {"
             "        \"name\": \"NAME1\""
@@ -155,25 +153,11 @@ static NSData *jsonData(NSString *json)
     assertThat(@(response.offset), is(@1));
 }
 
-- (void)testBuild_FromSampleResponse_ShouldHaveLimit2
-{
-    QCOFetchCharactersResponseModel *response = [self buildSampleResponse];
-    
-    assertThat(@(response.limit), is(@2));
-}
-
 - (void)testBuild_FromSampleResponse_ShouldHaveTotal3
 {
     QCOFetchCharactersResponseModel *response = [self buildSampleResponse];
     
     assertThat(@(response.total), is(@3));
-}
-
-- (void)testBuild_FromSampleResponse_ShouldHaveCount4
-{
-    QCOFetchCharactersResponseModel *response = [self buildSampleResponse];
-    
-    assertThat(@(response.count), is(@4));
 }
 
 - (void)testBuild_FromSampleResponse_ShouldHaveTwoCharacters

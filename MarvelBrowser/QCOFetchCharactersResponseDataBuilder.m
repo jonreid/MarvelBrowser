@@ -13,9 +13,7 @@
 - (void)parseDictionary:(NSDictionary *)dict
 {
     self.offset = QCORequireNumber(dict[@"offset"]);
-    self.limit = QCORequireNumber(dict[@"limit"]);
     self.total = QCORequireNumber(dict[@"total"]);
-    self.count = QCORequireNumber(dict[@"count"]);
     self.results = [self parseResultsFromArray:QCORequireArray(dict[@"results"])];
 }
 
