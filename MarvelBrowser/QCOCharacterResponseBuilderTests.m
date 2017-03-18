@@ -3,6 +3,8 @@
 
 #import "QCOCharacterResponseBuilder.h"
 
+#import "QCOCharacterResponse.h"
+
 #import <OCHamcrest/OCHamcrest.h>
 #import <XCTest/XCTest.h>
 
@@ -43,6 +45,14 @@
     [sut parseDictionary:dict];
     
     assertThat(sut.name, is(@"NAME"));
+}
+
+- (void)testBuild_ShouldHaveGivenName
+{
+    NSDictionary *dict = @{ @"name": @"NAME" };
+    [sut parseDictionary:dict];
+    
+    QCOCharacterResponse *response = [sut build];
 }
 
 @end
