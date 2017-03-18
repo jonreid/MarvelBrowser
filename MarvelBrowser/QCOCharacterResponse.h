@@ -5,4 +5,7 @@
 
 
 @interface QCOCharacterResponse : NSObject
+
+@property (nonatomic, copy, readonly) NSString *name;
+
 @end
