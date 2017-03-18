@@ -10,7 +10,8 @@
 @property (nonatomic, copy, readonly) NSString *status;
 @property (nonatomic, assign, readonly) NSInteger offset;
 @property (nonatomic, assign, readonly) NSInteger limit;
+@property (nonatomic, assign, readonly) NSInteger total;
 
-- (instancetype)initWithCode:(NSInteger)code status:(NSString *)status offset:(NSInteger)offset limit:(NSInteger)limit;
+- (instancetype)initWithCode:(NSInteger)code status:(NSString *)status offset:(NSInteger)offset limit:(NSInteger)limit total:(NSInteger)total;
 
 @end
