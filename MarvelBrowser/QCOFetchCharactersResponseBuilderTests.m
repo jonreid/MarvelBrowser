@@ -142,6 +142,28 @@ static NSData *jsonData(NSString *json)
     return [sut build];
 }
 
+- (QCOFetchCharactersResponseModel *)buildBadResponseFirstCharacterMissingName
+{
+    NSString *sampleResponse =
+            @"{"
+            "  \"code\": 200,"
+            "  \"status\": \"Ok\","
+            "  \"data\": {"
+            "    \"offset\": 1,"
+            "    \"total\": 3,"
+            "    \"results\": ["
+            "      {"
+            "      },"
+            "      {"
+            "        \"name\": \"NAME2\""
+            "      }"
+            "    ]"
+            "  }"
+            "}";
+    [sut parseJSONData:jsonData(sampleResponse)];
+    return [sut build];
+}
+
 - (void)testBuild_FromSampleResponse_ShouldHaveCode200
 {
     QCOFetchCharactersResponseModel *response = [self buildSampleResponse];
@@ -176,6 +198,14 @@ static NSData *jsonData(NSString *json)
     
     assertThat(response.characters, containsIn(@[
             hasProperty(@"name", @"NAME1"),
+            hasProperty(@"name", @"NAME2")]));
+}
+
+- (void)testBuild_FromBadResponseFirstCharacterMissingName_ShouldHaveOneCharacters
+{
+    QCOFetchCharactersResponseModel *response = [self buildBadResponseFirstCharacterMissingName];
+    
+    assertThat(response.characters, containsIn(@[
             hasProperty(@"name", @"NAME2")]));
 }
 
