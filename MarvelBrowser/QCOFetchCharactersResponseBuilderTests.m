@@ -109,7 +109,7 @@ static NSData *jsonData(NSString *json)
     assertThat(response, is(nilValue()));
 }
 
-- (QCOFetchCharactersResponseModel *)buildModelFromSampleResponse
+- (QCOFetchCharactersResponseModel *)buildSampleResponse
 {
     NSString *sampleResponse =
             @"{"
@@ -136,49 +136,49 @@ static NSData *jsonData(NSString *json)
 
 - (void)testBuild_FromSampleResponse_ShouldHaveCode200
 {
-    QCOFetchCharactersResponseModel *response = [self buildModelFromSampleResponse];
+    QCOFetchCharactersResponseModel *response = [self buildSampleResponse];
     
     assertThat(@(response.code), is(@200));
 }
 
 - (void)testBuild_FromSampleResponse_ShouldHaveStatusOk
 {
-    QCOFetchCharactersResponseModel *response = [self buildModelFromSampleResponse];
+    QCOFetchCharactersResponseModel *response = [self buildSampleResponse];
     
     assertThat(response.status, is(@"Ok"));
 }
 
 - (void)testBuild_FromSampleResponse_ShouldHaveOffset1
 {
-    QCOFetchCharactersResponseModel *response = [self buildModelFromSampleResponse];
+    QCOFetchCharactersResponseModel *response = [self buildSampleResponse];
     
     assertThat(@(response.offset), is(@1));
 }
 
 - (void)testBuild_FromSampleResponse_ShouldHaveLimit2
 {
-    QCOFetchCharactersResponseModel *response = [self buildModelFromSampleResponse];
+    QCOFetchCharactersResponseModel *response = [self buildSampleResponse];
     
     assertThat(@(response.limit), is(@2));
 }
 
 - (void)testBuild_FromSampleResponse_ShouldHaveTotal3
 {
-    QCOFetchCharactersResponseModel *response = [self buildModelFromSampleResponse];
+    QCOFetchCharactersResponseModel *response = [self buildSampleResponse];
     
     assertThat(@(response.total), is(@3));
 }
 
 - (void)testBuild_FromSampleResponse_ShouldHaveCount4
 {
-    QCOFetchCharactersResponseModel *response = [self buildModelFromSampleResponse];
+    QCOFetchCharactersResponseModel *response = [self buildSampleResponse];
     
     assertThat(@(response.count), is(@4));
 }
 
 - (void)XXXtestBuild_FromSampleResponse_ShouldHaveTwoCharacters
 {
-    QCOFetchCharactersResponseModel *response = [self buildModelFromSampleResponse];
+    QCOFetchCharactersResponseModel *response = [self buildSampleResponse];
     
     assertThat(response.characters, containsIn(@[
             hasProperty(@"name", @"NAME1"),
