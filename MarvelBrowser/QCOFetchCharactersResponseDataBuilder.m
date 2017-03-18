@@ -40,8 +40,11 @@
 - (NSArray<QCOCharacterResponse *> *)buildCharacters
 {
     NSMutableArray<QCOCharacterResponse *> *characters = [[NSMutableArray alloc] init];
-    for (QCOCharacterResponseBuilder *builder in self.results)
-        [characters addObject:[builder build]];
+    for (QCOCharacterResponseBuilder *builder in self.results) {
+        QCOCharacterResponse *character = [builder build];
+        if (character)
+            [characters addObject:character];
+    }
     return characters;
 }
 
