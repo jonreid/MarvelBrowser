@@ -39,7 +39,7 @@
     [accumulator addObject:builder];
 }
 
-- (NSMutableArray<QCOCharacterResponse *> *)buildCharacters
+- (NSArray<QCOCharacterResponse *> *)buildCharacters
 {
     NSMutableArray<QCOCharacterResponse *> *characters = [[NSMutableArray alloc] init];
     for (QCOCharacterResponseBuilder *builder in self.results)

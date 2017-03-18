@@ -16,6 +16,6 @@
 @property (nonatomic, copy) NSArray<QCOCharacterResponseBuilder *> *results;
 
 - (void)parseDictionary:(NSDictionary *)dict;
-- (NSMutableArray<QCOCharacterResponse *> *)buildCharacters;
+- (NSArray<QCOCharacterResponse *> *)buildCharacters;
 
 @end
