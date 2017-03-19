@@ -3,8 +3,16 @@
 
 #import "QCOParseFetchCharactersJSONData.h"
 
+#import "QCOBuilderUtils.h"
+#import "QCOFetchCharactersResponseBuilder.h"
+
 
 QCOFetchCharactersResponseModel *QCOParseFetchCharactersJSONData(NSData *jsonData)
 {
-    return nil;
+    QCOFetchCharactersResponseBuilder *builder = [[QCOFetchCharactersResponseBuilder alloc] init];
+    id object = [NSJSONSerialization JSONObjectWithData:jsonData
+                                                options:(NSJSONReadingOptions)0
+                                                  error:NULL];
+    [builder parseDictionary:QCORequireDictionary(object)];
+    return [builder build];
 }
