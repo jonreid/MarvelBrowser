@@ -31,9 +31,7 @@
 {
     if (!dict)
         return nil;
-    QCOFetchCharactersResponseDataBuilder *builder = [[QCOFetchCharactersResponseDataBuilder alloc] init];
-    [builder parseDictionary:dict];
-    return builder;
+    return [[QCOFetchCharactersResponseDataBuilder alloc] initWithDictionary:dict];
 }
 
 - (QCOFetchCharactersResponseModel *)build

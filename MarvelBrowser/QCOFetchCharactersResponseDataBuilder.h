@@ -9,11 +9,11 @@
 
 @interface QCOFetchCharactersResponseDataBuilder : NSObject
 
-@property (nonatomic, strong) NSNumber *offset;
-@property (nonatomic, strong) NSNumber *total;
-@property (nonatomic, copy) NSArray<QCOCharacterResponseBuilder *> *results;
+@property (nonatomic, strong, readonly) NSNumber *offset;
+@property (nonatomic, strong, readonly) NSNumber *total;
+@property (nonatomic, copy, readonly) NSArray<QCOCharacterResponseBuilder *> *results;
 
-- (void)parseDictionary:(NSDictionary *)dict;
+- (instancetype)initWithDictionary:(NSDictionary *)dict;
 - (NSArray<QCOCharacterResponse *> *)buildCharacters;
 
 @end

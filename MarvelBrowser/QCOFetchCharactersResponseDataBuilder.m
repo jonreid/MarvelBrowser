@@ -10,11 +10,16 @@
 
 @implementation QCOFetchCharactersResponseDataBuilder
 
-- (void)parseDictionary:(NSDictionary *)dict
+- (instancetype)initWithDictionary:(NSDictionary *)dict;
 {
-    self.offset = QCORequireNumber(dict[@"offset"]);
-    self.total = QCORequireNumber(dict[@"total"]);
-    self.results = [self parseResultsFromArray:QCORequireArray(dict[@"results"])];
+    self = [super init];
+    if (self)
+    {
+        _offset = QCORequireNumber(dict[@"offset"]);
+        _total = QCORequireNumber(dict[@"total"]);
+        _results = [[self parseResultsFromArray:QCORequireArray(dict[@"results"])] copy];
+    }
+    return self;
 }
 
 - (NSArray<QCOCharacterResponseBuilder *> *)parseResultsFromArray:(NSArray *)array

@@ -11,27 +11,12 @@
 @end
 
 @implementation QCOFetchCharactersResponseDataBuilderTests
-{
-    QCOFetchCharactersResponseDataBuilder *sut;
-}
-
-- (void)setUp
-{
-    [super setUp];
-    sut = [[QCOFetchCharactersResponseDataBuilder alloc] init];
-}
-
-- (void)tearDown
-{
-    sut = nil;
-    [super tearDown];
-}
 
 - (void)testParseDictionary_WithNonIntegerOffset_ShouldCaptureNilInBuilder
 {
     NSDictionary *dict = @{ @"offset": @"123" };
     
-    [sut parseDictionary:dict];
+    QCOFetchCharactersResponseDataBuilder *sut = [[QCOFetchCharactersResponseDataBuilder alloc] initWithDictionary:dict];
     
     assertThat(sut.offset, is(nilValue()));
 }
@@ -40,7 +25,7 @@
 {
     NSDictionary *dict = @{ @"offset": @123 };
     
-    [sut parseDictionary:dict];
+    QCOFetchCharactersResponseDataBuilder *sut = [[QCOFetchCharactersResponseDataBuilder alloc] initWithDictionary:dict];
     
     assertThat(sut.offset, is(@123));
 }
@@ -49,7 +34,7 @@
 {
     NSDictionary *dict = @{ @"total": @"123" };
     
-    [sut parseDictionary:dict];
+    QCOFetchCharactersResponseDataBuilder *sut = [[QCOFetchCharactersResponseDataBuilder alloc] initWithDictionary:dict];
     
     assertThat(sut.total, is(nilValue()));
 }
@@ -58,7 +43,7 @@
 {
     NSDictionary *dict = @{ @"total": @123 };
     
-    [sut parseDictionary:dict];
+    QCOFetchCharactersResponseDataBuilder *sut = [[QCOFetchCharactersResponseDataBuilder alloc] initWithDictionary:dict];
     
     assertThat(sut.total, is(@123));
 }
@@ -69,7 +54,7 @@
             @{ @"name": @"DUMMY" }
     };
     
-    [sut parseDictionary:dict];
+    QCOFetchCharactersResponseDataBuilder *sut = [[QCOFetchCharactersResponseDataBuilder alloc] initWithDictionary:dict];
     
     assertThat(sut.results, is(nilValue()));
 }
@@ -80,7 +65,7 @@
             @[ @"DUMMY" ],
     ] };
     
-    [sut parseDictionary:dict];
+    QCOFetchCharactersResponseDataBuilder *sut = [[QCOFetchCharactersResponseDataBuilder alloc] initWithDictionary:dict];
     
     assertThat(sut.results, hasCountOf(0));
 }
@@ -91,7 +76,7 @@
             @{ @"name": @"ONE" },
     ] };
     
-    [sut parseDictionary:dict];
+    QCOFetchCharactersResponseDataBuilder *sut = [[QCOFetchCharactersResponseDataBuilder alloc] initWithDictionary:dict];
     
     assertThat(sut.results, containsIn(@[
             hasProperty(@"name", @"ONE"),
@@ -105,7 +90,7 @@
             @{ @"name": @"TWO" },
     ] };
     
-    [sut parseDictionary:dict];
+    QCOFetchCharactersResponseDataBuilder *sut = [[QCOFetchCharactersResponseDataBuilder alloc] initWithDictionary:dict];
     
     assertThat(sut.results, containsIn(@[
             hasProperty(@"name", @"ONE"),
