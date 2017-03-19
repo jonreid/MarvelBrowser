@@ -33,41 +33,61 @@
     return [json dataUsingEncoding:NSUTF8StringEncoding];
 }
 
-- (void)testParseSampleResponse_ShouldHaveCode200
+- (void)testParse_WithSampleResponse_ShouldHaveCode200
 {
     QCOFetchCharactersResponseModel *response = QCOParseFetchCharactersJSONData([self sampleResponse]);
     
     assertThat(@(response.code), is(@200));
 }
 
-- (void)testParseSampleResponse_ShouldHaveStatusOk
+- (void)testParse_WithSampleResponse_ShouldHaveStatusOk
 {
     QCOFetchCharactersResponseModel *response = QCOParseFetchCharactersJSONData([self sampleResponse]);
 
     assertThat(response.status, is(@"Ok"));
 }
 
-- (void)testParseSampleResponse_ShouldHaveOffset1
+- (void)testParse_WithSampleResponse_ShouldHaveOffset1
 {
     QCOFetchCharactersResponseModel *response = QCOParseFetchCharactersJSONData([self sampleResponse]);
 
     assertThat(@(response.offset), is(@1));
 }
 
-- (void)testParseSampleResponse_ShouldHaveTotal3
+- (void)testParse_WithSampleResponse_ShouldHaveTotal3
 {
     QCOFetchCharactersResponseModel *response = QCOParseFetchCharactersJSONData([self sampleResponse]);
 
     assertThat(@(response.total), is(@3));
 }
 
-- (void)testParseSampleResponse_ShouldHaveTwoCharacters
+- (void)testParse_WithSampleResponse_ShouldHaveTwoCharacters
 {
     QCOFetchCharactersResponseModel *response = QCOParseFetchCharactersJSONData([self sampleResponse]);
 
     assertThat(response.characters, containsIn(@[
             hasProperty(@"name", @"NAME1"),
             hasProperty(@"name", @"NAME2")]));
+}
+
+- (void)testParse_WithMalformedJSON_ShouldReturnNil
+{
+    NSString *json = @"{\"cod";
+    NSData *jsonData = [json dataUsingEncoding:NSUTF8StringEncoding];
+    
+    QCOFetchCharactersResponseModel *response = QCOParseFetchCharactersJSONData(jsonData);
+    
+    assertThat(response, is(nilValue()));
+}
+
+- (void)testBuild_FromJSONArrayInsteadOfDictionary_ShouldReturnNil
+{
+    NSString *json = @"[]";
+    NSData *jsonData = [json dataUsingEncoding:NSUTF8StringEncoding];
+    
+    QCOFetchCharactersResponseModel *response = QCOParseFetchCharactersJSONData(jsonData);
+    
+    assertThat(response, is(nilValue()));
 }
 
 @end

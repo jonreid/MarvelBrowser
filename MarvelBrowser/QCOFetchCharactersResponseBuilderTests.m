@@ -89,26 +89,6 @@ static NSData *jsonData(NSString *json)
     assertThat(sut.data, hasProperty(@"offset", @123));
 }
 
-- (void)testBuild_FromMalformedJSON_ShouldReturnNil
-{
-    NSString *json = @"{\"cod";
-    
-    [sut parseJSONData:jsonData(json)];
-    QCOFetchCharactersResponseModel *response = [sut build];
-    
-    assertThat(response, is(nilValue()));
-}
-
-- (void)testBuild_FromJSONArrayInsteadOfDictionary_ShouldReturnNil
-{
-    NSString *json = @"[]";
-    
-    [sut parseJSONData:jsonData(json)];
-    QCOFetchCharactersResponseModel *response = [sut build];
-    
-    assertThat(response, is(nilValue()));
-}
-
 - (void)testBuild_RequiresCode
 {
     NSString *json = @"{\"status\":\"STATUS\"}";
