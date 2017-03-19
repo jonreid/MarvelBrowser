@@ -14,7 +14,7 @@
 
 @implementation QCOCharacterResponseBuilderTests
 
-- (void)testParseDictionary_WithNonStringName_ShouldCaptureNilInBuilder
+- (void)testInit_WithNonStringName_ShouldCaptureNilInBuilder
 {
     NSDictionary *dict = @{ @"name": @123 };
     
@@ -23,7 +23,7 @@
     assertThat(sut.name, is(nilValue()));
 }
 
-- (void)testParseDictionary_WithName_ShouldCaptureValueInBuilder
+- (void)testInit_WithName_ShouldCaptureValueInBuilder
 {
     NSDictionary *dict = @{ @"name": @"NAME" };
     
