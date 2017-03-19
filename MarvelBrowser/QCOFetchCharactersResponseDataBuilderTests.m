@@ -12,7 +12,7 @@
 
 @implementation QCOFetchCharactersResponseDataBuilderTests
 
-- (void)testParseDictionary_WithNonIntegerOffset_ShouldCaptureNilInBuilder
+- (void)testInit_WithNonIntegerOffset_ShouldCaptureNilInBuilder
 {
     NSDictionary *dict = @{ @"offset": @"123" };
     
@@ -21,7 +21,7 @@
     assertThat(sut.offset, is(nilValue()));
 }
 
-- (void)testParseDictionary_WithOffset_ShouldCaptureValueInBuilder
+- (void)testInit_WithOffset_ShouldCaptureValueInBuilder
 {
     NSDictionary *dict = @{ @"offset": @123 };
     
@@ -30,7 +30,7 @@
     assertThat(sut.offset, is(@123));
 }
 
-- (void)testParseDictionary_WithNonIntegerTotal_ShouldCaptureNilInBuilder
+- (void)testInit_WithNonIntegerTotal_ShouldCaptureNilInBuilder
 {
     NSDictionary *dict = @{ @"total": @"123" };
     
@@ -39,7 +39,7 @@
     assertThat(sut.total, is(nilValue()));
 }
 
-- (void)testParseDictionary_WithTotal_ShouldCaptureValueInBuilder
+- (void)testInit_WithTotal_ShouldCaptureValueInBuilder
 {
     NSDictionary *dict = @{ @"total": @123 };
     
@@ -48,7 +48,7 @@
     assertThat(sut.total, is(@123));
 }
 
-- (void)testParseDictionary_WithNonArrayResult_ShouldCaptureNilInBuilder
+- (void)testInit_WithNonArrayResult_ShouldCaptureNilInBuilder
 {
     NSDictionary *dict = @{ @"results":
             @{ @"name": @"DUMMY" }
@@ -59,7 +59,7 @@
     assertThat(sut.results, is(nilValue()));
 }
 
-- (void)testParseDictionary_WithOneResultThatIsNotDictionary_ShouldCaptureArraySizeZeroInBuilder
+- (void)testInit_WithOneResultThatIsNotDictionary_ShouldCaptureArraySizeZeroInBuilder
 {
     NSDictionary *dict = @{ @"results": @[
             @[ @"DUMMY" ],
@@ -70,7 +70,7 @@
     assertThat(sut.results, hasCountOf(0));
 }
 
-- (void)testParseDictionary_WithOneResult_ShouldCaptureOneCharacterInBuilder
+- (void)testInit_WithOneResult_ShouldCaptureOneCharacterInBuilder
 {
     NSDictionary *dict = @{ @"results": @[
             @{ @"name": @"ONE" },
@@ -83,7 +83,7 @@
     ]));
 }
 
-- (void)testParseDictionary_WithTwoResult_ShouldCaptureTwoCharactersInBuilder
+- (void)testInit_WithTwoResults_ShouldCaptureTwoCharactersInBuilder
 {
     NSDictionary *dict = @{ @"results": @[
             @{ @"name": @"ONE" },
@@ -94,6 +94,37 @@
     
     assertThat(sut.results, containsIn(@[
             hasProperty(@"name", @"ONE"),
+            hasProperty(@"name", @"TWO"),
+    ]));
+}
+
+- (void)testBuildCharacters_WithTwoResults_ShouldBuildTwoCharacters
+{
+    NSDictionary *dict = @{ @"results": @[
+            @{ @"name": @"ONE" },
+            @{ @"name": @"TWO" },
+    ] };
+    QCOFetchCharactersResponseDataBuilder *sut = [[QCOFetchCharactersResponseDataBuilder alloc] initWithDictionary:dict];
+    
+    NSArray<QCOCharacterResponse *> *characters = [sut buildCharacters];
+    
+    assertThat(characters, containsIn(@[
+            hasProperty(@"name", @"ONE"),
+            hasProperty(@"name", @"TWO"),
+    ]));
+}
+
+- (void)testBuildCharacters_WithTwoResultsButFirstCharacterMissingName_ShouldBuildOneCharacter
+{
+    NSDictionary *dict = @{ @"results": @[
+            @{},
+            @{ @"name": @"TWO" },
+    ] };
+    QCOFetchCharactersResponseDataBuilder *sut = [[QCOFetchCharactersResponseDataBuilder alloc] initWithDictionary:dict];
+    
+    NSArray<QCOCharacterResponse *> *characters = [sut buildCharacters];
+    
+    assertThat(characters, containsIn(@[
             hasProperty(@"name", @"TWO"),
     ]));
 }
