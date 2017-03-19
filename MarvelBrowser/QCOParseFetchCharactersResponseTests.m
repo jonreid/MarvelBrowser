@@ -1,4 +1,4 @@
-#import "QCOParseFetchCharactersResponse.h"
+#import "QCOParseFetchCharactersJSONData.h"
 
 #import "QCOFetchCharactersResponseModel.h"
 
@@ -35,7 +35,7 @@
 
 - (void)testParseSampleResponse_ShouldHaveCode200
 {
-    QCOFetchCharactersResponseModel *response = QCOParseFetchCharactersResponse([self sampleResponse]);
+    QCOFetchCharactersResponseModel *response = QCOParseFetchCharactersJSONData([self sampleResponse]);
     
     assertThat(@(response.code), is(@200));
 }
