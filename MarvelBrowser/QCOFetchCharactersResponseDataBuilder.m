@@ -43,12 +43,17 @@
 - (NSArray<QCOCharacterResponse *> *)buildCharacters
 {
     NSMutableArray<QCOCharacterResponse *> *characters = [[NSMutableArray alloc] init];
-    for (QCOCharacterResponseBuilder *builder in self.results) {
-        QCOCharacterResponse *character = [builder build];
-        if (character)
-            [characters addObject:character];
-    }
+    for (QCOCharacterResponseBuilder *builder in self.results)
+        [self appendBuiltModelFrom:builder toAccumulator:characters];
     return characters;
+}
+
+- (void)appendBuiltModelFrom:(QCOCharacterResponseBuilder *)builder
+               toAccumulator:(NSMutableArray<QCOCharacterResponse *> *)accumulator
+{
+    QCOCharacterResponse *product = [builder build];
+    if (product)
+        [accumulator addObject:product];
 }
 
 @end
