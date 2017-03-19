@@ -28,12 +28,16 @@
         return nil;
     NSMutableArray<QCOCharacterResponseBuilder *> *accumulator = [[NSMutableArray alloc] init];
     for (id result in array)
-    {
-        NSDictionary *dict = QCORequireDictionary(result);
-        if (dict)
-            [accumulator addObject:[[QCOCharacterResponseBuilder alloc] initWithDictionary:dict]];
-    }
+        [self appendResult:result toAccumulator:accumulator];
     return accumulator;
+}
+
+- (void)appendResult:(id)result
+       toAccumulator:(NSMutableArray<QCOCharacterResponseBuilder *> *)accumulator
+{
+    NSDictionary *dict = QCORequireDictionary(result);
+    if (dict)
+        [accumulator addObject:[[QCOCharacterResponseBuilder alloc] initWithDictionary:dict]];
 }
 
 - (NSArray<QCOCharacterResponse *> *)buildCharacters
