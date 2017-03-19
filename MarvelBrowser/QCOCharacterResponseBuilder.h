@@ -8,9 +8,9 @@
 
 @interface QCOCharacterResponseBuilder : NSObject
 
-@property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy, readonly) NSString *name;
 
-- (void)parseDictionary:(NSDictionary *)dict;
+- (instancetype)initWithDictionary:(NSDictionary *)dict;
 - (QCOCharacterResponse *)build;
 
 @end

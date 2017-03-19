@@ -13,27 +13,12 @@
 @end
 
 @implementation QCOCharacterResponseBuilderTests
-{
-    QCOCharacterResponseBuilder *sut;
-}
-
-- (void)setUp
-{
-    [super setUp];
-    sut = [[QCOCharacterResponseBuilder alloc] init];
-}
-
-- (void)tearDown
-{
-    sut = nil;
-    [super tearDown];
-}
 
 - (void)testParseDictionary_WithNonStringName_ShouldCaptureNilInBuilder
 {
     NSDictionary *dict = @{ @"name": @123 };
     
-    [sut parseDictionary:dict];
+    QCOCharacterResponseBuilder *sut = [[QCOCharacterResponseBuilder alloc] initWithDictionary:dict];
     
     assertThat(sut.name, is(nilValue()));
 }
@@ -42,7 +27,7 @@
 {
     NSDictionary *dict = @{ @"name": @"NAME" };
     
-    [sut parseDictionary:dict];
+    QCOCharacterResponseBuilder *sut = [[QCOCharacterResponseBuilder alloc] initWithDictionary:dict];
     
     assertThat(sut.name, is(@"NAME"));
 }
@@ -50,7 +35,7 @@
 - (void)testBuild_ShouldHaveGivenName
 {
     NSDictionary *dict = @{ @"name": @"NAME" };
-    [sut parseDictionary:dict];
+    QCOCharacterResponseBuilder *sut = [[QCOCharacterResponseBuilder alloc] initWithDictionary:dict];
     
     QCOCharacterResponse *response = [sut build];
     
@@ -60,7 +45,7 @@
 - (void)testBuild_RequiresName
 {
     NSDictionary *dict = @{};
-    [sut parseDictionary:dict];
+    QCOCharacterResponseBuilder *sut = [[QCOCharacterResponseBuilder alloc] initWithDictionary:dict];
     
     QCOCharacterResponse *response = [sut build];
     

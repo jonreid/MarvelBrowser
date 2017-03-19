@@ -9,9 +9,12 @@
 
 @implementation QCOCharacterResponseBuilder
 
-- (void)parseDictionary:(NSDictionary *)dict
+- (instancetype)initWithDictionary:(NSDictionary *)dict;
 {
-    self.name = QCORequireString(dict[@"name"]);
+    self = [super init];
+    if (self)
+        _name = [QCORequireString(dict[@"name"]) copy];
+    return self;
 }
 
 - (QCOCharacterResponse *)build

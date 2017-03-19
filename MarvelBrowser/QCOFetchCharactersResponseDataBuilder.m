@@ -30,11 +30,8 @@
 - (void)addDictionary:(NSDictionary *)dict
                    to:(NSMutableArray<QCOCharacterResponseBuilder *> *)accumulator
 {
-    if (!dict)
-        return;
-    QCOCharacterResponseBuilder *builder = [[QCOCharacterResponseBuilder alloc] init];
-    [builder parseDictionary:dict];
-    [accumulator addObject:builder];
+    if (dict)
+        [accumulator addObject:[[QCOCharacterResponseBuilder alloc] initWithDictionary:dict]];
 }
 
 - (NSArray<QCOCharacterResponse *> *)buildCharacters
