@@ -12,6 +12,7 @@
 		4873A2331DC054AA00E8C9A2 /* TestingAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7462DD201AB6313C00EE429E /* TestingAppDelegate.m */; };
 		48DDD2831E7621FC00D2DCE4 /* QCOFetchCharactersResponseDataBuilderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DDD2821E7621FC00D2DCE4 /* QCOFetchCharactersResponseDataBuilderTests.m */; };
 		48DDD2851E762E1C00D2DCE4 /* QCOCharacterResponseBuilderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DDD2841E762E1C00D2DCE4 /* QCOCharacterResponseBuilderTests.m */; };
+		48E81F711E7F4BCA002FD63A /* QCOParseFetchCharactersResponseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 48E81F701E7F4BCA002FD63A /* QCOParseFetchCharactersResponseTests.m */; };
 		609E92ABD787275AC313A4AB /* QCOFetchCharactersMarvelService.m in Sources */ = {isa = PBXBuildFile; fileRef = 609E9250F3997E3D1CC14A9B /* QCOFetchCharactersMarvelService.m */; };
 		609E985DF300A893AD02B8B3 /* QCOMarvelAuthentication.m in Sources */ = {isa = PBXBuildFile; fileRef = 609E950D6BA8062FC0F214A8 /* QCOMarvelAuthentication.m */; };
 		609E99A7842D4BC05E1F6182 /* QCOMarvelAuthenticationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 609E98B120EF92D11321CCAF /* QCOMarvelAuthenticationTests.m */; };
@@ -61,6 +62,7 @@
 		481247A41DEBB80D00B95720 /* QCOFetchCharactersResponseBuilderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCOFetchCharactersResponseBuilderTests.m; sourceTree = "<group>"; };
 		48DDD2821E7621FC00D2DCE4 /* QCOFetchCharactersResponseDataBuilderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCOFetchCharactersResponseDataBuilderTests.m; sourceTree = "<group>"; };
 		48DDD2841E762E1C00D2DCE4 /* QCOCharacterResponseBuilderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCOCharacterResponseBuilderTests.m; sourceTree = "<group>"; };
+		48E81F701E7F4BCA002FD63A /* QCOParseFetchCharactersResponseTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCOParseFetchCharactersResponseTests.m; sourceTree = "<group>"; };
 		609E91893F8F324ECD9EF3DC /* QCOFetchCharactersRequestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCOFetchCharactersRequestModel.h; sourceTree = "<group>"; };
 		609E9250F3997E3D1CC14A9B /* QCOFetchCharactersMarvelService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCOFetchCharactersMarvelService.m; sourceTree = "<group>"; };
 		609E9469988A9317A915402E /* QCOURLQueryMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCOURLQueryMatcher.m; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 				BB17057FF1C612046AF272D8 /* QCOFetchCharactersResponseDataBuilder.h */,
 				BB1702D49819D1E23BFEB80F /* QCOFetchCharactersResponseDataBuilder.m */,
 				48DDD2821E7621FC00D2DCE4 /* QCOFetchCharactersResponseDataBuilderTests.m */,
+				48E81F701E7F4BCA002FD63A /* QCOParseFetchCharactersResponseTests.m */,
 			);
 			name = "JSON Parsing";
 			sourceTree = "<group>";
@@ -496,6 +499,7 @@
 				609E9ED670D468FF94105A93 /* QCOFetchCharactersMarvelServiceTests.m in Sources */,
 				48DDD2831E7621FC00D2DCE4 /* QCOFetchCharactersResponseDataBuilderTests.m in Sources */,
 				0E1EC9441C781FA600AE074F /* QCOURLQueryMatcherTests.m in Sources */,
+				48E81F711E7F4BCA002FD63A /* QCOParseFetchCharactersResponseTests.m in Sources */,
 				4873A2331DC054AA00E8C9A2 /* TestingAppDelegate.m in Sources */,
 				609E9FE53E50AFB4B38CD955 /* QCOURLQueryMatcher.m in Sources */,
 				481247A51DEBB80D00B95720 /* QCOFetchCharactersResponseBuilderTests.m in Sources */,
