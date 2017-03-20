@@ -5,10 +5,10 @@
 
 #import "QCOBuilderUtils.h"
 #import "QCOCharacterResponseBuilder.h"
-#import "QCOFetchCharactersResponseDataBuilder.h"
+#import "QCOCharactersSliceResponseBuilder.h"
 
 
-@implementation QCOFetchCharactersResponseDataBuilder
+@implementation QCOCharactersSliceResponseBuilder
 
 - (instancetype)initWithDictionary:(NSDictionary *)dict;
 {

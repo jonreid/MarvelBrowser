@@ -4,7 +4,7 @@
 #import "QCOFetchCharactersResponseBuilder.h"
 
 #import "QCOBuilderUtils.h"
-#import "QCOFetchCharactersResponseDataBuilder.h"
+#import "QCOCharactersSliceResponseBuilder.h"
 #import "QCOFetchCharactersResponseModel.h"
 
 
@@ -22,11 +22,11 @@
     return self;
 }
 
-+ (QCOFetchCharactersResponseDataBuilder *)parseDataFromDictionary:(NSDictionary *)dict
++ (QCOCharactersSliceResponseBuilder *)parseDataFromDictionary:(NSDictionary *)dict
 {
     if (!dict)
         return nil;
-    return [[QCOFetchCharactersResponseDataBuilder alloc] initWithDictionary:dict];
+    return [[QCOCharactersSliceResponseBuilder alloc] initWithDictionary:dict];
 }
 
 - (QCOFetchCharactersResponseModel *)build

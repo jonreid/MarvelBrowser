@@ -7,7 +7,7 @@
 @class QCOCharacterResponseBuilder;
 
 
-@interface QCOFetchCharactersResponseDataBuilder : NSObject
+@interface QCOCharactersSliceResponseBuilder : NSObject
 
 @property (nonatomic, strong, readonly) NSNumber *offset;
 @property (nonatomic, strong, readonly) NSNumber *total;

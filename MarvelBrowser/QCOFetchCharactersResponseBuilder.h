@@ -3,7 +3,7 @@
 
 #import <Foundation/Foundation.h>
 
-@class QCOFetchCharactersResponseDataBuilder;
+@class QCOCharactersSliceResponseBuilder;
 @class QCOFetchCharactersResponseModel;
 
 
@@ -11,7 +11,7 @@
 
 @property (nonatomic, strong, readonly) NSNumber *code;
 @property (nonatomic, copy, readonly) NSString *status;
-@property (nonatomic, strong, readonly) QCOFetchCharactersResponseDataBuilder *data;
+@property (nonatomic, strong, readonly) QCOCharactersSliceResponseBuilder *data;
 
 - (instancetype)initWithDictionary:(NSDictionary *)dict;
 - (QCOFetchCharactersResponseModel *)build;

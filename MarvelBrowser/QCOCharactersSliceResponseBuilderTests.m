@@ -1,22 +1,22 @@
 //  TDD sample app MarvelBrowser by Jon Reid, http://qualitycoding.org/about/
 //  Copyright 2017 Jonathan M. Reid. See LICENSE.txt
 
-#import "QCOFetchCharactersResponseDataBuilder.h"
+#import "QCOCharactersSliceResponseBuilder.h"
 
 #import <OCHamcrest/OCHamcrest.h>
 #import <XCTest/XCTest.h>
 
 
-@interface QCOFetchCharactersResponseDataBuilderTests : XCTestCase
+@interface QCOCharactersSliceResponseBuilderTests : XCTestCase
 @end
 
-@implementation QCOFetchCharactersResponseDataBuilderTests
+@implementation QCOCharactersSliceResponseBuilderTests
 
 - (void)testInit_WithNonIntegerOffset_ShouldCaptureNilInBuilder
 {
     NSDictionary *dict = @{ @"offset": @"123" };
     
-    QCOFetchCharactersResponseDataBuilder *sut = [[QCOFetchCharactersResponseDataBuilder alloc] initWithDictionary:dict];
+    QCOCharactersSliceResponseBuilder *sut = [[QCOCharactersSliceResponseBuilder alloc] initWithDictionary:dict];
     
     assertThat(sut.offset, is(nilValue()));
 }
@@ -25,7 +25,7 @@
 {
     NSDictionary *dict = @{ @"offset": @123 };
     
-    QCOFetchCharactersResponseDataBuilder *sut = [[QCOFetchCharactersResponseDataBuilder alloc] initWithDictionary:dict];
+    QCOCharactersSliceResponseBuilder *sut = [[QCOCharactersSliceResponseBuilder alloc] initWithDictionary:dict];
     
     assertThat(sut.offset, is(@123));
 }
@@ -34,7 +34,7 @@
 {
     NSDictionary *dict = @{ @"total": @"123" };
     
-    QCOFetchCharactersResponseDataBuilder *sut = [[QCOFetchCharactersResponseDataBuilder alloc] initWithDictionary:dict];
+    QCOCharactersSliceResponseBuilder *sut = [[QCOCharactersSliceResponseBuilder alloc] initWithDictionary:dict];
     
     assertThat(sut.total, is(nilValue()));
 }
@@ -43,7 +43,7 @@
 {
     NSDictionary *dict = @{ @"total": @123 };
     
-    QCOFetchCharactersResponseDataBuilder *sut = [[QCOFetchCharactersResponseDataBuilder alloc] initWithDictionary:dict];
+    QCOCharactersSliceResponseBuilder *sut = [[QCOCharactersSliceResponseBuilder alloc] initWithDictionary:dict];
     
     assertThat(sut.total, is(@123));
 }
@@ -54,7 +54,7 @@
             @{ @"name": @"DUMMY" }
     };
     
-    QCOFetchCharactersResponseDataBuilder *sut = [[QCOFetchCharactersResponseDataBuilder alloc] initWithDictionary:dict];
+    QCOCharactersSliceResponseBuilder *sut = [[QCOCharactersSliceResponseBuilder alloc] initWithDictionary:dict];
     
     assertThat(sut.results, is(nilValue()));
 }
@@ -65,7 +65,7 @@
             @[ @"DUMMY" ],
     ] };
     
-    QCOFetchCharactersResponseDataBuilder *sut = [[QCOFetchCharactersResponseDataBuilder alloc] initWithDictionary:dict];
+    QCOCharactersSliceResponseBuilder *sut = [[QCOCharactersSliceResponseBuilder alloc] initWithDictionary:dict];
     
     assertThat(sut.results, hasCountOf(0));
 }
@@ -76,7 +76,7 @@
             @{ @"name": @"ONE" },
     ] };
     
-    QCOFetchCharactersResponseDataBuilder *sut = [[QCOFetchCharactersResponseDataBuilder alloc] initWithDictionary:dict];
+    QCOCharactersSliceResponseBuilder *sut = [[QCOCharactersSliceResponseBuilder alloc] initWithDictionary:dict];
     
     assertThat(sut.results, containsIn(@[
             hasProperty(@"name", @"ONE"),
@@ -90,7 +90,7 @@
             @{ @"name": @"TWO" },
     ] };
     
-    QCOFetchCharactersResponseDataBuilder *sut = [[QCOFetchCharactersResponseDataBuilder alloc] initWithDictionary:dict];
+    QCOCharactersSliceResponseBuilder *sut = [[QCOCharactersSliceResponseBuilder alloc] initWithDictionary:dict];
     
     assertThat(sut.results, containsIn(@[
             hasProperty(@"name", @"ONE"),
@@ -104,7 +104,7 @@
             @{ @"name": @"ONE" },
             @{ @"name": @"TWO" },
     ] };
-    QCOFetchCharactersResponseDataBuilder *sut = [[QCOFetchCharactersResponseDataBuilder alloc] initWithDictionary:dict];
+    QCOCharactersSliceResponseBuilder *sut = [[QCOCharactersSliceResponseBuilder alloc] initWithDictionary:dict];
     
     NSArray<QCOCharacterResponse *> *characters = [sut buildCharacters];
     
@@ -120,7 +120,7 @@
             @{},
             @{ @"name": @"TWO" },
     ] };
-    QCOFetchCharactersResponseDataBuilder *sut = [[QCOFetchCharactersResponseDataBuilder alloc] initWithDictionary:dict];
+    QCOCharactersSliceResponseBuilder *sut = [[QCOCharactersSliceResponseBuilder alloc] initWithDictionary:dict];
     
     NSArray<QCOCharacterResponse *> *characters = [sut buildCharacters];
     
