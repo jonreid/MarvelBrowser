@@ -12,8 +12,6 @@
 
 - (void)parseDictionary:(NSDictionary *)dict
 {
-    if (!dict)
-        return;
     self.code = QCORequireNumber(dict[@"code"]);
     self.status = QCORequireString(dict[@"status"]);
     self.data = [self parseDataFromDictionary:QCORequireDictionary(dict[@"data"])];
