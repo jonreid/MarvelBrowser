@@ -10,14 +10,6 @@
 
 @implementation QCOFetchCharactersResponseBuilder
 
-- (void)parseJSONData:(NSData *)jsonData
-{
-    id object = [NSJSONSerialization JSONObjectWithData:jsonData
-                                                options:(NSJSONReadingOptions)0
-                                                  error:NULL];
-    [self parseDictionary:QCORequireDictionary(object)];
-}
-
 - (void)parseDictionary:(NSDictionary *)dict
 {
     if (!dict)

@@ -13,7 +13,6 @@
 @property (nonatomic, copy) NSString *status;
 @property (nonatomic, strong) QCOFetchCharactersResponseDataBuilder *data;
 
-- (void)parseJSONData:(NSData *)jsonData;
 - (void)parseDictionary:(NSDictionary *)dict;
 - (QCOFetchCharactersResponseModel *)build;
 
