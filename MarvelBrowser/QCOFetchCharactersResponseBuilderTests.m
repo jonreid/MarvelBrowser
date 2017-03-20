@@ -35,65 +35,65 @@ static NSData *jsonData(NSString *json)
     [super tearDown];
 }
 
-- (void)testParseJSONData_WithNonIntegerCode_ShouldCaptureNilInBuilder
+- (void)testParseDictionary_WithNonIntegerCode_ShouldCaptureNilInBuilder
 {
-    NSString *json = @"{\"code\":\"409\"}";
+    NSDictionary *dict = @{ @"code": @"409" };
     
-    [sut parseJSONData:jsonData(json)];
+    [sut parseDictionary:dict];
     
     assertThat(sut.code, is(nilValue()));
 }
 
-- (void)testParseJSONData_WithCode_ShouldCaptureValueInBuilder
+- (void)testParseDictionary_WithCode_ShouldCaptureValueInBuilder
 {
-    NSString *json = @"{\"code\":200}";
+    NSDictionary *dict = @{ @"code": @200 };
     
-    [sut parseJSONData:jsonData(json)];
+    [sut parseDictionary:dict];
     
     assertThat(sut.code, is(@200));
 }
 
-- (void)testParseJSONData_WithNonStringStatus_ShouldCaptureNilInBuilder
+- (void)testParseDictionary_WithNonStringStatus_ShouldCaptureNilInBuilder
 {
-    NSString *json = @"{\"status\":409}";
+    NSDictionary *dict = @{ @"status": @409 };
     
-    [sut parseJSONData:jsonData(json)];
+    [sut parseDictionary:dict];
     
     assertThat(sut.status, is(nilValue()));
 }
 
-- (void)testParseJSONData_WithStatus_ShouldCaptureValueInBuilder
+- (void)testParseDictionary_WithStatus_ShouldCaptureValueInBuilder
 {
-    NSString *json = @"{\"status\":\"STATUS\"}";
+    NSDictionary *dict = @{ @"status": @"STATUS" };
     
-    [sut parseJSONData:jsonData(json)];
+    [sut parseDictionary:dict];
     
     assertThat(sut.status, is(@"STATUS"));
 }
 
-- (void)testParseJSONData_WithNonDictionaryData_ShouldCaptureNilInBuilder
+- (void)testParseDictionary_WithNonDictionaryData_ShouldCaptureNilInBuilder
 {
-    NSString *json = @"{\"data\":123}";
+    NSDictionary *dict = @{ @"data": @123 };
     
-    [sut parseJSONData:jsonData(json)];
+    [sut parseDictionary:dict];
     
     assertThat(sut.data, is(nilValue()));
 }
 
-- (void)testParseJSONData_WithData_ShouldCaptureValueInBuilder
+- (void)testParseDictionary_WithData_ShouldCaptureValueInBuilder
 {
-    NSString *json = @"{\"data\":{\"offset\":123}}";
+    NSDictionary *dict = @{ @"data": @{ @"offset": @123 } };
     
-    [sut parseJSONData:jsonData(json)];
+    [sut parseDictionary:dict];
     
     assertThat(sut.data, hasProperty(@"offset", @123));
 }
 
 - (void)testBuild_RequiresCode
 {
-    NSString *json = @"{\"status\":\"STATUS\"}";
+    NSDictionary *dict = @{ @"status": @"STATUS" };
     
-    [sut parseJSONData:jsonData(json)];
+    [sut parseDictionary:dict];
     QCOFetchCharactersResponseModel *response = [sut build];
     
     assertThat(response, is(nilValue()));
