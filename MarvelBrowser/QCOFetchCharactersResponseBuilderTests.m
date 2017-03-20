@@ -9,12 +9,6 @@
 #import <XCTest/XCTest.h>
 
 
-static NSData *jsonData(NSString *json)
-{
-    return [json dataUsingEncoding:NSUTF8StringEncoding];
-}
-
-
 @interface QCOFetchCharactersResponseBuilderTests : XCTestCase
 @end
 
@@ -97,66 +91,6 @@ static NSData *jsonData(NSString *json)
     QCOFetchCharactersResponseModel *response = [sut build];
     
     assertThat(response, is(nilValue()));
-}
-
-- (QCOFetchCharactersResponseModel *)buildSampleResponse
-{
-    NSString *sampleResponse =
-            @"{"
-            "  \"code\": 200,"
-            "  \"status\": \"Ok\","
-            "  \"data\": {"
-            "    \"offset\": 1,"
-            "    \"total\": 3,"
-            "    \"results\": ["
-            "      {"
-            "        \"name\": \"NAME1\""
-            "      },"
-            "      {"
-            "        \"name\": \"NAME2\""
-            "      }"
-            "    ]"
-            "  }"
-            "}";
-    [sut parseJSONData:jsonData(sampleResponse)];
-    return [sut build];
-}
-
-- (void)testBuild_FromSampleResponse_ShouldHaveCode200
-{
-    QCOFetchCharactersResponseModel *response = [self buildSampleResponse];
-    
-    assertThat(@(response.code), is(@200));
-}
-
-- (void)testBuild_FromSampleResponse_ShouldHaveStatusOk
-{
-    QCOFetchCharactersResponseModel *response = [self buildSampleResponse];
-    
-    assertThat(response.status, is(@"Ok"));
-}
-
-- (void)testBuild_FromSampleResponse_ShouldHaveOffset1
-{
-    QCOFetchCharactersResponseModel *response = [self buildSampleResponse];
-    
-    assertThat(@(response.offset), is(@1));
-}
-
-- (void)testBuild_FromSampleResponse_ShouldHaveTotal3
-{
-    QCOFetchCharactersResponseModel *response = [self buildSampleResponse];
-    
-    assertThat(@(response.total), is(@3));
-}
-
-- (void)testBuild_FromSampleResponse_ShouldHaveTwoCharacters
-{
-    QCOFetchCharactersResponseModel *response = [self buildSampleResponse];
-    
-    assertThat(response.characters, containsIn(@[
-            hasProperty(@"name", @"NAME1"),
-            hasProperty(@"name", @"NAME2")]));
 }
 
 @end

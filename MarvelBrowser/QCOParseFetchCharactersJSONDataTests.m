@@ -6,10 +6,10 @@
 #import <XCTest/XCTest.h>
 
 
-@interface QCOParseFetchCharactersResponseTests : XCTestCase
+@interface QCOParseFetchCharactersJSONDataTests : XCTestCase
 @end
 
-@implementation QCOParseFetchCharactersResponseTests
+@implementation QCOParseFetchCharactersJSONDataTests
 
 - (NSData *)sampleResponse
 {
