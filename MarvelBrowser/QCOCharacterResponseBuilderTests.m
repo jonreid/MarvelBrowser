@@ -32,7 +32,7 @@
     assertThat(sut.name, is(@"NAME"));
 }
 
-- (void)testBuild_ShouldHaveGivenName
+- (void)testBuild_WithName_ShouldHaveGivenName
 {
     NSDictionary *dict = @{ @"name": @"NAME" };
     QCOCharacterResponseBuilder *sut = [[QCOCharacterResponseBuilder alloc] initWithDictionary:dict];
@@ -42,7 +42,7 @@
     assertThat(response.name, is(@"NAME"));
 }
 
-- (void)testBuild_RequiresName
+- (void)testBuild_WithoutName_ShouldReturnNil
 {
     NSDictionary *dict = @{};
     QCOCharacterResponseBuilder *sut = [[QCOCharacterResponseBuilder alloc] initWithDictionary:dict];

@@ -80,7 +80,7 @@
     assertThat(response, is(nilValue()));
 }
 
-- (void)testBuild_FromJSONArrayInsteadOfDictionary_ShouldReturnNil
+- (void)testBuild_WithJSONArrayInsteadOfDictionary_ShouldReturnNil
 {
     NSString *json = @"[]";
     NSData *jsonData = [json dataUsingEncoding:NSUTF8StringEncoding];
