@@ -9,10 +9,10 @@
 
 QCOFetchCharactersResponseModel *QCOParseFetchCharactersJSONData(NSData *jsonData)
 {
-    QCOFetchCharactersResponseBuilder *builder = [[QCOFetchCharactersResponseBuilder alloc] init];
     id object = [NSJSONSerialization JSONObjectWithData:jsonData
                                                 options:(NSJSONReadingOptions)0
                                                   error:NULL];
-    [builder parseDictionary:QCORequireDictionary(object)];
+    QCOFetchCharactersResponseBuilder *builder = [[QCOFetchCharactersResponseBuilder alloc]
+            initWithDictionary:QCORequireDictionary(object)];
     return [builder build];
 }

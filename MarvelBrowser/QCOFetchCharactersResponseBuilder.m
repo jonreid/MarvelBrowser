@@ -10,14 +10,19 @@
 
 @implementation QCOFetchCharactersResponseBuilder
 
-- (void)parseDictionary:(NSDictionary *)dict
+- (instancetype)initWithDictionary:(NSDictionary *)dict;
 {
-    self.code = QCORequireNumber(dict[@"code"]);
-    self.status = QCORequireString(dict[@"status"]);
-    self.data = [self parseDataFromDictionary:QCORequireDictionary(dict[@"data"])];
+    self = [super init];
+    if (self)
+    {
+        _code = QCORequireNumber(dict[@"code"]);
+        _status = [QCORequireString(dict[@"status"]) copy];
+        _data = [[self class] parseDataFromDictionary:QCORequireDictionary(dict[@"data"])];
+    }
+    return self;
 }
 
-- (QCOFetchCharactersResponseDataBuilder *)parseDataFromDictionary:(NSDictionary *)dict
++ (QCOFetchCharactersResponseDataBuilder *)parseDataFromDictionary:(NSDictionary *)dict
 {
     if (!dict)
         return nil;

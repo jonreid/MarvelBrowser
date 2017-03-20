@@ -13,72 +13,57 @@
 @end
 
 @implementation QCOFetchCharactersResponseBuilderTests
-{
-    QCOFetchCharactersResponseBuilder *sut;
-}
 
-- (void)setUp
-{
-    [super setUp];
-    sut = [[QCOFetchCharactersResponseBuilder alloc] init];
-}
-
-- (void)tearDown
-{
-    sut = nil;
-    [super tearDown];
-}
-
-- (void)testParseDictionary_WithNonIntegerCode_ShouldCaptureNilInBuilder
+- (void)testInit_WithNonIntegerCode_ShouldCaptureNilInBuilder
 {
     NSDictionary *dict = @{ @"code": @"409" };
     
-    [sut parseDictionary:dict];
+    QCOFetchCharactersResponseBuilder *sut = [[QCOFetchCharactersResponseBuilder alloc] initWithDictionary:dict];
     
     assertThat(sut.code, is(nilValue()));
 }
 
-- (void)testParseDictionary_WithCode_ShouldCaptureValueInBuilder
+- (void)testInit_WithCode_ShouldCaptureValueInBuilder
 {
     NSDictionary *dict = @{ @"code": @200 };
     
-    [sut parseDictionary:dict];
+    QCOFetchCharactersResponseBuilder *sut = [[QCOFetchCharactersResponseBuilder alloc] initWithDictionary:dict];
     
     assertThat(sut.code, is(@200));
 }
 
-- (void)testParseDictionary_WithNonStringStatus_ShouldCaptureNilInBuilder
+- (void)testInit_WithNonStringStatus_ShouldCaptureNilInBuilder
 {
     NSDictionary *dict = @{ @"status": @409 };
     
-    [sut parseDictionary:dict];
+    QCOFetchCharactersResponseBuilder *sut = [[QCOFetchCharactersResponseBuilder alloc] initWithDictionary:dict];
     
     assertThat(sut.status, is(nilValue()));
 }
 
-- (void)testParseDictionary_WithStatus_ShouldCaptureValueInBuilder
+- (void)testInit_WithStatus_ShouldCaptureValueInBuilder
 {
     NSDictionary *dict = @{ @"status": @"STATUS" };
     
-    [sut parseDictionary:dict];
+    QCOFetchCharactersResponseBuilder *sut = [[QCOFetchCharactersResponseBuilder alloc] initWithDictionary:dict];
     
     assertThat(sut.status, is(@"STATUS"));
 }
 
-- (void)testParseDictionary_WithNonDictionaryData_ShouldCaptureNilInBuilder
+- (void)testInit_WithNonDictionaryData_ShouldCaptureNilInBuilder
 {
     NSDictionary *dict = @{ @"data": @123 };
     
-    [sut parseDictionary:dict];
+    QCOFetchCharactersResponseBuilder *sut = [[QCOFetchCharactersResponseBuilder alloc] initWithDictionary:dict];
     
     assertThat(sut.data, is(nilValue()));
 }
 
-- (void)testParseDictionary_WithData_ShouldCaptureValueInBuilder
+- (void)testInit_WithData_ShouldCaptureValueInBuilder
 {
     NSDictionary *dict = @{ @"data": @{ @"offset": @123 } };
     
-    [sut parseDictionary:dict];
+    QCOFetchCharactersResponseBuilder *sut = [[QCOFetchCharactersResponseBuilder alloc] initWithDictionary:dict];
     
     assertThat(sut.data, hasProperty(@"offset", @123));
 }
@@ -87,7 +72,7 @@
 {
     NSDictionary *dict = @{ @"status": @"STATUS" };
     
-    [sut parseDictionary:dict];
+    QCOFetchCharactersResponseBuilder *sut = [[QCOFetchCharactersResponseBuilder alloc] initWithDictionary:dict];
     QCOFetchCharactersResponseModel *response = [sut build];
     
     assertThat(response, is(nilValue()));
