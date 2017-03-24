@@ -98,6 +98,14 @@
     ]));
 }
 
+- (void)testBuild_WithOffsetAndTotal_ShouldHaveGivenOffsetAndTotal
+{
+    NSDictionary *dict = @{ @"offset": @123, @"total": @456 };
+    QCOCharactersSliceResponseBuilder *sut = [[QCOCharactersSliceResponseBuilder alloc] initWithDictionary:dict];
+    
+    QCOCharacterSliceResponseModel *response = [sut build];
+}
+
 - (void)testBuildCharacters_WithTwoResults_ShouldBuildTwoCharacters
 {
     NSDictionary *dict = @{ @"results": @[
