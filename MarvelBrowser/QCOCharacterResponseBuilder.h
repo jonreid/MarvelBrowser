@@ -3,7 +3,7 @@
 
 #import <Foundation/Foundation.h>
 
-@class QCOCharacterResponse;
+@class QCOCharacterResponseModel;
 
 
 @interface QCOCharacterResponseBuilder : NSObject
@@ -11,6 +11,6 @@
 @property (nonatomic, copy, readonly) NSString *name;
 
 - (instancetype)initWithDictionary:(NSDictionary *)dict;
-- (QCOCharacterResponse *)build;
+- (QCOCharacterResponseModel *)build;
 
 @end

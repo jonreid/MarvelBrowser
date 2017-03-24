@@ -3,7 +3,7 @@
 
 #import "QCOCharacterResponseBuilder.h"
 
-#import "QCOCharacterResponse.h"
+#import "QCOCharacterResponseModel.h"
 
 #import <OCHamcrest/OCHamcrest.h>
 #import <XCTest/XCTest.h>
@@ -37,7 +37,7 @@
     NSDictionary *dict = @{ @"name": @"NAME" };
     QCOCharacterResponseBuilder *sut = [[QCOCharacterResponseBuilder alloc] initWithDictionary:dict];
     
-    QCOCharacterResponse *response = [sut build];
+    QCOCharacterResponseModel *response = [sut build];
     
     assertThat(response.name, is(@"NAME"));
 }
@@ -47,7 +47,7 @@
     NSDictionary *dict = @{};
     QCOCharacterResponseBuilder *sut = [[QCOCharacterResponseBuilder alloc] initWithDictionary:dict];
     
-    QCOCharacterResponse *response = [sut build];
+    QCOCharacterResponseModel *response = [sut build];
     
     assertThat(response, is(nilValue()));
 }

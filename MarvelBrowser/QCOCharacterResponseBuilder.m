@@ -4,7 +4,7 @@
 #import "QCOCharacterResponseBuilder.h"
 
 #import "QCOBuilderUtils.h"
-#import "QCOCharacterResponse.h"
+#import "QCOCharacterResponseModel.h"
 
 
 @implementation QCOCharacterResponseBuilder
@@ -17,11 +17,11 @@
     return self;
 }
 
-- (QCOCharacterResponse *)build
+- (QCOCharacterResponseModel *)build
 {
     if (!self.name)
         return nil;
-    return [[QCOCharacterResponse alloc] initWithName:self.name];
+    return [[QCOCharacterResponseModel alloc] initWithName:self.name];
 }
 
 @end

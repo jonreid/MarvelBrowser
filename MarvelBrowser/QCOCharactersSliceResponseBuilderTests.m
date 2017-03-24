@@ -106,7 +106,7 @@
     ] };
     QCOCharactersSliceResponseBuilder *sut = [[QCOCharactersSliceResponseBuilder alloc] initWithDictionary:dict];
     
-    NSArray<QCOCharacterResponse *> *characters = [sut buildCharacters];
+    NSArray<QCOCharacterResponseModel *> *characters = [sut buildCharacters];
     
     assertThat(characters, containsIn(@[
             hasProperty(@"name", @"ONE"),
@@ -122,7 +122,7 @@
     ] };
     QCOCharactersSliceResponseBuilder *sut = [[QCOCharactersSliceResponseBuilder alloc] initWithDictionary:dict];
     
-    NSArray<QCOCharacterResponse *> *characters = [sut buildCharacters];
+    NSArray<QCOCharacterResponseModel *> *characters = [sut buildCharacters];
     
     assertThat(characters, containsIn(@[
             hasProperty(@"name", @"TWO"),

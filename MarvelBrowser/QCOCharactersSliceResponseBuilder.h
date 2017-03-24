@@ -3,7 +3,7 @@
 
 #import <Foundation/Foundation.h>
 
-@class QCOCharacterResponse;
+@class QCOCharacterResponseModel;
 @class QCOCharacterResponseBuilder;
 
 
@@ -14,6 +14,6 @@
 @property (nonatomic, copy, readonly) NSArray<QCOCharacterResponseBuilder *> *results;
 
 - (instancetype)initWithDictionary:(NSDictionary *)dict;
-- (NSArray<QCOCharacterResponse *> *)buildCharacters;
+- (NSArray<QCOCharacterResponseModel *> *)buildCharacters;
 
 @end

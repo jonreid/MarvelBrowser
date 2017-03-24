@@ -10,7 +10,7 @@
                       status:(NSString *)status
                       offset:(NSInteger)offset
                        total:(NSInteger)total
-                  characters:(NSArray<QCOCharacterResponse *> *)characters
+                  characters:(NSArray<QCOCharacterResponseModel *> *)characters
 {
     self = [super init];
     if (self)

@@ -4,7 +4,7 @@
 #import <Foundation/Foundation.h>
 
 
-@interface QCOCharacterResponse : NSObject
+@interface QCOCharacterResponseModel : NSObject
 
 @property (nonatomic, copy, readonly) NSString *name;
 
