@@ -6,6 +6,7 @@
 #import "QCOBuilderUtils.h"
 #import "QCOCharacterResponseBuilder.h"
 #import "QCOCharactersSliceResponseBuilder.h"
+#import "QCOCharacterSliceResponseModel.h"
 
 
 @implementation QCOCharactersSliceResponseBuilder
@@ -38,6 +39,11 @@
     NSDictionary *dict = QCORequireDictionary(result);
     if (dict)
         [accumulator addObject:[[QCOCharacterResponseBuilder alloc] initWithDictionary:dict]];
+}
+
+- (QCOCharacterSliceResponseModel *)build
+{
+    return nil;
 }
 
 - (NSArray<QCOCharacterResponseModel *> *)buildCharacters

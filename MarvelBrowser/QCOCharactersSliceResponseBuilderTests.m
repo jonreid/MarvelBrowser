@@ -2,6 +2,7 @@
 //  Copyright 2017 Jonathan M. Reid. See LICENSE.txt
 
 #import "QCOCharactersSliceResponseBuilder.h"
+#import "QCOCharacterSliceResponseModel.h"
 
 #import <OCHamcrest/OCHamcrest.h>
 #import <XCTest/XCTest.h>

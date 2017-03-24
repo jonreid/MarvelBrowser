@@ -5,6 +5,7 @@
 
 @class QCOCharacterResponseModel;
 @class QCOCharacterResponseBuilder;
+@class QCOCharacterSliceResponseModel;
 
 
 @interface QCOCharactersSliceResponseBuilder : NSObject
@@ -14,6 +15,7 @@
 @property (nonatomic, copy, readonly) NSArray<QCOCharacterResponseBuilder *> *results;
 
 - (instancetype)initWithDictionary:(NSDictionary *)dict;
+- (QCOCharacterSliceResponseModel *)build;
 - (NSArray<QCOCharacterResponseModel *> *)buildCharacters;
 
 @end
