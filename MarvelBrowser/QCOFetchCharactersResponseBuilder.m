@@ -32,7 +32,7 @@
 - (QCOFetchCharactersResponseModel *)build
 {
     QCOCharacterSliceResponseModel *slice = [self.data build];
-    if (!self.code || !slice)
+    if (!self.code || ([self.code isEqualToNumber:@200] && !slice))
         self.code = @500;
     return [[QCOFetchCharactersResponseModel alloc] initWithCode:self.code.integerValue
                                                           status:self.status
