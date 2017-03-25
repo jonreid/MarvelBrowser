@@ -100,7 +100,7 @@
     ]));
 }
 
-- (void)testBuild_WithAllRequiredFields_ShouldReturnModelWithGivenFields
+- (void)testBuild_WithAllRequiredFields_ShouldHaveGivenFields
 {
     NSDictionary *dict = @{
             @"offset": @123,
@@ -137,6 +137,26 @@
     QCOCharacterSliceResponseModel *response = [sut build];
     
     assertThat(response, is(nilValue()));
+}
+
+- (void)testBuild_WithRequiredFieldsPlusTwoResults_ShouldHaveTwoCharacters
+{
+    NSDictionary *dict = @{
+            @"offset": @123,
+            @"total": @456,
+            @"results": @[
+                @{ @"name": @"ONE" },
+                @{ @"name": @"TWO" },
+            ],
+    };
+    QCOCharactersSliceResponseBuilder *sut = [[QCOCharactersSliceResponseBuilder alloc] initWithDictionary:dict];
+    
+    QCOCharacterSliceResponseModel *response = [sut build];
+    
+    assertThat(response.characters, containsIn(@[
+            hasProperty(@"name", @"ONE"),
+            hasProperty(@"name", @"TWO"),
+    ]));
 }
 
 - (void)testBuildCharacters_WithTwoResults_ShouldBuildTwoCharacters
