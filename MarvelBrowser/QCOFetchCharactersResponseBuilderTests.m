@@ -106,7 +106,7 @@
     assertThat(response, is(nilValue()));
 }
 
-- (void)testBuild_WithCodePlusDataWithRequiredFields_ShouldHaveSlice
+- (void)XXXtestBuild_WithCodePlusDataWithRequiredFields_ShouldHaveSlice
 {
     NSDictionary *dict = @{
             @"code": @123,
