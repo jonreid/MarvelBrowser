@@ -5,4 +5,8 @@
 
 
 @interface QCOCharacterSliceResponseModel : NSObject
+
+@property (nonatomic, assign, readonly) NSInteger offset;
+@property (nonatomic, assign, readonly) NSInteger total;
+
 @end

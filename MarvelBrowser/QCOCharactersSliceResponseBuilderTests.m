@@ -2,6 +2,7 @@
 //  Copyright 2017 Jonathan M. Reid. See LICENSE.txt
 
 #import "QCOCharactersSliceResponseBuilder.h"
+
 #import "QCOCharacterSliceResponseModel.h"
 
 #import <OCHamcrest/OCHamcrest.h>
@@ -99,12 +100,15 @@
     ]));
 }
 
-- (void)testBuild_WithOffsetAndTotal_ShouldHaveGivenOffsetAndTotal
+- (void)testBuild_WithRequiredFields_ShouldHaveGivenOffsetAndTotal
 {
     NSDictionary *dict = @{ @"offset": @123, @"total": @456 };
     QCOCharactersSliceResponseBuilder *sut = [[QCOCharactersSliceResponseBuilder alloc] initWithDictionary:dict];
     
     QCOCharacterSliceResponseModel *response = [sut build];
+ 
+    assertThat(@(response.offset), is(@123));
+    assertThat(@(response.total), is(@456));
 }
 
 - (void)testBuildCharacters_WithTwoResults_ShouldBuildTwoCharacters
