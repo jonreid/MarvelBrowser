@@ -135,4 +135,16 @@
     assertThat(response.slice, hasProperty(@"total", @2));
 }
 
+- (void)testBuild_WithSuccess200CodeButNoData_ShouldReturnCode500
+{
+    NSDictionary *dict = @{
+            @"code": @200,
+    };
+    QCOFetchCharactersResponseBuilder *sut = [[QCOFetchCharactersResponseBuilder alloc] initWithDictionary:dict];
+    
+    QCOFetchCharactersResponseModel *response = [sut build];
+    
+    assertThat(@(response.code), is(@500));
+}
+
 @end
