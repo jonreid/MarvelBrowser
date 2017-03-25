@@ -68,7 +68,19 @@
     assertThat(sut.data, hasProperty(@"offset", @123));
 }
 
-- (void)testBuild_WithCodeAndStatus_ShouldReturnResponse
+- (void)testBuild_WithRequiredCode_ShouldHaveGivenField
+{
+    NSDictionary *dict = @{
+            @"code": @123,
+    };
+    QCOFetchCharactersResponseBuilder *sut = [[QCOFetchCharactersResponseBuilder alloc] initWithDictionary:dict];
+    
+    QCOFetchCharactersResponseModel *response = [sut build];
+    
+    assertThat(@(response.code), is(@123));
+}
+
+- (void)testBuild_WithCodeAndStatus_ShouldHaveGivenFields
 {
     NSDictionary *dict = @{
             @"code": @123,
