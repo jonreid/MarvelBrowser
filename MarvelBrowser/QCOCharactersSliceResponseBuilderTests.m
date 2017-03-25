@@ -100,15 +100,31 @@
     ]));
 }
 
-- (void)testBuild_WithRequiredFields_ShouldHaveGivenOffsetAndTotal
+- (void)testBuild_WithAllRequiredFields_ShouldReturnModelWithGivenFields
 {
-    NSDictionary *dict = @{ @"offset": @123, @"total": @456 };
+    NSDictionary *dict = @{
+            @"offset": @123,
+            @"total": @456,
+    };
     QCOCharactersSliceResponseBuilder *sut = [[QCOCharactersSliceResponseBuilder alloc] initWithDictionary:dict];
     
     QCOCharacterSliceResponseModel *response = [sut build];
  
     assertThat(@(response.offset), is(@123));
     assertThat(@(response.total), is(@456));
+}
+
+
+- (void)testBuild_MissingOffset_ShouldReturnNil
+{
+    NSDictionary *dict = @{
+            @"total": @456,
+    };
+    QCOCharactersSliceResponseBuilder *sut = [[QCOCharactersSliceResponseBuilder alloc] initWithDictionary:dict];
+    
+    QCOCharacterSliceResponseModel *response = [sut build];
+    
+    assertThat(response, is(nilValue()));
 }
 
 - (void)testBuildCharacters_WithTwoResults_ShouldBuildTwoCharacters
