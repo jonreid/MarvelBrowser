@@ -106,4 +106,21 @@
     assertThat(response, is(nilValue()));
 }
 
+- (void)testBuild_WithCodePlusDataWithRequiredFields_ShouldHaveSlice
+{
+    NSDictionary *dict = @{
+            @"code": @123,
+            @"data": @{
+                    @"offset": @1,
+                    @"total": @2,
+            }
+    };
+    QCOFetchCharactersResponseBuilder *sut = [[QCOFetchCharactersResponseBuilder alloc] initWithDictionary:dict];
+    
+    QCOFetchCharactersResponseModel *response = [sut build];
+    
+    assertThat(response.slice, hasProperty(@"offset", @1));
+    assertThat(response.slice, hasProperty(@"total", @2));
+}
+
 @end
