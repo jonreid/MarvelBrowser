@@ -9,4 +9,6 @@
 @property (nonatomic, assign, readonly) NSInteger offset;
 @property (nonatomic, assign, readonly) NSInteger total;
 
+- (instancetype)initWithOffset:(NSInteger)offset total:(NSInteger)total;
+
 @end

@@ -5,4 +5,16 @@
 
 
 @implementation QCOCharacterSliceResponseModel
+
+- (instancetype)initWithOffset:(NSInteger)offset total:(NSInteger)total
+{
+    self = [super init];
+    if (self)
+    {
+        _offset = offset;
+        _total = total;
+    }
+    return self;
+}
+
 @end
