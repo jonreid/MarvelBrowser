@@ -158,6 +158,25 @@
     ]));
 }
 
+- (void)testBuild_WithRequiredFieldsPlusTwoResultsButFirstCharacterMissingName_ShouldHaveOneCharacter
+{
+    NSDictionary *dict = @{
+            @"offset": @123,
+            @"total": @456,
+            @"results": @[
+                @{},
+                @{ @"name": @"TWO" },
+            ],
+    };
+    QCOCharactersSliceResponseBuilder *sut = [[QCOCharactersSliceResponseBuilder alloc] initWithDictionary:dict];
+    
+    QCOCharacterSliceResponseModel *response = [sut build];
+    
+    assertThat(response.characters, containsIn(@[
+            hasProperty(@"name", @"TWO"),
+    ]));
+}
+
 - (void)testBuild_WithRequiredFieldsButNoResults_ShouldHaveEmptyCharactersArray
 {
     NSDictionary *dict = @{
