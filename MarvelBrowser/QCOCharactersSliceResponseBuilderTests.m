@@ -139,7 +139,7 @@
     assertThat(response, is(nilValue()));
 }
 
-- (void)XXXtestBuild_WithRequiredFieldsPlusTwoResults_ShouldHaveTwoCharacters
+- (void)testBuild_WithRequiredFieldsPlusTwoResults_ShouldHaveTwoCharacters
 {
     NSDictionary *dict = @{
             @"offset": @123,
