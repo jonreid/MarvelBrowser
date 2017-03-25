@@ -9,7 +9,7 @@
 
 @interface QCOFetchCharactersResponseBuilder : NSObject
 
-@property (nonatomic, strong, readonly) NSNumber *code;
+@property (nonatomic, strong) NSNumber *code;
 @property (nonatomic, copy, readonly) NSString *status;
 @property (nonatomic, strong, readonly) QCOCharactersSliceResponseBuilder *data;
 

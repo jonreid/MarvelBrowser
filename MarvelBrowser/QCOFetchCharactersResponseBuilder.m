@@ -32,7 +32,7 @@
 - (QCOFetchCharactersResponseModel *)build
 {
     if (!self.code)
-        return nil;
+        self.code = @500;
     return [[QCOFetchCharactersResponseModel alloc] initWithCode:self.code.integerValue
                                                           status:self.status
                                                            slice:[self.data build]];
