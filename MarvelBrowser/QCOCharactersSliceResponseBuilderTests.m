@@ -127,6 +127,18 @@
     assertThat(response, is(nilValue()));
 }
 
+- (void)testBuild_MissingTotal_ShouldReturnNil
+{
+    NSDictionary *dict = @{
+            @"offset": @123,
+    };
+    QCOCharactersSliceResponseBuilder *sut = [[QCOCharactersSliceResponseBuilder alloc] initWithDictionary:dict];
+    
+    QCOCharacterSliceResponseModel *response = [sut build];
+    
+    assertThat(response, is(nilValue()));
+}
+
 - (void)testBuildCharacters_WithTwoResults_ShouldBuildTwoCharacters
 {
     NSDictionary *dict = @{ @"results": @[
