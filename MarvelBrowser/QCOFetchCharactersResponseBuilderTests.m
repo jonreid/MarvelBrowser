@@ -72,6 +72,10 @@
 {
     NSDictionary *dict = @{
             @"code": @123,
+            @"data": @{
+                    @"offset": @1,
+                    @"total": @2,
+            }
     };
     QCOFetchCharactersResponseBuilder *sut = [[QCOFetchCharactersResponseBuilder alloc] initWithDictionary:dict];
     
@@ -80,11 +84,15 @@
     assertThat(@(response.code), is(@123));
 }
 
-- (void)testBuild_WithCodeAndStatus_ShouldHaveGivenFields
+- (void)testBuild_WithStatus_ShouldHaveGivenField
 {
     NSDictionary *dict = @{
             @"code": @123,
-            @"status": @"STATUS"
+            @"status": @"STATUS",
+            @"data": @{
+                    @"offset": @1,
+                    @"total": @2,
+            }
     };
     QCOFetchCharactersResponseBuilder *sut = [[QCOFetchCharactersResponseBuilder alloc] initWithDictionary:dict];
     
@@ -97,7 +105,11 @@
 - (void)testBuild_WithoutCode_ShouldReturnNil
 {
     NSDictionary *dict = @{
-            @"status": @"STATUS"
+            @"status": @"STATUS",
+            @"data": @{
+                    @"offset": @1,
+                    @"total": @2,
+            }
     };
     QCOFetchCharactersResponseBuilder *sut = [[QCOFetchCharactersResponseBuilder alloc] initWithDictionary:dict];
     
