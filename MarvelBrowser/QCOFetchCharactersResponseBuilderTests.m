@@ -102,7 +102,7 @@
     assertThat(response.status, is(@"STATUS"));
 }
 
-- (void)testBuild_WithoutCode_ShouldReturnNil
+- (void)testBuild_WithoutCode_ShouldReturnCode500
 {
     NSDictionary *dict = @{
             @"status": @"STATUS",
@@ -115,7 +115,7 @@
     
     QCOFetchCharactersResponseModel *response = [sut build];
     
-    assertThat(response, is(nilValue()));
+    assertThat(@(response.code), is(@500));
 }
 
 - (void)testBuild_WithCodePlusDataWithRequiredFields_ShouldHaveSlice
