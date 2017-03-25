@@ -71,24 +71,24 @@
             hasProperty(@"name", @"NAME2")]));
 }
 
-- (void)testParse_WithMalformedJSON_ShouldReturnNil
+- (void)testParse_WithMalformedJSON_ShouldReturnCode500
 {
     NSString *json = @"{\"cod";
     NSData *jsonData = [json dataUsingEncoding:NSUTF8StringEncoding];
     
     QCOFetchCharactersResponseModel *response = QCOParseFetchCharactersJSONData(jsonData);
     
-    assertThat(response, is(nilValue()));
+    assertThat(@(response.code), is(@500));
 }
 
-- (void)testBuild_WithJSONArrayInsteadOfDictionary_ShouldReturnNil
+- (void)testBuild_WithJSONArrayInsteadOfDictionary_ShouldReturnCode500
 {
     NSString *json = @"[]";
     NSData *jsonData = [json dataUsingEncoding:NSUTF8StringEncoding];
     
     QCOFetchCharactersResponseModel *response = QCOParseFetchCharactersJSONData(jsonData);
     
-    assertThat(response, is(nilValue()));
+    assertThat(@(response.code), is(@500));
 }
 
 @end
