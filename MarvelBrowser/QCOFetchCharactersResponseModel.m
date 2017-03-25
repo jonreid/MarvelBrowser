@@ -6,7 +6,9 @@
 
 @implementation QCOFetchCharactersResponseModel
 
-- (instancetype)initWithCode:(NSInteger)code status:(NSString *)status slice:(QCOCharacterSliceResponseModel *)slice offset:(NSInteger)offset total:(NSInteger)total characters:(NSArray<QCOCharacterResponseModel *> *)characters
+- (instancetype)initWithCode:(NSInteger)code
+                      status:(NSString *)status
+                       slice:(QCOCharacterSliceResponseModel *)slice
 {
     self = [super init];
     if (self)
@@ -14,12 +16,8 @@
         _code = code;
         _status = [status copy];
         _slice = slice;
-        _offset = offset;
-        _total = total;
-        _characters = [characters copy];
     }
     return self;
 }
-
 
 @end

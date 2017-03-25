@@ -12,10 +12,9 @@
 @property (nonatomic, assign, readonly) NSInteger code;
 @property (nonatomic, copy, readonly) NSString *status;
 @property (nonatomic, strong) QCOCharacterSliceResponseModel *slice;
-@property (nonatomic, assign, readonly) NSInteger offset;
-@property (nonatomic, assign, readonly) NSInteger total;
-@property (nonatomic, copy, readonly) NSArray<QCOCharacterResponseModel *> *characters;
 
-- (instancetype)initWithCode:(NSInteger)code status:(NSString *)status slice:(QCOCharacterSliceResponseModel *)slice offset:(NSInteger)offset total:(NSInteger)total characters:(NSArray<QCOCharacterResponseModel *> *)characters;
+- (instancetype)initWithCode:(NSInteger)code
+                      status:(NSString *)status
+                       slice:(QCOCharacterSliceResponseModel *)slice;
 
 @end

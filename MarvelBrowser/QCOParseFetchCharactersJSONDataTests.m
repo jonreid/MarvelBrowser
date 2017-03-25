@@ -1,5 +1,6 @@
 #import "QCOParseFetchCharactersJSONData.h"
 
+#import "QCOCharacterSliceResponseModel.h"
 #import "QCOFetchCharactersResponseModel.h"
 
 #import <OCHamcrest/OCHamcrest.h>
@@ -51,21 +52,21 @@
 {
     QCOFetchCharactersResponseModel *response = QCOParseFetchCharactersJSONData([self sampleResponse]);
 
-    assertThat(@(response.offset), is(@1));
+    assertThat(@(response.slice.offset), is(@1));
 }
 
 - (void)testParse_WithSampleResponse_ShouldHaveTotal3
 {
     QCOFetchCharactersResponseModel *response = QCOParseFetchCharactersJSONData([self sampleResponse]);
 
-    assertThat(@(response.total), is(@3));
+    assertThat(@(response.slice.total), is(@3));
 }
 
 - (void)testParse_WithSampleResponse_ShouldHaveTwoCharacters
 {
     QCOFetchCharactersResponseModel *response = QCOParseFetchCharactersJSONData([self sampleResponse]);
 
-    assertThat(response.characters, containsIn(@[
+    assertThat(response.slice.characters, containsIn(@[
             hasProperty(@"name", @"NAME1"),
             hasProperty(@"name", @"NAME2")]));
 }

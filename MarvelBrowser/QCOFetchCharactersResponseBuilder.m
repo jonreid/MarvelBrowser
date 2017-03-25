@@ -35,10 +35,7 @@
         return nil;
     return [[QCOFetchCharactersResponseModel alloc] initWithCode:self.code.integerValue
                                                           status:self.status
-                                                           slice:[self.data build]
-                                                          offset:self.data.offset.integerValue
-                                                           total:self.data.total.integerValue
-                                                      characters:[self.data buildCharacters]];
+                                                           slice:[self.data build]];
 }
 
 @end
