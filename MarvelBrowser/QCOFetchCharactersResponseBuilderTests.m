@@ -147,4 +147,16 @@
     assertThat(@(response.code), is(@500));
 }
 
+- (void)testBuild_WithErrorCodeAndNoData_ShouldReturnGivenCode
+{
+    NSDictionary *dict = @{
+            @"code": @409,
+    };
+    QCOFetchCharactersResponseBuilder *sut = [[QCOFetchCharactersResponseBuilder alloc] initWithDictionary:dict];
+    
+    QCOFetchCharactersResponseModel *response = [sut build];
+    
+    assertThat(@(response.code), is(@409));
+}
+
 @end
