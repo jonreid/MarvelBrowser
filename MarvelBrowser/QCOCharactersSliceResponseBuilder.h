@@ -16,6 +16,5 @@
 
 - (instancetype)initWithDictionary:(NSDictionary *)dict;
 - (QCOCharacterSliceResponseModel *)build;
-- (NSArray<QCOCharacterResponseModel *> *)buildCharacters;
 
 @end

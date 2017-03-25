@@ -190,35 +190,4 @@
     assertThat(response.characters, isEmpty());
 }
 
-- (void)testBuildCharacters_WithTwoResults_ShouldBuildTwoCharacters
-{
-    NSDictionary *dict = @{ @"results": @[
-            @{ @"name": @"ONE" },
-            @{ @"name": @"TWO" },
-    ] };
-    QCOCharactersSliceResponseBuilder *sut = [[QCOCharactersSliceResponseBuilder alloc] initWithDictionary:dict];
-    
-    NSArray<QCOCharacterResponseModel *> *characters = [sut buildCharacters];
-    
-    assertThat(characters, containsIn(@[
-            hasProperty(@"name", @"ONE"),
-            hasProperty(@"name", @"TWO"),
-    ]));
-}
-
-- (void)testBuildCharacters_WithTwoResultsButFirstCharacterMissingName_ShouldBuildOneCharacter
-{
-    NSDictionary *dict = @{ @"results": @[
-            @{},
-            @{ @"name": @"TWO" },
-    ] };
-    QCOCharactersSliceResponseBuilder *sut = [[QCOCharactersSliceResponseBuilder alloc] initWithDictionary:dict];
-    
-    NSArray<QCOCharacterResponseModel *> *characters = [sut buildCharacters];
-    
-    assertThat(characters, containsIn(@[
-            hasProperty(@"name", @"TWO"),
-    ]));
-}
-
 @end
