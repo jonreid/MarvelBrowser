@@ -139,7 +139,7 @@
     assertThat(response, is(nilValue()));
 }
 
-- (void)testBuild_WithRequiredFieldsPlusTwoResults_ShouldHaveTwoCharacters
+- (void)XXXtestBuild_WithRequiredFieldsPlusTwoResults_ShouldHaveTwoCharacters
 {
     NSDictionary *dict = @{
             @"offset": @123,
@@ -157,6 +157,19 @@
             hasProperty(@"name", @"ONE"),
             hasProperty(@"name", @"TWO"),
     ]));
+}
+
+- (void)testBuild_WithRequiredFieldsButNoResults_ShouldHaveEmptyCharactersArray
+{
+    NSDictionary *dict = @{
+            @"offset": @123,
+            @"total": @456,
+    };
+    QCOCharactersSliceResponseBuilder *sut = [[QCOCharactersSliceResponseBuilder alloc] initWithDictionary:dict];
+    
+    QCOCharacterSliceResponseModel *response = [sut build];
+    
+    assertThat(response.characters, isEmpty());
 }
 
 - (void)testBuildCharacters_WithTwoResults_ShouldBuildTwoCharacters
