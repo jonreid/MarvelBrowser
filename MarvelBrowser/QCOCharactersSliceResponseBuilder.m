@@ -47,8 +47,7 @@
         return nil;
     return [[QCOCharacterSliceResponseModel alloc] initWithOffset:self.offset.integerValue
                                                             total:self.total.integerValue
-                                                       characters:nil];
-//                                                       characters:[self buildCharacters]];
+                                                       characters:[self buildCharacters]];
 }
 
 - (NSArray<QCOCharacterResponseModel *> *)buildCharacters
