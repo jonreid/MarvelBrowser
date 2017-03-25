@@ -31,11 +31,12 @@
 
 - (QCOFetchCharactersResponseModel *)build
 {
-    if (!self.code)
+    QCOCharacterSliceResponseModel *slice = [self.data build];
+    if (!self.code || !slice)
         self.code = @500;
     return [[QCOFetchCharactersResponseModel alloc] initWithCode:self.code.integerValue
                                                           status:self.status
-                                                           slice:[self.data build]];
+                                                           slice:slice];
 }
 
 @end
