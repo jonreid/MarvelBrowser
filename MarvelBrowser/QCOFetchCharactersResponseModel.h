@@ -4,12 +4,14 @@
 #import <Foundation/Foundation.h>
 
 @class QCOCharacterResponseModel;
+@class QCOCharacterSliceResponseModel;
 
 
 @interface QCOFetchCharactersResponseModel : NSObject
 
 @property (nonatomic, assign, readonly) NSInteger code;
 @property (nonatomic, copy, readonly) NSString *status;
+@property (nonatomic, strong) QCOCharacterSliceResponseModel *slice;
 @property (nonatomic, assign, readonly) NSInteger offset;
 @property (nonatomic, assign, readonly) NSInteger total;
 @property (nonatomic, copy, readonly) NSArray<QCOCharacterResponseModel *> *characters;
