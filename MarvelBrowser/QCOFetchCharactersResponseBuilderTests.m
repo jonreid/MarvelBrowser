@@ -68,15 +68,23 @@
     assertThat(sut.data, hasProperty(@"offset", @123));
 }
 
+- (NSDictionary *)requiredDataFieldsWithDictionary:(NSDictionary *)dict
+{
+    NSMutableDictionary *dictPlusData = [[NSMutableDictionary alloc] initWithDictionary:dict];
+    [dictPlusData addEntriesFromDictionary:@{
+            @"data": @{
+                    @"offset": @0,
+                    @"total": @0,
+            }
+    }];
+    return dictPlusData;
+}
+
 - (void)testBuild_WithRequiredCode_ShouldHaveGivenField
 {
-    NSDictionary *dict = @{
+    NSDictionary *dict = [self requiredDataFieldsWithDictionary:@{
             @"code": @123,
-            @"data": @{
-                    @"offset": @1,
-                    @"total": @2,
-            }
-    };
+    }];
     QCOFetchCharactersResponseBuilder *sut = [[QCOFetchCharactersResponseBuilder alloc] initWithDictionary:dict];
     
     QCOFetchCharactersResponseModel *response = [sut build];
@@ -86,31 +94,22 @@
 
 - (void)testBuild_WithStatus_ShouldHaveGivenField
 {
-    NSDictionary *dict = @{
-            @"code": @123,
+    NSDictionary *dict = [self requiredDataFieldsWithDictionary:@{
+            @"code": @200,
             @"status": @"STATUS",
-            @"data": @{
-                    @"offset": @1,
-                    @"total": @2,
-            }
-    };
+    }];
     QCOFetchCharactersResponseBuilder *sut = [[QCOFetchCharactersResponseBuilder alloc] initWithDictionary:dict];
     
     QCOFetchCharactersResponseModel *response = [sut build];
     
-    assertThat(@(response.code), is(@123));
     assertThat(response.status, is(@"STATUS"));
 }
 
 - (void)testBuild_WithoutCode_ShouldReturnCode500
 {
-    NSDictionary *dict = @{
+    NSDictionary *dict = [self requiredDataFieldsWithDictionary:@{
             @"status": @"STATUS",
-            @"data": @{
-                    @"offset": @1,
-                    @"total": @2,
-            }
-    };
+    }];
     QCOFetchCharactersResponseBuilder *sut = [[QCOFetchCharactersResponseBuilder alloc] initWithDictionary:dict];
     
     QCOFetchCharactersResponseModel *response = [sut build];
@@ -121,7 +120,7 @@
 - (void)testBuild_WithCodePlusDataWithRequiredFields_ShouldHaveSlice
 {
     NSDictionary *dict = @{
-            @"code": @123,
+            @"code": @200,
             @"data": @{
                     @"offset": @1,
                     @"total": @2,

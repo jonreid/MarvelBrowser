@@ -138,16 +138,24 @@
     assertThat(response, is(nilValue()));
 }
 
+- (NSDictionary *)requiredFieldsWithDictionary:(NSDictionary *)dict
+{
+    NSMutableDictionary *dictPlusData = [[NSMutableDictionary alloc] initWithDictionary:dict];
+    [dictPlusData addEntriesFromDictionary:@{
+            @"offset": @0,
+            @"total": @0,
+    }];
+    return dictPlusData;
+}
+
 - (void)testBuild_WithRequiredFieldsPlusTwoResults_ShouldHaveTwoCharacters
 {
-    NSDictionary *dict = @{
-            @"offset": @123,
-            @"total": @456,
+    NSDictionary *dict = [self requiredFieldsWithDictionary:@{
             @"results": @[
-                @{ @"name": @"ONE" },
-                @{ @"name": @"TWO" },
+                    @{ @"name": @"ONE" },
+                    @{ @"name": @"TWO" },
             ],
-    };
+    }];
     QCOCharactersSliceResponseBuilder *sut = [[QCOCharactersSliceResponseBuilder alloc] initWithDictionary:dict];
     
     QCOCharacterSliceResponseModel *response = [sut build];
@@ -160,14 +168,12 @@
 
 - (void)testBuild_WithRequiredFieldsPlusTwoResultsButFirstCharacterMissingName_ShouldHaveOneCharacter
 {
-    NSDictionary *dict = @{
-            @"offset": @123,
-            @"total": @456,
+    NSDictionary *dict = [self requiredFieldsWithDictionary:@{
             @"results": @[
-                @{},
-                @{ @"name": @"TWO" },
+                    @{},
+                    @{ @"name": @"TWO" },
             ],
-    };
+    }];
     QCOCharactersSliceResponseBuilder *sut = [[QCOCharactersSliceResponseBuilder alloc] initWithDictionary:dict];
     
     QCOCharacterSliceResponseModel *response = [sut build];
@@ -179,10 +185,7 @@
 
 - (void)testBuild_WithRequiredFieldsButNoResults_ShouldHaveEmptyCharactersArray
 {
-    NSDictionary *dict = @{
-            @"offset": @123,
-            @"total": @456,
-    };
+    NSDictionary *dict = [self requiredFieldsWithDictionary:@{}];
     QCOCharactersSliceResponseBuilder *sut = [[QCOCharactersSliceResponseBuilder alloc] initWithDictionary:dict];
     
     QCOCharacterSliceResponseModel *response = [sut build];
