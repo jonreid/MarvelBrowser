@@ -64,7 +64,7 @@
 - (void)testInit_WithOneResultThatIsNotDictionary_ShouldCaptureArraySizeZeroInBuilder
 {
     NSDictionary *dict = @{ @"results": @[
-            @[ @"DUMMY" ],
+            @"DUMMY",
     ] };
     
     QCOCharactersSliceResponseBuilder *sut = [[QCOCharactersSliceResponseBuilder alloc] initWithDictionary:dict];
