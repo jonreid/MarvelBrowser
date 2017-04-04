@@ -61,30 +61,6 @@
     assertThat(sut.results, is(nilValue()));
 }
 
-- (void)testInit_WithOneResultThatIsNotDictionary_ShouldCaptureArraySizeZeroInBuilder
-{
-    NSDictionary *dict = @{ @"results": @[
-            @"DUMMY",
-    ] };
-    
-    QCOCharactersSliceResponseBuilder *sut = [[QCOCharactersSliceResponseBuilder alloc] initWithDictionary:dict];
-    
-    assertThat(sut.results, hasCountOf(0));
-}
-
-- (void)testInit_WithOneResult_ShouldCaptureOneCharacterInBuilder
-{
-    NSDictionary *dict = @{ @"results": @[
-            @{ @"name": @"ONE" },
-    ] };
-    
-    QCOCharactersSliceResponseBuilder *sut = [[QCOCharactersSliceResponseBuilder alloc] initWithDictionary:dict];
-    
-    assertThat(sut.results, containsIn(@[
-            hasProperty(@"name", @"ONE"),
-    ]));
-}
-
 - (void)testInit_WithTwoResults_ShouldCaptureTwoCharactersInBuilder
 {
     NSDictionary *dict = @{ @"results": @[
@@ -96,6 +72,20 @@
     
     assertThat(sut.results, containsIn(@[
             hasProperty(@"name", @"ONE"),
+            hasProperty(@"name", @"TWO"),
+    ]));
+}
+
+- (void)testInit_WithTwoResultsButFirstNotDictionary_ShouldCaptureValidSecondResult
+{
+    NSDictionary *dict = @{ @"results": @[
+            @"DUMMY",
+            @{ @"name": @"TWO" },
+    ] };
+    
+    QCOCharactersSliceResponseBuilder *sut = [[QCOCharactersSliceResponseBuilder alloc] initWithDictionary:dict];
+    
+    assertThat(sut.results, containsIn(@[
             hasProperty(@"name", @"TWO"),
     ]));
 }
