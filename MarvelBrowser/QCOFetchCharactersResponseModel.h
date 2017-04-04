@@ -11,7 +11,7 @@
 
 @property (nonatomic, assign, readonly) NSInteger code;
 @property (nonatomic, copy, readonly) NSString *status;
-@property (nonatomic, strong) QCOCharacterSliceResponseModel *slice;
+@property (nonatomic, strong, readonly) QCOCharacterSliceResponseModel *slice;
 
 - (instancetype)initWithCode:(NSInteger)code
                       status:(NSString *)status
