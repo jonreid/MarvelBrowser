@@ -68,4 +68,13 @@
     [verify(mockTask) cancel];
 }
 
+- (void)testDidCancel_WithExistingTask_ShouldReleaseTask
+{
+    [sut startTask:mockTask];
+    
+    [sut cancel];
+    
+    assertThat(sut.currentTask, is(nilValue()));
+}
+
 @end
