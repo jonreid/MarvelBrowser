@@ -24,7 +24,7 @@
 
 - (void)cancel
 {
-    
+    [self.currentTask cancel];
 }
 
 @end
