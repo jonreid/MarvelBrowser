@@ -59,4 +59,11 @@
     assertThat(sut.currentTask, is(nilValue()));
 }
 
+- (void)testCancel_WithExistingTask_ShouldCancelTask
+{
+    [sut startTask:mockTask];
+    
+    [sut cancel];
+}
+
 @end
