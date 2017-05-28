@@ -4,10 +4,15 @@
 #import "QCONetworkRequest.h"
 
 
+@interface QCONetworkRequest ()
+@property (nonatomic, strong, readwrite) NSURLSessionTask *currentTask;
+@end
+
 @implementation QCONetworkRequest
 
 - (void)startTask:(NSURLSessionTask *)task
 {
+    self.currentTask = task;
     [task resume];
 }
 
