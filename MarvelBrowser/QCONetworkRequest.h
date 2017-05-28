@@ -6,6 +6,8 @@
 
 @interface QCONetworkRequest : NSObject
 
+@property (nonatomic, strong, readonly) NSURLSessionTask *currentTask;
+
 - (void)startTask:(NSURLSessionTask *)task;
 
 @end
