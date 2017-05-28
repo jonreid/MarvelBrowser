@@ -6,9 +6,9 @@
 
 @implementation QCONetworkRequest
 
-- (void)startDataTask:(NSURLSessionDataTask *)dataTask
+- (void)startTask:(NSURLSessionTask *)task
 {
-    [dataTask resume];
+    [task resume];
 }
 
 @end

@@ -37,7 +37,7 @@
         NSString *str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
         NSLog(@"data: %@", str);
     }];
-    [networkRequest startDataTask:dataTask];
+    [networkRequest startTask:dataTask];
 }
 
 - (NSURL *)URLForRequestModel:(QCOFetchCharactersRequestModel *)requestModel
