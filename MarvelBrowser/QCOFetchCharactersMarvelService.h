@@ -4,12 +4,14 @@
 #import <Foundation/Foundation.h>
 
 @class QCOFetchCharactersRequestModel;
+@class QCONetworkRequest;
 
 
 @interface QCOFetchCharactersMarvelService : NSObject
 
 - (instancetype)initWithSession:(NSURLSession *)session
         authParametersGenerator:(NSString *(^)(void))authParametersGenerator;
-- (void)fetchCharactersWithRequestModel:(QCOFetchCharactersRequestModel *)requestModel;
+- (void)fetchCharactersWithRequestModel:(QCOFetchCharactersRequestModel *)requestModel
+                         networkRequest:(QCONetworkRequest *)networkRequest;
 
 @end

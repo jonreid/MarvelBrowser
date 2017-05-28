@@ -4,6 +4,7 @@
 #import "QCOFetchCharactersMarvelService.h"
 
 #import "QCOFetchCharactersRequestModel.h"
+#import "QCONetworkRequest.h"
 
 
 @interface QCOFetchCharactersMarvelService ()
@@ -26,6 +27,7 @@
 }
 
 - (void)fetchCharactersWithRequestModel:(QCOFetchCharactersRequestModel *)requestModel
+                         networkRequest:(QCONetworkRequest *)networkRequest
 {
     NSURL *url = [self URLForRequestModel:requestModel];
     NSURLSessionDataTask *dataTask = [self.session dataTaskWithURL:url
