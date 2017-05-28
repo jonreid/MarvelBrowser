@@ -46,7 +46,7 @@
 {
     [sut startTask:mockTask];
     
-    assertThat(^{ [sut startTask:mockTask]; },
+    assertThat(^{ [self->sut startTask:[[NSURLSessionTask alloc] init]]; },
             throwsException(hasProperty(@"name", NSInternalInconsistencyException)));
 }
 
