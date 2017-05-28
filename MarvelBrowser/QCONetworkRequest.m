@@ -19,7 +19,7 @@
 
 - (void)didComplete
 {
-    
+    self.currentTask = nil;
 }
 
 @end
