@@ -55,6 +55,8 @@
     [sut startTask:mockTask];
     
     [sut didComplete];
+    
+    assertThat(sut.currentTask, is(nilValue()));
 }
 
 @end
