@@ -64,6 +64,8 @@
     [sut startTask:mockTask];
     
     [sut cancel];
+    
+    [verify(mockTask) cancel];
 }
 
 @end
