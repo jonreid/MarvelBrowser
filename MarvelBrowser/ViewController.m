@@ -6,6 +6,7 @@
 #import "QCOFetchCharactersMarvelService.h"
 #import "QCOFetchCharactersRequestModel.h"
 #import "QCOMarvelAuthentication.h"
+#import "QCONetworkRequest.h"
 
 
 @implementation ViewController
@@ -20,7 +21,8 @@
                                              }];
     QCOFetchCharactersRequestModel *requestModel =
             [[QCOFetchCharactersRequestModel alloc] initWithNamePrefix:@"Spider" pageSize:1 offset:0];
-    [service fetchCharactersWithRequestModel:requestModel networkRequest:nil];
+    [service fetchCharactersWithRequestModel:requestModel
+                              networkRequest:[[QCONetworkRequest alloc] init]];
 }
 
 @end
