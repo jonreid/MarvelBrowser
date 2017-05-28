@@ -4,6 +4,7 @@
 #import "QCOFetchCharactersMarvelService.h"
 
 #import "QCOFetchCharactersRequestModel.h"
+#import "QCONetworkRequest.h"
 
 #import "QCOURLQueryMatcher.h"
 #import <OCHamcrest/OCHamcrest.h>
@@ -133,7 +134,8 @@
     [given([mockSession dataTaskWithURL:anything() completionHandler:anything()])
             willReturn:mockDataTask];
 
-    [sut fetchCharactersWithRequestModel:[self dummyRequestModel] networkRequest:nil];
+    [sut fetchCharactersWithRequestModel:[self dummyRequestModel]
+                          networkRequest:[[QCONetworkRequest alloc] init]];
 
     [verify(mockDataTask) resume];
 }
