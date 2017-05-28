@@ -13,7 +13,7 @@
 - (void)startTask:(NSURLSessionTask *)task
 {
     self.currentTask = task;
-    [task resume];
+    [self.currentTask resume];
 }
 
 @end
