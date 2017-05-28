@@ -25,6 +25,7 @@
 - (void)cancel
 {
     [self.currentTask cancel];
+    self.currentTask = nil;
 }
 
 @end
