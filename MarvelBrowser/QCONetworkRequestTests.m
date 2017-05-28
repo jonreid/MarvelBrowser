@@ -1,3 +1,6 @@
+#import "QCONetworkRequest.h"
+
+#import <OCMockito/OCMockito.h>
 #import <XCTest/XCTest.h>
 
 
@@ -5,5 +8,15 @@
 @end
 
 @implementation QCONetworkRequestTests
+
+- (void)testStartTask_ShouldTellTaskToResume
+{
+    id mockTask = mock([NSURLSessionTask class]);
+    QCONetworkRequest *sut = [[QCONetworkRequest alloc] init];
+    
+    [sut startTask:mockTask];
+    
+    [verify(mockTask) resume];
+}
 
 @end
