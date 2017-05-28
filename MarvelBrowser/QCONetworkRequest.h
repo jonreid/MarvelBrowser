@@ -5,4 +5,7 @@
 
 
 @interface QCONetworkRequest : NSObject
+
+- (void)startDataTask:(NSURLSessionDataTask *)dataTask;
+
 @end

@@ -5,4 +5,10 @@
 
 
 @implementation QCONetworkRequest
+
+- (void)startDataTask:(NSURLSessionDataTask *)dataTask
+{
+    
+}
+
 @end
