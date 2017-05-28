@@ -9,10 +9,24 @@
 @end
 
 @implementation QCONetworkRequestTests
+{
+    id mockTask;
+}
+
+- (void)setUp
+{
+    [super setUp];
+    mockTask = mock([NSURLSessionTask class]);
+}
+
+- (void)tearDown
+{
+    mockTask = nil;
+    [super tearDown];
+}
 
 - (void)testStartTask_ShouldTellTaskToResume
 {
-    id mockTask = mock([NSURLSessionTask class]);
     QCONetworkRequest *sut = [[QCONetworkRequest alloc] init];
     
     [sut startTask:mockTask];
@@ -22,7 +36,6 @@
 
 - (void)testStartTask_ShouldRetainGivenTask
 {
-    id mockTask = mock([NSURLSessionTask class]);
     QCONetworkRequest *sut = [[QCONetworkRequest alloc] init];
     
     [sut startTask:mockTask];
