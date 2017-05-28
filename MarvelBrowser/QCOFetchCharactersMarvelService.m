@@ -38,7 +38,6 @@
         NSLog(@"data: %@", str);
     }];
     [networkRequest startDataTask:dataTask];
-    [dataTask resume];
 }
 
 - (NSURL *)URLForRequestModel:(QCOFetchCharactersRequestModel *)requestModel

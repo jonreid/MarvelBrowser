@@ -8,7 +8,7 @@
 
 - (void)startDataTask:(NSURLSessionDataTask *)dataTask
 {
-    
+    [dataTask resume];
 }
 
 @end
