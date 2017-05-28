@@ -42,4 +42,12 @@
     assertThat(sut.currentTask, is(sameInstance(mockTask)));
 }
 
+- (void)testStartTask_WithExistingTask_ShouldThrowInternalInconsistencyException
+{
+    [sut startTask:mockTask];
+    
+    assertThat(^{ [sut startTask:mockTask]; },
+            throwsException(hasProperty(@"name", NSInternalInconsistencyException)));
+}
+
 @end
