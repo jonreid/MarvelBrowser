@@ -50,4 +50,11 @@
             throwsException(hasProperty(@"name", NSInternalInconsistencyException)));
 }
 
+- (void)testDidComplete_WithExistingTask_ShouldReleaseTask
+{
+    [sut startTask:mockTask];
+    
+    [sut didComplete];
+}
+
 @end
