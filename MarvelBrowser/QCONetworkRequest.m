@@ -8,7 +8,7 @@
 
 - (void)startTask:(NSURLSessionTask *)task
 {
-//    [task resume];
+    [task resume];
 }
 
 @end
