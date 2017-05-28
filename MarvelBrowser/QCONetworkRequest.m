@@ -17,4 +17,9 @@
     [self.currentTask resume];
 }
 
+- (void)didComplete
+{
+    
+}
+
 @end

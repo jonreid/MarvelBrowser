@@ -9,5 +9,6 @@
 @property (nonatomic, strong, readonly) NSURLSessionTask *currentTask;
 
 - (void)startTask:(NSURLSessionTask *)task;
+- (void)didComplete;
 
 @end
