@@ -37,6 +37,7 @@
         NSString *str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
         NSLog(@"data: %@", str);
     }];
+    [networkRequest startDataTask:dataTask];
     [dataTask resume];
 }
 
