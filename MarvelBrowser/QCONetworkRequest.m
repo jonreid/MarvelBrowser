@@ -22,4 +22,9 @@
     self.currentTask = nil;
 }
 
+- (void)cancel
+{
+    
+}
+
 @end

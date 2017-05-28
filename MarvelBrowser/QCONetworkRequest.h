@@ -10,5 +10,6 @@
 
 - (void)startTask:(NSURLSessionTask *)task;
 - (void)didComplete;
+- (void)cancel;
 
 @end
