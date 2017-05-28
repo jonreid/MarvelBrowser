@@ -12,6 +12,8 @@
 
 - (void)startTask:(NSURLSessionTask *)task
 {
+    if (self.currentTask)
+        @throw [NSException exceptionWithName:NSInternalInconsistencyException reason:nil userInfo:nil];
     self.currentTask = task;
     [self.currentTask resume];
 }
