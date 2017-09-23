@@ -8,13 +8,13 @@
 
 @interface QCOFetchCharactersMarvelService ()
 @property (nonatomic, strong, readonly) NSURLSession *session;
-@property (nonatomic, copy, readonly) NSString *(^authParametersGenerator)();
+@property (nonatomic, copy, readonly) NSString *(^authParametersGenerator)(void);
 @end
 
 @implementation QCOFetchCharactersMarvelService
 
 - (instancetype)initWithSession:(NSURLSession *)session
-        authParametersGenerator:(NSString *(^)())authParametersGenerator
+        authParametersGenerator:(NSString *(^)(void))authParametersGenerator
 {
     self = [super init];
     if (self)
