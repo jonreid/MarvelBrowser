@@ -1,9 +1,9 @@
 target 'MarvelBrowserTests' do
   inherit! :search_paths
-  pod 'OCMockito', '~> 4.0'
+  pod 'OCMockito', '~> 5.0'
 end
 
 target 'AcceptanceTests' do
   inherit! :search_paths
-  pod 'OCHamcrest', '~> 6.0'
+  pod 'OCHamcrest', '~> 7.0'
 end
