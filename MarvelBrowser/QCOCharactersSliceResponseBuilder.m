@@ -11,7 +11,7 @@
 
 @implementation QCOCharactersSliceResponseBuilder
 
-- (instancetype)initWithDictionary:(NSDictionary *)dict;
+- (instancetype)initWithDictionary:(NSDictionary *)dict
 {
     self = [super init];
     if (self)
