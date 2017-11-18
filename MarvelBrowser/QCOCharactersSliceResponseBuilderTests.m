@@ -23,7 +23,7 @@
     assertThat(sut.offset, is(nilValue()));
 }
 
-- (void)testInit_WithOffset_ShouldCaptureValueInBuilder
+- (void)testInit_WithIntegerOffset_ShouldCaptureValueInBuilder
 {
     NSDictionary *dict = @{ @"offset": @123 };
     
@@ -41,7 +41,7 @@
     assertThat(sut.total, is(nilValue()));
 }
 
-- (void)testInit_WithTotal_ShouldCaptureValueInBuilder
+- (void)testInit_WithIntegerTotal_ShouldCaptureValueInBuilder
 {
     NSDictionary *dict = @{ @"total": @123 };
     
