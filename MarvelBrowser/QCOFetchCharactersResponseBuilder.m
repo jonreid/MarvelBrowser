@@ -33,7 +33,7 @@
 {
     QCOCharacterSliceResponseModel *slice = [self.data build];
     BOOL validCodeButNoData = [self.code isEqualToNumber:@200] && !slice;
-    if (!self.code || validCodeButNoData)
+    if (self.code == nil || validCodeButNoData)
         self.code = @500;
     return [[QCOFetchCharactersResponseModel alloc] initWithCode:self.code.integerValue
                                                           status:self.status

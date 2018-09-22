@@ -43,7 +43,7 @@
 
 - (QCOCharacterSliceResponseModel *)build
 {
-    if (!self.offset || !self.total)
+    if (self.offset == nil || self.total == nil)
         return nil;
     return [[QCOCharacterSliceResponseModel alloc] initWithOffset:self.offset.integerValue
                                                             total:self.total.integerValue
