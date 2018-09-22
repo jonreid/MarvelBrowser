@@ -20,14 +20,13 @@
 		609E9EC82DB962E5B26058C3 /* QCOFetchCharactersRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 609E95C3EA7D949667F5A771 /* QCOFetchCharactersRequestModel.m */; };
 		609E9ED670D468FF94105A93 /* QCOFetchCharactersMarvelServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 609E9A8AC61A8BCC6F21946E /* QCOFetchCharactersMarvelServiceTests.m */; };
 		609E9FE53E50AFB4B38CD955 /* QCOURLQueryMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 609E9469988A9317A915402E /* QCOURLQueryMatcher.m */; };
-		716E1941D5E9CEFBAF09BE16 /* libPods-AcceptanceTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FE3A426F643037B48A46FF5 /* libPods-AcceptanceTests.a */; };
 		74CC7A8A1A1D9036007FCA40 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CC7A891A1D9036007FCA40 /* main.m */; };
 		74CC7A8D1A1D9036007FCA40 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CC7A8C1A1D9036007FCA40 /* AppDelegate.m */; };
 		74CC7A901A1D9036007FCA40 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CC7A8F1A1D9036007FCA40 /* ViewController.m */; };
 		74CC7A931A1D9036007FCA40 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74CC7A911A1D9036007FCA40 /* Main.storyboard */; };
 		74CC7A951A1D9036007FCA40 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74CC7A941A1D9036007FCA40 /* Images.xcassets */; };
 		74CC7A981A1D9036007FCA40 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74CC7A961A1D9036007FCA40 /* LaunchScreen.xib */; };
-		8D3BD2FB46F1B04390B9065E /* libPods-MarvelBrowserTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DB140229E203CF67F2C670E0 /* libPods-MarvelBrowserTests.a */; };
+		90220F736A0A7DE3646D66C1 /* Pods_AcceptanceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1AB0C7A3C4B23EC2732D43D /* Pods_AcceptanceTests.framework */; };
 		BB17017093FA6A72F3C8D22E /* QCOParseFetchCharactersJSONData.m in Sources */ = {isa = PBXBuildFile; fileRef = BB17095F93727D3936E89679 /* QCOParseFetchCharactersJSONData.m */; };
 		BB1701C2DC0FB8D46D2C2F5D /* QCOCharacterResponseBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = BB17032C47EF3F644689C4C8 /* QCOCharacterResponseBuilder.m */; };
 		BB17036BA888B6A651EF56FF /* QCOFetchCharactersResponseBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = BB170EB9F28E5B3451977009 /* QCOFetchCharactersResponseBuilder.m */; };
@@ -38,6 +37,7 @@
 		BB170E3A9499EC956E66D49D /* QCOCharacterResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BB17089BCF81FED6A142D947 /* QCOCharacterResponseModel.m */; };
 		BB170EA19C8564DD2701B8B4 /* QCOFetchCharactersResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BB170D246257B43E17269506 /* QCOFetchCharactersResponseModel.m */; };
 		BB170F76D08D50FCDBEA5B17 /* QCOCharacterSliceResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BB170050E5FFBC5C90611586 /* QCOCharacterSliceResponseModel.m */; };
+		E181EFCFC5884632AE956C78 /* Pods_MarvelBrowserTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6C363FEE0298FE4419A2A99 /* Pods_MarvelBrowserTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,7 +62,6 @@
 		0E7709941B50C1CD0056472E /* AcceptanceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AcceptanceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		24785E2828932317A9FFF690 /* Pods-MarvelBrowserTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelBrowserTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MarvelBrowserTests/Pods-MarvelBrowserTests.debug.xcconfig"; sourceTree = "<group>"; };
 		38188BACA897CA99C095E0C0 /* Pods-AcceptanceTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AcceptanceTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AcceptanceTests/Pods-AcceptanceTests.debug.xcconfig"; sourceTree = "<group>"; };
-		3FE3A426F643037B48A46FF5 /* libPods-AcceptanceTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AcceptanceTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		481247A41DEBB80D00B95720 /* QCOFetchCharactersResponseBuilderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCOFetchCharactersResponseBuilderTests.m; sourceTree = "<group>"; };
 		48DDD2821E7621FC00D2DCE4 /* QCOCharactersSliceResponseBuilderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCOCharactersSliceResponseBuilderTests.m; sourceTree = "<group>"; };
 		48DDD2841E762E1C00D2DCE4 /* QCOCharacterResponseBuilderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCOCharacterResponseBuilderTests.m; sourceTree = "<group>"; };
@@ -114,7 +113,8 @@
 		BB170EB9F28E5B3451977009 /* QCOFetchCharactersResponseBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCOFetchCharactersResponseBuilder.m; sourceTree = "<group>"; };
 		BB170F8EE62542DBD3B9EBD4 /* QCOFetchCharactersResponseBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCOFetchCharactersResponseBuilder.h; sourceTree = "<group>"; };
 		BB170FA6B264C91149AB4597 /* QCOCharacterResponseBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCOCharacterResponseBuilder.h; sourceTree = "<group>"; };
-		DB140229E203CF67F2C670E0 /* libPods-MarvelBrowserTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MarvelBrowserTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C6C363FEE0298FE4419A2A99 /* Pods_MarvelBrowserTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarvelBrowserTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1AB0C7A3C4B23EC2732D43D /* Pods_AcceptanceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AcceptanceTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,7 +122,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				716E1941D5E9CEFBAF09BE16 /* libPods-AcceptanceTests.a in Frameworks */,
+				90220F736A0A7DE3646D66C1 /* Pods_AcceptanceTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,7 +137,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D3BD2FB46F1B04390B9065E /* libPods-MarvelBrowserTests.a in Frameworks */,
+				E181EFCFC5884632AE956C78 /* Pods_MarvelBrowserTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,8 +147,8 @@
 		00ACB743A9A842939A5A0B18 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3FE3A426F643037B48A46FF5 /* libPods-AcceptanceTests.a */,
-				DB140229E203CF67F2C670E0 /* libPods-MarvelBrowserTests.a */,
+				E1AB0C7A3C4B23EC2732D43D /* Pods_AcceptanceTests.framework */,
+				C6C363FEE0298FE4419A2A99 /* Pods_MarvelBrowserTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -268,6 +268,7 @@
 				0E7709901B50C1CD0056472E /* Sources */,
 				0E7709911B50C1CD0056472E /* Frameworks */,
 				0E7709921B50C1CD0056472E /* Resources */,
+				FAF28BDD62DE33E34BD1173E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -304,6 +305,7 @@
 				74CC7A991A1D9036007FCA40 /* Sources */,
 				74CC7A9A1A1D9036007FCA40 /* Frameworks */,
 				74CC7A9B1A1D9036007FCA40 /* Resources */,
+				0618B404819868A66AB6A570 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -403,6 +405,26 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		0618B404819868A66AB6A570 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MarvelBrowserTests/Pods-MarvelBrowserTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/OCHamcrest/OCHamcrest.framework",
+				"${BUILT_PRODUCTS_DIR}/OCMockito/OCMockito.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OCHamcrest.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OCMockito.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MarvelBrowserTests/Pods-MarvelBrowserTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		2130736AED2E66625E95A0A8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -419,6 +441,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FAF28BDD62DE33E34BD1173E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-AcceptanceTests/Pods-AcceptanceTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/OCHamcrest/OCHamcrest.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OCHamcrest.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AcceptanceTests/Pods-AcceptanceTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
